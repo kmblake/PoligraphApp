@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C61DD962980058F6C8 /* AppDelegate.swift */; };
-		65B229C91DD962980058F6C8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C81DD962980058F6C8 /* FeedViewController.swift */; };
+		65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C81DD962980058F6C8 /* BrowseViewController.swift */; };
 		65B229CB1DD962980058F6C8 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229CA1DD962980058F6C8 /* AskViewController.swift */; };
 		65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CC1DD962980058F6C8 /* Main.storyboard */; };
 		65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CF1DD962980058F6C8 /* Assets.xcassets */; };
@@ -16,6 +16,13 @@
 		65B229DE1DD962990058F6C8 /* PoligraphAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229DD1DD962990058F6C8 /* PoligraphAppTests.swift */; };
 		65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */; };
 		65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229EA1DD967960058F6C8 /* ReviewViewController.swift */; };
+		B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */; };
+		B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E904E1DDEE2C300F89E2D /* User+CoreDataClass.swift */; };
+		B17E90551DDEE2C300F89E2D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E904F1DDEE2C300F89E2D /* User+CoreDataProperties.swift */; };
+		B17E90561DDEE2C300F89E2D /* Question+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90501DDEE2C300F89E2D /* Question+CoreDataClass.swift */; };
+		B17E90571DDEE2C300F89E2D /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90511DDEE2C300F89E2D /* Question+CoreDataProperties.swift */; };
+		B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90521DDEE2C300F89E2D /* Review+CoreDataClass.swift */; };
+		B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,7 @@
 /* Begin PBXFileReference section */
 		65B229C31DD962980058F6C8 /* PoligraphApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoligraphApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B229C61DD962980058F6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65B229C81DD962980058F6C8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		65B229C81DD962980058F6C8 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		65B229CA1DD962980058F6C8 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
 		65B229CD1DD962980058F6C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65B229CF1DD962980058F6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +49,13 @@
 		65B229DF1DD962990058F6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		65B229EA1DD967960058F6C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B17E904E1DDEE2C300F89E2D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B17E904F1DDEE2C300F89E2D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B17E90501DDEE2C300F89E2D /* Question+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B17E90511DDEE2C300F89E2D /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B17E90521DDEE2C300F89E2D /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				65B229C61DD962980058F6C8 /* AppDelegate.swift */,
-				65B229C81DD962980058F6C8 /* FeedViewController.swift */,
-				65B229CA1DD962980058F6C8 /* AskViewController.swift */,
-				65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */,
-				65B229EA1DD967960058F6C8 /* ReviewViewController.swift */,
+				B17E900D1DDEDA5000F89E2D /* Core Data */,
+				B17E90091DDED9D500F89E2D /* Browse */,
+				B17E900A1DDED9E200F89E2D /* Ask */,
+				B17E900B1DDED9E700F89E2D /* Answer */,
+				B17E900C1DDED9F200F89E2D /* Review */,
 				65B229CC1DD962980058F6C8 /* Main.storyboard */,
 				65B229CF1DD962980058F6C8 /* Assets.xcassets */,
 				65B229D11DD962980058F6C8 /* LaunchScreen.storyboard */,
@@ -103,6 +118,52 @@
 				65B229DF1DD962990058F6C8 /* Info.plist */,
 			);
 			path = PoligraphAppTests;
+			sourceTree = "<group>";
+		};
+		B17E90091DDED9D500F89E2D /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				65B229C81DD962980058F6C8 /* BrowseViewController.swift */,
+			);
+			name = Browse;
+			sourceTree = "<group>";
+		};
+		B17E900A1DDED9E200F89E2D /* Ask */ = {
+			isa = PBXGroup;
+			children = (
+				65B229CA1DD962980058F6C8 /* AskViewController.swift */,
+			);
+			name = Ask;
+			sourceTree = "<group>";
+		};
+		B17E900B1DDED9E700F89E2D /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */,
+			);
+			name = Answer;
+			sourceTree = "<group>";
+		};
+		B17E900C1DDED9F200F89E2D /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				65B229EA1DD967960058F6C8 /* ReviewViewController.swift */,
+			);
+			name = Review;
+			sourceTree = "<group>";
+		};
+		B17E900D1DDEDA5000F89E2D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				B17E904E1DDEE2C300F89E2D /* User+CoreDataClass.swift */,
+				B17E904F1DDEE2C300F89E2D /* User+CoreDataProperties.swift */,
+				B17E90501DDEE2C300F89E2D /* Question+CoreDataClass.swift */,
+				B17E90511DDEE2C300F89E2D /* Question+CoreDataProperties.swift */,
+				B17E90521DDEE2C300F89E2D /* Review+CoreDataClass.swift */,
+				B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */,
+				B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +216,7 @@
 				TargetAttributes = {
 					65B229C21DD962980058F6C8 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CE5QU67D8T;
 						ProvisioningStyle = Automatic;
 					};
 					65B229D81DD962990058F6C8 = {
@@ -210,9 +272,16 @@
 			files = (
 				65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */,
 				65B229CB1DD962980058F6C8 /* AskViewController.swift in Sources */,
+				B17E90551DDEE2C300F89E2D /* User+CoreDataProperties.swift in Sources */,
+				B17E90571DDEE2C300F89E2D /* Question+CoreDataProperties.swift in Sources */,
 				65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */,
 				65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */,
-				65B229C91DD962980058F6C8 /* FeedViewController.swift in Sources */,
+				65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */,
+				B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */,
+				B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */,
+				B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */,
+				B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */,
+				B17E90561DDEE2C300F89E2D /* Question+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CE5QU67D8T;
 				INFOPLIST_FILE = PoligraphApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.Stanford.PoligraphApp;
@@ -361,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CE5QU67D8T;
 				INFOPLIST_FILE = PoligraphApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.Stanford.PoligraphApp;
@@ -416,6 +487,7 @@
 				65B229E41DD962990058F6C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65B229E51DD962990058F6C8 /* Build configuration list for PBXNativeTarget "PoligraphAppTests" */ = {
 			isa = XCConfigurationList;
@@ -424,8 +496,22 @@
 				65B229E71DD962990058F6C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */,
+			);
+			currentVersion = B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65B229BB1DD962980058F6C8 /* Project object */;
 }

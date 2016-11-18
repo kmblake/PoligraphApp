@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class BrowseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
