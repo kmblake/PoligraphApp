@@ -72,6 +72,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
+    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    
+    // MARK: - Core Data Preloading
+    
+    func parseCSV(contentsOfURL: URL, encoding: String.Encoding, error: NSErrorPointer?) -> [String]? {
+        //TODO implement, or use parseJSON
+        return ["foo"]
+    }
+    
+    
+    func preloadData() {
+        // TODO: Implement Preload
+        
+        //Test code with one user, one question
+        let context = getContext()
+        
+        //TODO: Clear database?
+        
+        // Parse JSON (or CSV)
+        
+        //First, load users
+            //User.addNewUser(id: <#T##Int#>, firstName: <#T##String#>, lastName: <#T##String#>, bio: <#T##String#>, credentials: <#T##String#>, inManagedObjectContext: context)
+        
+        //Second, load questions
+            //Question.addQuestion(asker: <#T##User#>, text: <#T##String#>, inManagedObjectContext: context)
+            //Add other attributes for answered questions
+        
+            //TODO: make sure that these reciprocate to users
+        
+        //Third, load reviews
+            //Review.addNewReview(feedbackText: <#T##String#>, recommendation: <#T##Int#>, biasRating: <#T##Double#>, question: <#T##Question#>, reviewer: <#T##User#>, inManagedObjectContext: context)
+        
+            //TODO: Make sure that reviews reciprocate to questions and users
+        
+        //Save
+        do {
+            try context.save()
+            print("Data successfully preloaded")
+        } catch let error as NSError {
+            print("Could not save database on preload: \(error), \(error.userInfo)")
+        }
+    }
+    
+
     // MARK: - Core Data Saving support
     
     func saveContext () {
