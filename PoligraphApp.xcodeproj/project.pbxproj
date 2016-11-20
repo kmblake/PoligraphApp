@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17AF0BE63470194F5A830D3A /* Pods_PoligraphAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB79CFB41CEA5003860578 /* Pods_PoligraphAppTests.framework */; };
+		5215004F5CA4FEF8A31E048C /* Pods_PoligraphApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */; };
+		6553B81D1DE13D06008F183E /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 6553B81C1DE13D06008F183E /* test.json */; };
 		65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C61DD962980058F6C8 /* AppDelegate.swift */; };
 		65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C81DD962980058F6C8 /* BrowseViewController.swift */; };
 		65B229CB1DD962980058F6C8 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229CA1DD962980058F6C8 /* AskViewController.swift */; };
@@ -36,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018038BD4E44D48D0262F6CB /* Pods-PoligraphApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphApp/Pods-PoligraphApp.release.xcconfig"; sourceTree = "<group>"; };
+		0ACB79CFB41CEA5003860578 /* Pods_PoligraphAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoligraphAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0D597E9DCBFA8292245EC4 /* Pods-PoligraphAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphAppTests/Pods-PoligraphAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5042C064BAE8C9A97F562B6C /* Pods-PoligraphAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphAppTests/Pods-PoligraphAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6553B81C1DE13D06008F183E /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		65B229C31DD962980058F6C8 /* PoligraphApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoligraphApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B229C61DD962980058F6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B229C81DD962980058F6C8 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,7 @@
 		65B229DF1DD962990058F6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		65B229EA1DD967960058F6C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoligraphApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B17E904E1DDEE2C300F89E2D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B17E904F1DDEE2C300F89E2D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 		B17E90511DDEE2C300F89E2D /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B17E90521DDEE2C300F89E2D /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8886B85062E9F231DA55B8B /* Pods-PoligraphApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphApp/Pods-PoligraphApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5215004F5CA4FEF8A31E048C /* Pods_PoligraphApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,18 +81,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AF0BE63470194F5A830D3A /* Pods_PoligraphAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11DFCC13C93F78E476F9F9AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */,
+				0ACB79CFB41CEA5003860578 /* Pods_PoligraphAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C399E9B740F95902D5E4B1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8886B85062E9F231DA55B8B /* Pods-PoligraphApp.debug.xcconfig */,
+				018038BD4E44D48D0262F6CB /* Pods-PoligraphApp.release.xcconfig */,
+				0F0D597E9DCBFA8292245EC4 /* Pods-PoligraphAppTests.debug.xcconfig */,
+				5042C064BAE8C9A97F562B6C /* Pods-PoligraphAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		65B229BA1DD962980058F6C8 = {
 			isa = PBXGroup;
 			children = (
 				65B229C51DD962980058F6C8 /* PoligraphApp */,
 				65B229DC1DD962990058F6C8 /* PoligraphAppTests */,
 				65B229C41DD962980058F6C8 /* Products */,
+				5C399E9B740F95902D5E4B1A /* Pods */,
+				11DFCC13C93F78E476F9F9AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +131,7 @@
 		65B229C51DD962980058F6C8 /* PoligraphApp */ = {
 			isa = PBXGroup;
 			children = (
+				6553B81C1DE13D06008F183E /* test.json */,
 				65B229C61DD962980058F6C8 /* AppDelegate.swift */,
 				B17E900D1DDEDA5000F89E2D /* Core Data */,
 				B17E90091DDED9D500F89E2D /* Browse */,
@@ -173,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65B229E21DD962990058F6C8 /* Build configuration list for PBXNativeTarget "PoligraphApp" */;
 			buildPhases = (
+				DB0285F394D0E769ADA6452D /* [CP] Check Pods Manifest.lock */,
 				65B229BF1DD962980058F6C8 /* Sources */,
 				65B229C01DD962980058F6C8 /* Frameworks */,
 				65B229C11DD962980058F6C8 /* Resources */,
+				60984D5A3AF174345904CF93 /* [CP] Embed Pods Frameworks */,
+				565E7E50B7592AE975238536 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65B229E51DD962990058F6C8 /* Build configuration list for PBXNativeTarget "PoligraphAppTests" */;
 			buildPhases = (
+				24D582DDAFB91AAF01409C3C /* [CP] Check Pods Manifest.lock */,
 				65B229D51DD962990058F6C8 /* Sources */,
 				65B229D61DD962990058F6C8 /* Frameworks */,
 				65B229D71DD962990058F6C8 /* Resources */,
+				6040FF55BE09E3505D046A5E /* [CP] Embed Pods Frameworks */,
+				72ADB6161BA3923EFD6929D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B229D31DD962980058F6C8 /* LaunchScreen.storyboard in Resources */,
+				6553B81D1DE13D06008F183E /* test.json in Resources */,
 				65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */,
 				65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */,
 			);
@@ -264,6 +306,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24D582DDAFB91AAF01409C3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		565E7E50B7592AE975238536 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoligraphApp/Pods-PoligraphApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6040FF55BE09E3505D046A5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoligraphAppTests/Pods-PoligraphAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60984D5A3AF174345904CF93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoligraphApp/Pods-PoligraphApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72ADB6161BA3923EFD6929D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoligraphAppTests/Pods-PoligraphAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB0285F394D0E769ADA6452D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65B229BF1DD962980058F6C8 /* Sources */ = {
@@ -418,6 +553,7 @@
 		};
 		65B229E31DD962990058F6C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8886B85062E9F231DA55B8B /* Pods-PoligraphApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CE5QU67D8T;
@@ -431,6 +567,7 @@
 		};
 		65B229E41DD962990058F6C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 018038BD4E44D48D0262F6CB /* Pods-PoligraphApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CE5QU67D8T;
@@ -444,6 +581,7 @@
 		};
 		65B229E61DD962990058F6C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F0D597E9DCBFA8292245EC4 /* Pods-PoligraphAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +596,7 @@
 		};
 		65B229E71DD962990058F6C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5042C064BAE8C9A97F562B6C /* Pods-PoligraphAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

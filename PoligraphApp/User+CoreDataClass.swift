@@ -18,17 +18,28 @@ public class User: NSManagedObject {
         Does not add asked, answered Questions, or reviews
  
     */
-    class func addNewUser(id: Int, firstName: String, lastName: String, bio: String, credentials: String, inManagedObjectContext context: NSManagedObjectContext) -> User? {
-        if let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as? User {
-            user.id = Int32(id) //TODO: May want to pass in an Int32
-            user.firstName = firstName
-            user.lastName = lastName
-            user.bio = bio
-            user.credentials = credentials
-            
+//    class func addNewUser(id: Int, firstName: String, lastName: String, bio: String, credentials: String, inManagedObjectContext context: NSManagedObjectContext) -> User? {
+//        if let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as? User {
+//            user.id = Int32(id) //TODO: May want to pass in an Int32
+//            user.firstName = firstName
+//            user.lastName = lastName
+//            user.bio = bio
+//            user.credentials = credentials
+//            
+//            return user
+//        }
+//        
+//        return nil
+//    }
+    
+    class func getUser(id: Int, inManagedObjectContext context: NSManagedObjectContext) -> User? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        //request.predicate = NSPredicate(format: "firstName == %@", "George")
+        request.predicate = NSPredicate(format: "id == %i", id)
+        
+        if let user = (try? context.fetch(request))?.first as? User {
             return user
         }
-        
         return nil
     }
 }

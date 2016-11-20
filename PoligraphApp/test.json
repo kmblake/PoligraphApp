@@ -1,0 +1,36 @@
+{
+  "users": [{
+    "id": 1,
+    "first_name": "George",
+    "last_name": "Washington",
+    "bio": "US History Buff",
+    "credentials": "Former U.S. President, General",
+    "asked_questions": [
+        {
+          "id": 1,
+          "text": "What is Aleppo?",
+          "status": 0
+        }
+      ]
+  }, {
+    "id": 2,
+    "first_name": "Anna",
+    "last_name": "Smith"
+  }, {
+    "id": 3,
+    "first_name": "Peter",
+    "last_name": "Jones"
+  }, {
+    "id": 4,
+    "first_name": "Akshay",
+    "last_name": "Rajasekar"
+  }, {
+    "id": 5,
+    "first_name": "Curtis",
+    "last_name": "Eichenwald"
+  }, {
+    "id": 6,
+    "first_name": "William",
+    "last_name": "Isaacson"
+  }]
+}

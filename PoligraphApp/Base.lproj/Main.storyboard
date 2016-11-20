@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Feed-->
+        <!--Browse-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="My Feed" id="9pv-A4-QxB" customClass="FeedViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Browse" id="9pv-A4-QxB" customClass="BrowseViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -62,7 +62,7 @@
                             <constraint firstItem="OZi-FB-nb7" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="pxA-4a-K5s"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Browse" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="ybS-Td-dwU" id="NVE-pd-f99"/>
                     </connections>
