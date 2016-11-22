@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+import DATAStack
+import Sync
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        fetchLocalItems(errorPrint)
+        Question.printAllQuestions(inManagedObjectContext: self.dataStack.mainContext)
         return true
     }
 
@@ -41,6 +47,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+
+    // MARK: - Core Data stack
+    
+    let dataStack = DATAStack(modelName:"Model")
+    
+    // MARK: - Core Data Preloading
+    
+    
+    func fetchLocalItems(_ completion: @escaping (NSError?) -> Void) {
+        let url = URL(string: "test.json")!
+        let filePath = Bundle.main.path(forResource: url.deletingPathExtension().absoluteString, ofType: url.pathExtension)!
+        let data = try! Foundation.Data(contentsOf: URL(fileURLWithPath: filePath))
+        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+        self.dataStack.performInNewBackgroundContext { backgroundContext in
+            
+            Sync.changes(json["users"] as! Array, inEntityNamed: "User", predicate: nil, parent: nil, inContext: backgroundContext, dataStack: self.dataStack, completion: { error in
+                NotificationCenter.default.removeObserver(self, name: .NSManagedObjectContextObjectsDidChange, object: nil)
+                completion(error)
+            })
+        }
+        print("Local Items Fetched")
+    }
+    
+    /* Error Handler for fetchLocalItems */
+    func errorPrint(error: NSError?) {
+        if let error = error {
+            print("Error \(error)")
+        }
+    }
 
 }
 

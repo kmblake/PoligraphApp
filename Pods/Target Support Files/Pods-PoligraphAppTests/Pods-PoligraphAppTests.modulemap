@@ -1,0 +1,6 @@
+framework module Pods_PoligraphAppTests {
+  umbrella header "Pods-PoligraphAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

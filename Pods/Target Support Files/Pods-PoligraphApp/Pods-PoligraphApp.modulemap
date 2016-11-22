@@ -1,0 +1,6 @@
+framework module Pods_PoligraphApp {
+  umbrella header "Pods-PoligraphApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
