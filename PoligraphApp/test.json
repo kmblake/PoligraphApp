@@ -3,23 +3,48 @@
     "id": 1,
     "first_name": "George",
     "last_name": "Washington",
-    "bio": "US History Buff",
+    "bio": "U.S. History Buff",
     "credentials": "Former U.S. President, General",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
     "asked_questions": [
         {
           "id": 1,
           "text": "What is Aleppo?",
           "status": 0
         }
-      ]
+      ],
+    "answered_questions": [
+      {
+        "id": 3,
+        "text": "Why is the Iran Deal controversial?",
+        "status": 3,
+        "summary": "It's a short-term gain on a long-term gamble",
+        "answer": "Formal negotiations toward the Joint Comprehensive Plan of Action on Iran's nuclear program began with the adoption of the Joint Plan of Action, an interim agreement signed between Iran and the P5+1 countries in November 2013. For the next twenty months, Iran and the P5+1 countries engaged in negotiations, and in April 2015 agreed on a Iran nuclear deal framework for the final agreement and in July 2015, Iran and the P5+1 agreed on the plan.Under the agreement, Iran agreed to eliminate its stockpile of medium-enriched uranium, cut its stockpile of low-enriched uranium by 98%, and reduce by about two-thirds the number of its gas centrifuges for 13 years. For the next 15 years, Iran will only enrich uranium up to 3.67%. Iran also agreed not to build any new heavy-water facilities for the same period of time. Uranium-enrichment activities will be limited to a single facility using first-generation centrifuges for 10 years. Other facilities will be converted to avoid proliferation risks. To monitor and verify Iran's compliance with the agreement, the International Atomic Energy Agency (IAEA) will have regular access to all Iranian nuclear facilities. The agreement provides that in return for verifiably abiding by its commitments, Iran will receive relief from U.S., European Union, and United Nations Security Council nuclear-related economic sanctions. (Credit: Wikipedia)",
+        "upvotes": 102,
+        "asker_id": 5,
+        "biasRating": 0.7,
+        "image": "https://news.usni.org/wp-content/uploads/2016/08/kerry_ruhani.jpg"
+      },
+      {
+          "id": 2,
+          "text": "What's the Paris Agreement?",
+          "answer": "The United Nations Paris Agreement on Climate Change is is an agreement within the United Nations Framework Convention on Climate Change (UNFCCC) dealing with greenhouse gases emissions mitigation, adaptation and finance starting in the year 2020. The language of the agreement was negotiated by representatives of 195 countries at the 21st Conference of the Parties of the UNFCCC in Paris and adopted by consensus on 12 December 2015. It was opened for signature on 22 April 2016 (Earth Day) at a ceremony in New York. As of November 2016, 193 UNFCCC members have signed the treaty, 112 of which have ratified it. After the European Union ratified the agreement in October 2016, there were enough countries that had ratified the agreement that produce enough of the world's greenhouse gases for the agreement to enter into force. The agreement went into effect on 4 November 2016. (Credit: Wikipedia). Signatories to the agreement have committed to limits to the amount of greenhouse gases they produce, in order to slow global warming. These limits would be increased over the period of decades in order to acheive the goal of keeping global warming at a manageable 2 degrees Celsius above pre-industrial levels.",
+            "status": 3,
+            "summary": "A deal for nations to limit greenhouse gas emissions",
+            "upvotes": 32,
+            "biasRating": 0.2,
+            "image": "http://www.un.org/sustainabledevelopment/wp-content/uploads/2015/11/cop21_logo_transparent.png",
+            "asker_id": 3
+        }
+    ]
   }, {
     "id": 2,
     "first_name": "Anna",
-    "last_name": "Smith"
+    "last_name": "Smith",
   }, {
     "id": 3,
     "first_name": "Peter",
-    "last_name": "Jones"
+    "last_name": "Jones",
   }, {
     "id": 4,
     "first_name": "Akshay",

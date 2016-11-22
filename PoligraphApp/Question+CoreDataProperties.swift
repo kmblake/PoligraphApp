@@ -2,12 +2,13 @@
 //  Question+CoreDataProperties.swift
 //  PoligraphApp
 //
-//  Created by Gordon Blake on 11/17/16.
+//  Created by Kent Blake on 11/21/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
 import Foundation
 import CoreData
+
 
 extension Question {
 
@@ -15,15 +16,16 @@ extension Question {
         return NSFetchRequest<Question>(entityName: "Question");
     }
 
-    @NSManaged public var text: String?
     @NSManaged public var answer: String?
-    @NSManaged public var summary: String?
-    @NSManaged public var image: NSObject?
+    @NSManaged public var biasRating: Float
+    @NSManaged public var id: Int32
+    @NSManaged public var image: String?
     @NSManaged public var status: Int32
-    @NSManaged public var biasRating: Double
+    @NSManaged public var summary: String?
+    @NSManaged public var text: String?
     @NSManaged public var upvotes: Int32
-    @NSManaged public var asker: User?
     @NSManaged public var answerer: User?
+    @NSManaged public var asker: User?
     @NSManaged public var reviews: NSSet?
 
 }

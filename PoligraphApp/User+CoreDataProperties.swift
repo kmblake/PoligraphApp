@@ -2,12 +2,13 @@
 //  User+CoreDataProperties.swift
 //  PoligraphApp
 //
-//  Created by Gordon Blake on 11/17/16.
+//  Created by Kent Blake on 11/21/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
 import Foundation
 import CoreData
+
 
 extension User {
 
@@ -15,31 +16,15 @@ extension User {
         return NSFetchRequest<User>(entityName: "User");
     }
 
-    @NSManaged public var id: Int32
-    @NSManaged public var firstName: String?
-    @NSManaged public var lastName: String?
     @NSManaged public var bio: String?
     @NSManaged public var credentials: String?
-    @NSManaged public var askedQuestions: NSSet?
+    @NSManaged public var firstName: String?
+    @NSManaged public var id: Int32
+    @NSManaged public var lastName: String?
+    @NSManaged public var image: String?
     @NSManaged public var answeredQuestions: NSSet?
+    @NSManaged public var askedQuestions: NSSet?
     @NSManaged public var reviews: NSSet?
-
-}
-
-// MARK: Generated accessors for askedQuestions
-extension User {
-
-    @objc(addAskedQuestionsObject:)
-    @NSManaged public func addToAskedQuestions(_ value: Question)
-
-    @objc(removeAskedQuestionsObject:)
-    @NSManaged public func removeFromAskedQuestions(_ value: Question)
-
-    @objc(addAskedQuestions:)
-    @NSManaged public func addToAskedQuestions(_ values: NSSet)
-
-    @objc(removeAskedQuestions:)
-    @NSManaged public func removeFromAskedQuestions(_ values: NSSet)
 
 }
 
@@ -57,6 +42,23 @@ extension User {
 
     @objc(removeAnsweredQuestions:)
     @NSManaged public func removeFromAnsweredQuestions(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for askedQuestions
+extension User {
+
+    @objc(addAskedQuestionsObject:)
+    @NSManaged public func addToAskedQuestions(_ value: Question)
+
+    @objc(removeAskedQuestionsObject:)
+    @NSManaged public func removeFromAskedQuestions(_ value: Question)
+
+    @objc(addAskedQuestions:)
+    @NSManaged public func addToAskedQuestions(_ values: NSSet)
+
+    @objc(removeAskedQuestions:)
+    @NSManaged public func removeFromAskedQuestions(_ values: NSSet)
 
 }
 

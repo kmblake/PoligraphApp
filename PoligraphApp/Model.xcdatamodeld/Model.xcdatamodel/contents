@@ -2,9 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Question" representedClassName=".Question" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="biasRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="biasRating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +14,7 @@
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="question" inverseEntity="Review" syncable="YES"/>
     </entity>
     <entity name="Review" representedClassName=".Review" syncable="YES">
-        <attribute name="biasRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="biasRating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="feedbackText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="recommendation" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -26,14 +26,15 @@
         <attribute name="credentials" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="answeredQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="answerer" inverseEntity="Question" syncable="YES"/>
         <relationship name="askedQuestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="asker" inverseEntity="Question" syncable="YES"/>
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewer" inverseEntity="Review" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Question" positionX="-8487" positionY="-2971" width="128" height="210"/>
-        <element name="Review" positionX="-8300" positionY="-2691" width="128" height="135"/>
-        <element name="User" positionX="-8282" positionY="-2935" width="128" height="163"/>
+        <element name="Question" positionX="-8487" positionY="-2971" width="128" height="208"/>
+        <element name="Review" positionX="-8300" positionY="-2691" width="128" height="133"/>
+        <element name="User" positionX="-8282" positionY="-2935" width="128" height="178"/>
     </elements>
 </model>

@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
         fetchLocalItems(errorPrint)
+        Question.printAllQuestions(inManagedObjectContext: self.dataStack.mainContext)
         return true
     }
 
@@ -50,35 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let dataStack = DATAStack(modelName:"Model")
     
-//    lazy var persistentContainer: NSPersistentContainer = {
-//        /*
-//         The persistent container for the application. This implementation
-//         creates and returns a container, having loaded the store for the
-//         application to it. This property is optional since there are legitimate
-//         error conditions that could cause the creation of the store to fail.
-//         */
-////        let container = NSPersistentContainer(name: "PoligraphApp")
-//        let container = DATAStack(modelName: "PoligraphApp")
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                
-//                /*
-//                 Typical reasons for an error here include:
-//                 * The parent directory does not exist, cannot be created, or disallows writing.
-//                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-//                 * The device is out of space.
-//                 * The store could not be migrated to the current model version.
-//                 Check the error message to determine what the actual problem was.
-//                 */
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
-//            }
-//        })
-//        return container
-//    }()
-    
-    
     // MARK: - Core Data Preloading
     
     
@@ -97,91 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Local Items Fetched")
     }
     
+    /* Error Handler for fetchLocalItems */
     func errorPrint(error: NSError?) {
         if let error = error {
             print("Error \(error)")
         }
     }
-    
-    
-//    func preloadData() {
-//        // TODO: Implement Preload
-//        
-//        //Test code with one user, one question
-//        //let context = self.dataStack.mainContext
-//        //JSONSerialization.jsonObject(with: dataOK, options: []) as? [String: AnyObject]
-//        
-//        if let path = Bundle.main.path(forResource: "test", ofType: "json")
-//        {
-//            if let jsonData = NSData(contentsOfFile: path)
-//            {
-////                if let jsonResult = try! JSONSerialization.JSONObjectWithData(jsonData, options: JSONSerialization.ReadingOptions.MutableContainers) as? [[String: Any]]
-//                
-//                if let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: AnyObject]
-//                {
-//                    Sync.changes(
-//                        jsonResult,
-//                        inEntityNamed: "User",
-//                        dataStack: dataStack) { error in
-//                            // New objects have been inserted
-//                            // Existing objects have been updated
-//                            // And not found objects have been deleted
-//                    }
-//                    print("Sync Completed")
-//                }
-//            }
-//        }
-    
-
-        //TODO: Clear database?
-        
-        // Parse JSON (or CSV)
-        
-        //First, load users
-            //User.addNewUser(id: <#T##Int#>, firstName: <#T##String#>, lastName: <#T##String#>, bio: <#T##String#>, credentials: <#T##String#>, inManagedObjectContext: context)
-        
-        //Second, load questions
-            //Question.addQuestion(asker: <#T##User#>, text: <#T##String#>, inManagedObjectContext: context)
-            //Add other attributes for answered questions
-        
-            //TODO: make sure that these reciprocate to users
-        
-        //Third, load reviews
-            //Review.addNewReview(feedbackText: <#T##String#>, recommendation: <#T##Int#>, biasRating: <#T##Double#>, question: <#T##Question#>, reviewer: <#T##User#>, inManagedObjectContext: context)
-        
-            //TODO: Make sure that reviews reciprocate to questions and users
-        
-        //Save
-//        do {
-//            try context.save()
-//            print("Data successfully preloaded")
-//        } catch let error as NSError {
-//            print("Could not save database on preload: \(error), \(error.userInfo)")
-//        }
- //   }
-    
-
-    // MARK: - Core Data Saving support
-    
-//    func saveContext () {
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nserror = error as NSError
-//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//            }
-//        }
-//    }
-    
-
-    
-
-
-    
 
 }
 
