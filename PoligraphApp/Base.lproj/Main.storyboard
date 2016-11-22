@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Ask Poligraph" translatesAutoresizingMaskIntoConstraints="NO" id="OZi-FB-nb7">
+                            <searchBar contentMode="redraw" text="" placeholder="Ask Poligraph" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZi-FB-nb7">
                                 <rect key="frame" x="0.0" y="55" width="375" height="44"/>
                                 <color key="barTintColor" red="0.1764705882352941" green="0.61176470588235299" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -31,55 +31,62 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="A7V-d2-ZnL"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ibb-Qi-Qq9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="247" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ibb-Qi-Qq9">
                                 <rect key="frame" x="16" y="99" width="343" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Question" rowHeight="222" id="tNo-rw-XK6" customClass="BrowseQuestionTableViewCell" customModule="PoligraphApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="222"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Question" rowHeight="250" id="tNo-rw-XK6" customClass="BrowseQuestionTableViewCell" customModule="PoligraphApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNo-rw-XK6" id="Sf3-kh-kkP">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="221"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Paris Agreement?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
-                                                    <rect key="frame" x="8" y="8" width="327" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
+                                                    <rect key="frame" x="8" y="8" width="328" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="2fk-aN-8Xl"/>
+                                                        <constraint firstAttribute="height" constant="20" id="2fk-aN-8Xl"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A deal for nations to limit greenhouse gas emissions " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-y4-Wkx">
-                                                    <rect key="frame" x="8" y="37" width="327" height="51"/>
+                                                    <rect key="frame" x="8" y="36" width="328" height="47.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="51" id="thz-aP-9mZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-VP-Mfg">
-                                                    <rect key="frame" x="75" y="96" width="192" height="112"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-VP-Mfg">
+                                                    <rect key="frame" x="28" y="91.5" width="287" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="yPY-BV-l7y"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-Qf-5Ux">
+                                                    <rect key="frame" x="162" y="156.5" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Reg-VP-Mfg" firstAttribute="top" secondItem="fPs-y4-Wkx" secondAttribute="bottom" constant="8" symbolic="YES" id="10i-uS-FGZ"/>
                                                 <constraint firstItem="fPs-y4-Wkx" firstAttribute="top" secondItem="afX-Zf-BMo" secondAttribute="bottom" constant="8" symbolic="YES" id="BTg-qO-Nkz"/>
                                                 <constraint firstItem="afX-Zf-BMo" firstAttribute="top" secondItem="Sf3-kh-kkP" secondAttribute="topMargin" id="G1L-cr-dhT"/>
                                                 <constraint firstItem="afX-Zf-BMo" firstAttribute="leading" secondItem="fPs-y4-Wkx" secondAttribute="leading" id="O5O-pM-69U"/>
-                                                <constraint firstItem="Reg-VP-Mfg" firstAttribute="leading" secondItem="Sf3-kh-kkP" secondAttribute="leadingMargin" constant="67" id="U5A-xM-b2b"/>
+                                                <constraint firstItem="Reg-VP-Mfg" firstAttribute="leading" secondItem="Sf3-kh-kkP" secondAttribute="leadingMargin" constant="20" id="U5A-xM-b2b"/>
                                                 <constraint firstItem="fPs-y4-Wkx" firstAttribute="centerX" secondItem="Reg-VP-Mfg" secondAttribute="centerX" id="XQV-am-Jy9"/>
                                                 <constraint firstItem="afX-Zf-BMo" firstAttribute="trailing" secondItem="fPs-y4-Wkx" secondAttribute="trailing" id="ao5-RM-JFx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Reg-VP-Mfg" secondAttribute="trailing" constant="68" id="kSF-kn-XLk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Reg-VP-Mfg" secondAttribute="trailing" constant="20" id="kSF-kn-XLk"/>
+                                                <constraint firstItem="2cj-Qf-5Ux" firstAttribute="centerX" secondItem="Reg-VP-Mfg" secondAttribute="centerX" id="kpH-zu-bjz"/>
                                                 <constraint firstItem="afX-Zf-BMo" firstAttribute="leading" secondItem="Sf3-kh-kkP" secondAttribute="leadingMargin" id="pbQ-lQ-KVy"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Reg-VP-Mfg" secondAttribute="bottom" constant="5" id="tQQ-7j-FMx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Reg-VP-Mfg" secondAttribute="bottom" id="tQQ-7j-FMx"/>
+                                                <constraint firstItem="2cj-Qf-5Ux" firstAttribute="centerY" secondItem="Reg-VP-Mfg" secondAttribute="centerY" id="tk6-xL-JKO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="questionImage" destination="Reg-VP-Mfg" id="yMj-01-3mJ"/>
                                             <outlet property="questionTextLabel" destination="afX-Zf-BMo" id="XWy-kl-Rpz"/>
+                                            <outlet property="spinner" destination="2cj-Qf-5Ux" id="eah-Qm-QpJ"/>
                                             <outlet property="summaryLabel" destination="fPs-y4-Wkx" id="IIf-4i-Tsk"/>
                                             <segue destination="mz5-K6-PTF" kind="presentation" identifier="Show Answer" modalPresentationStyle="fullScreen" id="ffp-vc-ZiW"/>
                                         </connections>
@@ -95,7 +102,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdM-YX-eEX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="35"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -169,73 +176,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkb-zW-zpU">
-                                <rect key="frame" x="16" y="28" width="343" height="608"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkb-zW-zpU">
+                                <rect key="frame" x="16" y="40" width="343" height="596"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dho-ee-e5a" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="582"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dho-ee-e5a" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="596"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsw-ex-U4U">
-                                                <rect key="frame" x="0.0" y="4" width="343" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="4" width="343" height="27"/>
                                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="social.png" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-tF-Maj">
-                                                <rect key="frame" x="0.0" y="52" width="35" height="35"/>
+                                                <rect key="frame" x="0.0" y="53" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="O5z-oM-eIu"/>
                                                     <constraint firstAttribute="width" constant="35" id="aRW-Ce-Fer"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZVG-E1-l1D">
-                                                <rect key="frame" x="0.0" y="208" width="343" height="220"/>
+                                                <rect key="frame" x="0.0" y="208.5" width="343" height="220"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="220" id="U3Y-WM-Csv"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A deal for nations to limit greenhouse gas emissions " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-nj-K3i">
-                                                <rect key="frame" x="0.0" y="107" width="343" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="108" width="343" height="45.5"/>
                                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="19"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUw-my-48m" customClass="UIBiasBar" customModule="PoligraphApp" customModuleProvider="target">
-                                                <rect key="frame" x="-2" y="173" width="347" height="31"/>
-                                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I know a thing or two about politics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-5c-WuA">
-                                                <rect key="frame" x="43" y="69.5" width="292" height="18"/>
-                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-qO-b3d">
-                                                <rect key="frame" x="161" y="308" width="20" height="20"/>
-                                            </activityIndicatorView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Washington" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-NC-D9O">
-                                                <rect key="frame" x="43" y="51.5" width="128.5" height="18"/>
-                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
-                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAC-pC-hz9" userLabel="Divider">
-                                                <rect key="frame" x="20" y="40.5" width="303" height="1"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="JXJ-fY-CQk"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AU-QU-j0O">
-                                                <rect key="frame" x="0.0" y="400" width="343" height="636"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AU-QU-j0O">
+                                                <rect key="frame" x="0.0" y="449" width="343" height="91"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <mutableString key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</mutableString>
+                                                    <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
                                                         <attributes>
                                                             <font key="NSFont" size="17" name="Optima-Regular"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
@@ -244,17 +219,58 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUw-my-48m" customClass="UIBiasBar" customModule="PoligraphApp" customModuleProvider="target">
+                                                <rect key="frame" x="-2" y="173.5" width="347" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I know a thing or two about politics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-5c-WuA">
+                                                <rect key="frame" x="43" y="70" width="292" height="18"/>
+                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XbT-qO-b3d">
+                                                <rect key="frame" x="161" y="308.5" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George Washington" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3F-NC-D9O">
+                                                <rect key="frame" x="43" y="52" width="129" height="18"/>
+                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAC-pC-hz9" userLabel="Divider">
+                                                <rect key="frame" x="20" y="41" width="303" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="JXJ-fY-CQk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyD-hv-kQM">
+                                                <rect key="frame" x="104" y="548" width="135" height="33"/>
+                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                                <state key="normal" title="Report this answer"/>
+                                                <connections>
+                                                    <action selector="reportAnswerButton:" destination="mz5-K6-PTF" eventType="touchUpInside" id="EiB-hU-WBT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Hsw-ex-U4U" firstAttribute="top" secondItem="dho-ee-e5a" secondAttribute="top" constant="4" id="2Tc-O6-cR4"/>
                                             <constraint firstItem="1AU-QU-j0O" firstAttribute="width" secondItem="dho-ee-e5a" secondAttribute="width" id="3Gu-gB-8bt"/>
+                                            <constraint firstAttribute="bottom" secondItem="PyD-hv-kQM" secondAttribute="bottom" constant="15" id="6Dv-xW-upz"/>
                                             <constraint firstItem="N3F-NC-D9O" firstAttribute="leading" secondItem="dqW-tF-Maj" secondAttribute="trailing" constant="8" symbolic="YES" id="6Hq-Ho-vpl"/>
                                             <constraint firstItem="XbT-qO-b3d" firstAttribute="centerY" secondItem="ZVG-E1-l1D" secondAttribute="centerY" id="6KJ-5J-vMq"/>
                                             <constraint firstItem="tb9-5c-WuA" firstAttribute="leading" secondItem="dqW-tF-Maj" secondAttribute="trailing" constant="8" symbolic="YES" id="6ZI-I8-pBh"/>
                                             <constraint firstItem="kUw-my-48m" firstAttribute="centerX" secondItem="dho-ee-e5a" secondAttribute="centerX" id="9je-dd-tJY"/>
                                             <constraint firstItem="kUw-my-48m" firstAttribute="top" secondItem="ya8-nj-K3i" secondAttribute="bottom" constant="20" id="9k0-ul-iJR"/>
                                             <constraint firstItem="1AU-QU-j0O" firstAttribute="top" secondItem="ZVG-E1-l1D" secondAttribute="bottom" constant="20" id="BM1-Qd-8LU"/>
+                                            <constraint firstItem="PyD-hv-kQM" firstAttribute="top" secondItem="1AU-QU-j0O" secondAttribute="bottom" constant="8" id="CKw-u2-JCy"/>
                                             <constraint firstItem="tb9-5c-WuA" firstAttribute="top" secondItem="N3F-NC-D9O" secondAttribute="bottom" id="Ckf-KH-8J7"/>
                                             <constraint firstItem="dqW-tF-Maj" firstAttribute="top" secondItem="XAC-pC-hz9" secondAttribute="bottom" constant="10.5" id="ESj-ML-rSf"/>
                                             <constraint firstItem="1AU-QU-j0O" firstAttribute="centerX" secondItem="dho-ee-e5a" secondAttribute="centerX" id="Ibn-ha-zW5"/>
@@ -264,6 +280,7 @@
                                             <constraint firstItem="XbT-qO-b3d" firstAttribute="centerX" secondItem="ZVG-E1-l1D" secondAttribute="centerX" id="Y5f-S2-wJu"/>
                                             <constraint firstItem="Hsw-ex-U4U" firstAttribute="centerX" secondItem="dho-ee-e5a" secondAttribute="centerX" id="f3m-Hg-533"/>
                                             <constraint firstItem="Hsw-ex-U4U" firstAttribute="width" secondItem="dho-ee-e5a" secondAttribute="width" id="hLB-aJ-OeD"/>
+                                            <constraint firstItem="PyD-hv-kQM" firstAttribute="centerX" secondItem="dho-ee-e5a" secondAttribute="centerX" id="iE3-Cb-1pQ"/>
                                             <constraint firstAttribute="trailing" secondItem="tb9-5c-WuA" secondAttribute="trailing" constant="8" id="isx-Tq-X4Q"/>
                                             <constraint firstItem="ZVG-E1-l1D" firstAttribute="top" secondItem="kUw-my-48m" secondAttribute="bottom" constant="5" id="lCs-0G-wwo"/>
                                             <constraint firstItem="ya8-nj-K3i" firstAttribute="width" secondItem="dho-ee-e5a" secondAttribute="width" id="mJp-hH-6Hs"/>
@@ -287,6 +304,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-zt-TUC">
                                 <rect key="frame" x="0.0" y="-2" width="375" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="vUq-R0-K2c"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4g-Xc-Ceu">
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
@@ -304,17 +324,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pkb-zW-zpU" firstAttribute="centerX" secondItem="PWB-RD-r1v" secondAttribute="centerX" id="0j4-w2-6ew"/>
                             <constraint firstItem="XAC-pC-hz9" firstAttribute="leading" secondItem="PWB-RD-r1v" secondAttribute="leadingMargin" constant="20" id="8JU-GH-O5s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G4g-Xc-Ceu" secondAttribute="trailing" constant="-16" id="LiF-A4-CER"/>
-                            <constraint firstItem="QaL-zt-TUC" firstAttribute="centerX" secondItem="pkb-zW-zpU" secondAttribute="centerX" id="N9N-xA-ra5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pkb-zW-zpU" secondAttribute="leading" id="P8J-dh-xn0"/>
                             <constraint firstItem="G4g-Xc-Ceu" firstAttribute="leading" secondItem="PWB-RD-r1v" secondAttribute="leadingMargin" constant="-16" id="Qsw-mP-YiW"/>
                             <constraint firstItem="QaL-zt-TUC" firstAttribute="top" secondItem="PWB-RD-r1v" secondAttribute="topMargin" constant="-2" id="Qx1-yf-XS5"/>
-                            <constraint firstItem="pkb-zW-zpU" firstAttribute="top" secondItem="TFK-ZW-9Ym" secondAttribute="bottom" constant="8" symbolic="YES" id="ZrG-hO-bfF"/>
+                            <constraint firstItem="pkb-zW-zpU" firstAttribute="top" secondItem="TFK-ZW-9Ym" secondAttribute="bottom" constant="20" id="ZrG-hO-bfF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XAC-pC-hz9" secondAttribute="trailing" constant="20" id="c4D-lv-nYa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pkb-zW-zpU" secondAttribute="trailing" id="d6b-yS-fUs"/>
-                            <constraint firstItem="pkb-zW-zpU" firstAttribute="top" secondItem="QaL-zt-TUC" secondAttribute="bottom" constant="8" symbolic="YES" id="epJ-Ov-rI9"/>
                             <constraint firstItem="Vyn-ag-zZs" firstAttribute="top" secondItem="G4g-Xc-Ceu" secondAttribute="bottom" id="hNI-4T-dSF"/>
+                            <constraint firstItem="QaL-zt-TUC" firstAttribute="width" secondItem="PWB-RD-r1v" secondAttribute="width" id="ivi-ga-d7y"/>
                             <constraint firstItem="Vyn-ag-zZs" firstAttribute="top" secondItem="pkb-zW-zpU" secondAttribute="bottom" constant="31" id="jVp-G3-fc0"/>
                             <constraint firstItem="QaL-zt-TUC" firstAttribute="leading" secondItem="PWB-RD-r1v" secondAttribute="leading" id="rf5-Dj-Jo9"/>
                         </constraints>

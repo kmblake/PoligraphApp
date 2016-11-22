@@ -64,7 +64,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private struct Storyboard {
         static let BrowseQuestionCellIdentifier = "Question"
-        static let RowHeight: CGFloat = 150.0
+        static let RowHeight: CGFloat = 250.0
         static let ShowAnsweredQuestionSegue = "Show Answer"
     }
     

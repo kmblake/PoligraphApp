@@ -20,6 +20,34 @@ class AnsweredQuestionViewController: UIViewController {
     @IBOutlet weak var answerBiasSlider: UISlider!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    
+    // MARK: - Actions
+    @IBAction func reportAnswerButton(_ sender: UIButton) {
+        print("Report button pressed")
+        
+        let reportQuestionController = UIAlertController(title: "Report Answer", message: "We're sorry. Please tell us what's wrong with this answer.", preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            //TODO: Add action
+        }
+        let inaccurateAction = UIAlertAction(title: "Inaccurate", style: .default) { (action) in
+            //TODO: Add action
+        }
+        let offensiveAction = UIAlertAction(title: "Offensive", style: .default) { (action) in
+            //TODO: Add action
+        }
+        let otherAction = UIAlertAction(title: "Other", style: .default) { (action) in
+            //TODO: Add action
+        }
+        
+        reportQuestionController.addAction(cancelAction)
+        reportQuestionController.addAction(inaccurateAction)
+        reportQuestionController.addAction(offensiveAction)
+        reportQuestionController.addAction(otherAction)
+        
+        self.present(reportQuestionController, animated: true, completion: nil)
+    }
+
+    
     private struct Storyboard {
         static let ShowBrowseSegue = "Show Browse"
     }
@@ -28,9 +56,6 @@ class AnsweredQuestionViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        //let contentViewFrame = self.view.subviews[0].subviews[0].frame
-        //self.view.subviews[0].frame = CGRect(x: 0, y: 0, width: contentViewFrame.width, height: contentViewFrame.height + 200)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,14 +65,27 @@ class AnsweredQuestionViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //let contentViewFrame = self.view.subviews[0].subviews[0].frame
-        //self.view.subviews[0].subviews[0].frame = CGRect(x: 0, y: 0, width: contentViewFrame.width, height: contentViewFrame.height + 200)
-        if let scrollView = self.view.subviews[0] as? UIScrollView {
-            let size = scrollView.contentSize
-            answerText.sizeToFit()
-            print("Label height = \(answerText.frame.height)")
-            scrollView.contentSize = CGSize(width: size.width, height: size.height + 1.6 * answerText.frame.height)
-        }
+  //      if let scrollView = self.view.subviews[0] as? UIScrollView {
+  //          let size = scrollView.contentSize
+   //         answerText.sizeToFit()
+   //         print("Label height = \(answerText.frame.height)")
+   //         scrollView.contentSize = CGSize(width: size.width, height: size.height + answerText.frame.height - 50)
+            //scrollView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: scrollView.contentSize)
+   //         let contentView = scrollView.subviews[0]
+            
+    //        contentView.frame = CGRect(x: contentView.frame.minX, y: contentView.frame.minY, width: contentView.frame.width, height: scrollView.contentSize.height)
+            //contentView.frame = scrollView.bounds
+//            contentView.bounds = CGRect(x: 0.0, y: 0.0, width: contentView.bounds.maxX, height: scrollView.contentSize.height)
+//            scrollView.bounds = CGRect(x: 0, y:0, width: scrollView.bounds.maxX, height: contentView.bounds.height)
+//
+//            print("Content Size Height = \(scrollView.contentSize.height)")
+//            print("ContentView Height = \(contentView.bounds.height)")
+  //          print("ScrollView Height = \(scrollView.bounds.height)")
+    //        print("Superview Height = \(scrollView.superview?.bounds.height)")
+            //contentView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: scrollView.contentSize)
+      //      contentView.backgroundColor = UIColor.red
+            //scrollView.backgroundColor = UIColor.blue
+       // }
         
     }
     
@@ -83,7 +121,6 @@ class AnsweredQuestionViewController: UIViewController {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSMakeRange(0, attributedString.length))
             answerText?.attributedText = attributedString
 
-            //TODO: Set answer image, if there is one
             print("Bias Rating: \(question.biasRating)")
             answerBiasSlider?.setValue(question.biasRating, animated: false)
             //TODO: Upvotes
@@ -95,9 +132,8 @@ class AnsweredQuestionViewController: UIViewController {
                             DispatchQueue.main.async {
                                 if imageURLString == question.image {
                                     print("Image assigned")
+                                    self.spinner?.stopAnimating()
                                     self.answerImage.image = UIImage(data: imageData)
-                                    self.answererImage.layer.cornerRadius = self.answererImage.frame.size.width / 2
-                                    self.answererImage.clipsToBounds = true
                                 } else {
                                     print("Ignoring data returned from URL \(imageURL)")
                                 }
@@ -118,8 +154,9 @@ class AnsweredQuestionViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     if answererImageURLString == answerer.image {
                                         print("Answerer Image Assigned")
-                                        self.spinner?.stopAnimating()
                                         self.answererImage.image = UIImage(data: answererImageData)
+                                        self.answererImage.layer.cornerRadius = self.answererImage.frame.size.width / 2
+                                        self.answererImage.clipsToBounds = true
                                     } else {
                                         print("Ignoring data returned from URL \(answererImageURL)")
                                     }
@@ -144,7 +181,7 @@ class AnsweredQuestionViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier! == Storyboard.ShowBrowseSegue {
-            if let browseVC = segue.destination as? BrowseViewController {
+            if let _ = segue.destination as? BrowseViewController {
                 //TODO do stuff?
             }
         }

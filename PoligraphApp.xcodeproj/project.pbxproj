@@ -583,6 +583,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8886B85062E9F231DA55B8B /* Pods-PoligraphApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CE5QU67D8T;
 				INFOPLIST_FILE = PoligraphApp/Info.plist;
@@ -597,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 018038BD4E44D48D0262F6CB /* Pods-PoligraphApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CE5QU67D8T;
 				INFOPLIST_FILE = PoligraphApp/Info.plist;
