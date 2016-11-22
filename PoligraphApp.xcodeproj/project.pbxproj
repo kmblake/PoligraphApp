@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		17AF0BE63470194F5A830D3A /* Pods_PoligraphAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB79CFB41CEA5003860578 /* Pods_PoligraphAppTests.framework */; };
 		5215004F5CA4FEF8A31E048C /* Pods_PoligraphApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */; };
+		650B14E71DE4E52E00F2F495 /* information_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 650B14E61DE4E52E00F2F495 /* information_white.png */; };
+		650B14E91DE4E58400F2F495 /* social_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 650B14E81DE4E58400F2F495 /* social_white.png */; };
 		65307FF31DE2BF5700713051 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = 65307FF21DE2BF5700713051 /* information.png */; };
 		65307FF51DE2BFF600713051 /* social.png in Resources */ = {isa = PBXBuildFile; fileRef = 65307FF41DE2BFF600713051 /* social.png */; };
 		65307FF71DE3370B00713051 /* AnsweredQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65307FF61DE3370B00713051 /* AnsweredQuestionViewController.swift */; };
@@ -48,6 +50,8 @@
 		0ACB79CFB41CEA5003860578 /* Pods_PoligraphAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoligraphAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0D597E9DCBFA8292245EC4 /* Pods-PoligraphAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphAppTests/Pods-PoligraphAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5042C064BAE8C9A97F562B6C /* Pods-PoligraphAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphAppTests/Pods-PoligraphAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		650B14E61DE4E52E00F2F495 /* information_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information_white.png; sourceTree = "<group>"; };
+		650B14E81DE4E58400F2F495 /* social_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = social_white.png; sourceTree = "<group>"; };
 		65307FF21DE2BF5700713051 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
 		65307FF41DE2BFF600713051 /* social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = social.png; sourceTree = "<group>"; };
 		65307FF61DE3370B00713051 /* AnsweredQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +125,9 @@
 		65307FF11DE2BF3F00713051 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				650B14E61DE4E52E00F2F495 /* information_white.png */,
 				65307FF41DE2BFF600713051 /* social.png */,
+				650B14E81DE4E58400F2F495 /* social_white.png */,
 				65307FF21DE2BF5700713051 /* information.png */,
 			);
 			name = Assets;
@@ -318,7 +324,9 @@
 				65B229D31DD962980058F6C8 /* LaunchScreen.storyboard in Resources */,
 				65307FF51DE2BFF600713051 /* social.png in Resources */,
 				6553B81D1DE13D06008F183E /* test.json in Resources */,
+				650B14E71DE4E52E00F2F495 /* information_white.png in Resources */,
 				65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */,
+				650B14E91DE4E58400F2F495 /* social_white.png in Resources */,
 				65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

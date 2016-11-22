@@ -112,7 +112,7 @@
                                     <constraint firstAttribute="width" constant="29" id="Cib-il-pOJ"/>
                                     <constraint firstAttribute="height" constant="29" id="rDU-px-Mmf"/>
                                 </constraints>
-                                <state key="normal" image="information.png"/>
+                                <state key="normal" image="information_white.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9th-0n-Bno">
                                 <rect key="frame" x="15" y="23" width="29" height="29"/>
@@ -120,7 +120,7 @@
                                     <constraint firstAttribute="height" constant="29" id="LZh-gG-EFo"/>
                                     <constraint firstAttribute="width" constant="29" id="jtt-P7-7wn"/>
                                 </constraints>
-                                <state key="normal" image="social.png"/>
+                                <state key="normal" image="social_white.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -476,9 +476,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="information.png" width="256" height="256"/>
+        <image name="information_white.png" width="256" height="256"/>
         <image name="second" width="30" height="30"/>
         <image name="social.png" width="256" height="256"/>
+        <image name="social_white.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mT6-dn-76L"/>

@@ -63,32 +63,6 @@ class AnsweredQuestionViewController: UIViewController {
         updateUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-  //      if let scrollView = self.view.subviews[0] as? UIScrollView {
-  //          let size = scrollView.contentSize
-   //         answerText.sizeToFit()
-   //         print("Label height = \(answerText.frame.height)")
-   //         scrollView.contentSize = CGSize(width: size.width, height: size.height + answerText.frame.height - 50)
-            //scrollView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: scrollView.contentSize)
-   //         let contentView = scrollView.subviews[0]
-            
-    //        contentView.frame = CGRect(x: contentView.frame.minX, y: contentView.frame.minY, width: contentView.frame.width, height: scrollView.contentSize.height)
-            //contentView.frame = scrollView.bounds
-//            contentView.bounds = CGRect(x: 0.0, y: 0.0, width: contentView.bounds.maxX, height: scrollView.contentSize.height)
-//            scrollView.bounds = CGRect(x: 0, y:0, width: scrollView.bounds.maxX, height: contentView.bounds.height)
-//
-//            print("Content Size Height = \(scrollView.contentSize.height)")
-//            print("ContentView Height = \(contentView.bounds.height)")
-  //          print("ScrollView Height = \(scrollView.bounds.height)")
-    //        print("Superview Height = \(scrollView.superview?.bounds.height)")
-            //contentView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: scrollView.contentSize)
-      //      contentView.backgroundColor = UIColor.red
-            //scrollView.backgroundColor = UIColor.blue
-       // }
-        
-    }
-    
     var question: Question? {
         didSet{
             print("Question Set")
