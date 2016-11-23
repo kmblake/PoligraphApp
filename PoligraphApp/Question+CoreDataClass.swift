@@ -28,7 +28,7 @@ public class Question: NSManagedObject {
         case asked = 0
         case unfinishedAnswer
         case answered
-        case reviwed
+        case reviewed
     }
     
     class func printAllQuestions(inManagedObjectContext context: NSManagedObjectContext) {

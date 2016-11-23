@@ -10,12 +10,26 @@ import UIKit
 
 class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    //let searchResultsController = SearchResultsTableViewController()
+
+    let questionSearchController = UISearchController(searchResultsController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as UIViewController)
+    
+    let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        questionSearchController.dimsBackgroundDuringPresentation = true
+        if let searchResultsTVC = questionSearchController.searchResultsController as? SearchResultsTableViewController {
+            questionSearchController.searchResultsUpdater = searchResultsTVC
+        }
+        tableView.tableHeaderView = questionSearchController.searchBar
+        definesPresentationContext = true
         
         //Testing code
         /*
@@ -47,7 +61,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         */
         
-        if let newQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.reviwed, inManagedObjectContext: moc) {
+        if let newQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.reviewed, inManagedObjectContext: moc) {
             questions = newQuestions
             print("Questions Loaded")
             print("Number of results: \(questions.count)")
@@ -58,6 +72,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
+
     
     // MARK: - Table view data source
     // May be useful: http://stackoverflow.com/questions/31673607/tableview-in-viewcontroller-in-swift

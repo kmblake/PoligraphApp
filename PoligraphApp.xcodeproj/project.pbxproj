@@ -17,6 +17,8 @@
 		65307FF91DE390E200713051 /* UIBiasBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65307FF81DE390E200713051 /* UIBiasBar.swift */; };
 		6553B81D1DE13D06008F183E /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 6553B81C1DE13D06008F183E /* test.json */; };
 		6553B81F1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6553B81E1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift */; };
+		657DAB5A1DE531C800F4AEDE /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAB591DE531C800F4AEDE /* SearchResultsTableViewController.swift */; };
+		657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */; };
 		65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C61DD962980058F6C8 /* AppDelegate.swift */; };
 		65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C81DD962980058F6C8 /* BrowseViewController.swift */; };
 		65B229CB1DD962980058F6C8 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229CA1DD962980058F6C8 /* AskViewController.swift */; };
@@ -58,6 +60,8 @@
 		65307FF81DE390E200713051 /* UIBiasBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBiasBar.swift; sourceTree = "<group>"; };
 		6553B81C1DE13D06008F183E /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		6553B81E1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		657DAB591DE531C800F4AEDE /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		65B229C31DD962980058F6C8 /* PoligraphApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoligraphApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B229C61DD962980058F6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B229C81DD962980058F6C8 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 		B17E900A1DDED9E200F89E2D /* Ask */ = {
 			isa = PBXGroup;
 			children = (
+				657DAB591DE531C800F4AEDE /* SearchResultsTableViewController.swift */,
+				657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */,
 				65B229CA1DD962980058F6C8 /* AskViewController.swift */,
 			);
 			name = Ask;
@@ -438,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657DAB5A1DE531C800F4AEDE /* SearchResultsTableViewController.swift in Sources */,
 				65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */,
 				6553B81F1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift in Sources */,
 				65B229CB1DD962980058F6C8 /* AskViewController.swift in Sources */,
@@ -448,6 +455,7 @@
 				65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */,
 				65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */,
 				65307FF91DE390E200713051 /* UIBiasBar.swift in Sources */,
+				657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */,
 				B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */,
 				B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */,
 				B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */,

@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNo-rw-XK6" id="Sf3-kh-kkP">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
@@ -147,20 +147,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Browse" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="ybS-Td-dwU" id="NVE-pd-f99"/>
                         <outlet property="tableView" destination="ibb-Qi-Qq9" id="hQg-e6-nv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ybS-Td-dwU">
-                    <connections>
-                        <outlet property="delegate" destination="9pv-A4-QxB" id="Aeh-he-SN9"/>
-                        <outlet property="searchBar" destination="OZi-FB-nb7" id="9vQ-Br-UWa"/>
-                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="X6V-Q9-jc0"/>
-                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="q8I-Mw-hdh"/>
-                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="Ebf-l4-Pm3"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="765.60000000000002" y="-367.46626686656674"/>
         </scene>
@@ -394,6 +384,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="360"/>
+        </scene>
+        <!--Search Results-->
+        <scene sceneID="9sj-zY-9LS">
+            <objects>
+                <tableViewController storyboardIdentifier="Search Results" title="Search Results" id="bWu-rM-Kg0" customClass="SearchResultsTableViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qCZ-Vu-M9g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Search" textLabel="slg-vW-HNL" style="IBUITableViewCellStyleDefault" id="i1a-iM-Yv1" customClass="SearchTableViewCell" customModule="PoligraphApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i1a-iM-Yv1" id="YS1-Wo-7rx">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="slg-vW-HNL">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="questionTextLabel" destination="slg-vW-HNL" id="fmI-n4-UW4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bWu-rM-Kg0" id="OYC-at-dNd"/>
+                            <outlet property="delegate" destination="bWu-rM-Kg0" id="Wha-3L-7dQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LT-JD-4GH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="355.7721139430285"/>
         </scene>
         <!--Answer-->
         <scene sceneID="WND-Rw-qaI">
