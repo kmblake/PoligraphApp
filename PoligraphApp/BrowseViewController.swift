@@ -31,36 +31,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.tableHeaderView = questionSearchController.searchBar
         definesPresentationContext = true
         
-        //Testing code
-        /*
-        if let userOne = User.getUser(id: 1, inManagedObjectContext: moc) {
-            print("First Name: \(userOne.firstName)")
-            print("Last Name: \(userOne.lastName)")
-            
-            //Add a new question
-            _ = Question.addAskedQuestion(asker: userOne, text: "Why did Donald Trump win the Presidency?", inManagedObjectContext: moc)
-        } else {
-            print("Error: User load failed")
-        }
-        //Search questions by text
-        if let questions = Question.searchQuestions(type: Question.StatusTypes.answered, text: "What", inManagedObjectContext: moc) {
-            if questions.count > 0 {
-                for question in questions {
-                    print("\n Question")
-                    print("Text: \(question.text)")
-                    print("Asker: \(question.asker?.firstName)")
-                    print("Id: \(question.id)")
-                    print("Asker Name: \(question.asker?.firstName)")
-                    print("Answerer Name: \(question.answerer?.firstName)")
-                    print("Status: \(question.status)")
-                }
-
-            } else {
-                print("Error: No questions with that text.")
-            }
-        }
-        */
-        
         if let newQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.reviewed, inManagedObjectContext: moc) {
             questions = newQuestions
             print("Questions Loaded")
@@ -72,10 +42,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
-
     
     // MARK: - Table view data source
-    // May be useful: http://stackoverflow.com/questions/31673607/tableview-in-viewcontroller-in-swift
     
     private struct Storyboard {
         static let BrowseQuestionCellIdentifier = "Question"
@@ -92,7 +60,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
 
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         print("Loading Sections")
         return 1

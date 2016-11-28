@@ -18,22 +18,9 @@ class SearchTableViewCell: UITableViewCell {
             updateUI()
         }
     }
-//    
-//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        print("Init with Style called")
-//        updateUI()
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
     
     func updateUI() {
-        //print("Updating UI for Search Cell")
         if let question = self.question {
-            print(questionTextLabel ?? "Text label is nil")
-            //print("Setting question text to \(question.text)")
             questionTextLabel?.text = question.text ?? "Error loading question title"
         }
     }

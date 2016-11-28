@@ -13,6 +13,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     
     private struct Storyboard {
         static let SearchCellIdentifier = "Search"
+        static let ShowAnswerSegueIdentifier = "Show Answer"
     }
     
     var questions: [Question]? {
@@ -56,20 +57,26 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     
     func updateSearchResults(for searchController: UISearchController) {
         let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
-        let questions = Question.searchQuestions(withStatus: Question.StatusTypes.reviewed, text: searchController.searchBar.text!, inManagedObjectContext: moc)
+        //TODO: all questions or reviewed questions?
+        let questions = Question.searchQuestions(withStatus: nil, text: searchController.searchBar.text!, inManagedObjectContext: moc)
         if let searchResultsTVC = searchController.searchResultsController as? SearchResultsTableViewController {
             searchResultsTVC.questions = questions
         }
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier! == Storyboard.ShowAnswerSegueIdentifier {
+            if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
+                if let question = (sender as? SearchTableViewCell)?.question {
+                    print("Segueing to Answered Question VC from Search")
+                    answeredQuestionVC.question = question
+                }
+            }
+        }
     }
-    */
 
 }
