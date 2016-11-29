@@ -10,15 +10,17 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchResultsUpdating  {
     
+    var askPressed = false
     
     private struct Storyboard {
         static let SearchCellIdentifier = "Search"
         static let ShowAnswerSegueIdentifier = "Show Answer"
+        static let CheckCellIdentifier = "Submit Check"
+        static let AskTabSegueIdentifier = "Return to Ask"
     }
     
     var questions: [Question]? {
         didSet {
-            print("Search questions set: \(questions!.count)")
             tableView.reloadData()
         }
     }
@@ -26,6 +28,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
 
     // MARK: - Table view data source
@@ -35,7 +40,9 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let questionsArray = questions {
+        if askPressed {
+            return 1
+        } else if let questionsArray = questions {
             return questionsArray.count
         }
         return 0
@@ -43,14 +50,20 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.SearchCellIdentifier, for: indexPath)
-        let question = questions![indexPath.row]
-        
-        if let questionCell = cell as? SearchTableViewCell {
-            questionCell.question = question
+        if askPressed {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.CheckCellIdentifier, for: indexPath)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.SearchCellIdentifier, for: indexPath)
+            let question = questions![indexPath.row]
+            
+            if let questionCell = cell as? SearchTableViewCell {
+                questionCell.question = question
+            }
+            
+            return cell
         }
-    
-        return cell
     }
     
     // MARK: Search controller implementation
@@ -75,6 +88,11 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
                     print("Segueing to Answered Question VC from Search")
                     answeredQuestionVC.question = question
                 }
+            }
+        } else if segue.identifier! == Storyboard.AskTabSegueIdentifier {
+            if let tabBarController = segue.destination as? UITabBarController {
+                tabBarController.selectedIndex = 1
+                print("Set index")
             }
         }
     }

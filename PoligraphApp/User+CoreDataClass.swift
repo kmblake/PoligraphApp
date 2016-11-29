@@ -42,4 +42,8 @@ public class User: NSManagedObject {
         }
         return nil
     }
+    
+    class func currentUser(inManagedObjectContext context: NSManagedObjectContext) -> User? {
+        return getUser(id: 1, inManagedObjectContext: context) //NOTE: User ID is hardcoded here
+    }
 }
