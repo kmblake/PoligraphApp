@@ -15,7 +15,7 @@ class UnansweredQuestionViewController: UIViewController {
     }
     
     @IBAction func upvoteButton(_ sender: UIButton) {
-        //TODO: Limit user upvotes? Requires tracking if user has upvoted...
+        //TODO: Limit user upvotes. Requires tracking if user has upvoted...
         if let question = self.question {
             question.upvotes += 1
             sender.tintColor = UIColor.polyBlue() //TODO: Determine color

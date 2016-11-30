@@ -101,11 +101,9 @@ public class Question: NSManagedObject {
         } else if let question = NSEntityDescription.insertNewObject(forEntityName: "Question", into: context) as? Question {
             question.text = text
             question.asker = asker
-            question.status = Int32(StatusTypes.asked.rawValue) //TODO: Make this a nice enum
+            question.status = Int32(StatusTypes.asked.rawValue)
             question.id = maxQuestionID
-            //TODO: What's the status of the bias rating? Should be nil
-            
-            //Note that this doesn't add: answer, summary, image, biasRating, upvotes, answerer, or reviews
+            return question
         }
         
         return nil

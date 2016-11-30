@@ -9,6 +9,7 @@
 import UIKit
 
 class AnsweredQuestionViewController: UIViewController {
+    
     @IBAction func dismissButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -28,8 +29,6 @@ class AnsweredQuestionViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func reportAnswerButton(_ sender: UIButton) {
-        print("Report button pressed")
-        
         let reportQuestionController = UIAlertController(title: "Report Answer", message: "We're sorry. Please tell us what's wrong with this answer.", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             //TODO: Add action
@@ -64,7 +63,6 @@ class AnsweredQuestionViewController: UIViewController {
     
     var question: Question? {
         didSet{
-            print("Question Set")
             updateUI()
         }
     }
@@ -82,9 +80,7 @@ class AnsweredQuestionViewController: UIViewController {
         
         //Load new info from question (if any)
         if let question = self.question {
-            print("Updating Question Text to: \(question.text!)")
             questionTextLabel?.text = question.text!
-            print("\(questionTextLabel)")
             answerSummary?.text = question.summary ?? "Error loading summary" //TODO Attributed/rich text?
             let attributedString = NSMutableAttributedString(string: question.answer ?? "Error loading answer")
             let paragraphStyle = NSMutableParagraphStyle()
@@ -93,10 +89,8 @@ class AnsweredQuestionViewController: UIViewController {
             let textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
             attributedString.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSMakeRange(0, attributedString.length))
             answerText?.attributedText = attributedString
-
-            print("Bias Rating: \(question.biasRating)")
             answerBiasSlider?.setValue(question.biasRating, animated: false)
-            //TODO: Upvotes
+
             
             if let imageURLString = question.image {
                 if let imageURL = URL(string: imageURLString) {
@@ -104,7 +98,6 @@ class AnsweredQuestionViewController: UIViewController {
                         if let imageData = try? Data(contentsOf: imageURL) {
                             DispatchQueue.main.async {
                                 if imageURLString == question.image {
-                                    print("Image assigned")
                                     self.spinner?.stopAnimating()
                                     self.answerImage.image = UIImage(data: imageData)
                                 } else {
@@ -126,7 +119,6 @@ class AnsweredQuestionViewController: UIViewController {
                             if let answererImageData = try? Data(contentsOf: answererImageURL) {
                                 DispatchQueue.main.async {
                                     if answererImageURLString == answerer.image {
-                                        print("Answerer Image Assigned")
                                         self.answererImage.image = UIImage(data: answererImageData)
                                         self.answererImage.layer.cornerRadius = self.answererImage.frame.size.width / 2
                                         self.answererImage.clipsToBounds = true
@@ -148,7 +140,7 @@ class AnsweredQuestionViewController: UIViewController {
     
 
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -159,5 +151,6 @@ class AnsweredQuestionViewController: UIViewController {
             }
         }
     }
+     */
 
 }

@@ -35,15 +35,12 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let searchResultsTVC = questionSearchController.searchResultsController as? SearchResultsTableViewController {
             questionSearchController.searchResultsUpdater = searchResultsTVC
         }
-        //tableView.headerView(forSection: 0) = questionSearchController.searchBar
-        //tableView.tableHeaderView = questionSearchController.searchBar
         definesPresentationContext = true
         
         if let newQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.reviewed, inManagedObjectContext: moc) {
             questions = newQuestions
             print("Questions Loaded")
             print("Number of results: \(questions.count)")
-            //print("\(questions[0].text)")
         } else {
             print("Question load failed.")
         }
@@ -84,10 +81,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let questionText = questionSearchController.searchBar.text {
             if let user = User.currentUser(inManagedObjectContext: moc)  {
                 _ = Question.addAskedQuestion(asker: user, text: questionText, inManagedObjectContext: moc)
-                print("New asked question added")
             }
         }
-        //TODO: Segue to AskDashboard
         if let searchResultsController = questionSearchController.searchResultsController as? SearchResultsTableViewController {
             searchResultsController.performSegue(withIdentifier: Storyboard.AskTabSegueIdentifier, sender: searchResultsController)
         }
@@ -114,7 +109,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var questions = [Question]() {
         didSet {
-            print("Set questions")
             tableView.reloadData()
         }
     }
@@ -132,11 +126,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.BrowseQuestionCellIdentifier, for: indexPath)
         let question = questions[indexPath.row]
-        
-        print("Getting cell")
         if let questionCell = cell as? BrowseQuestionTableViewCell {
             questionCell.question = question
-            print("Assigned question")
         }
 
         return cell
@@ -151,7 +142,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        print("ViewForHeaderInSection Called")
         return questionSearchController.searchBar
     }
 
@@ -173,7 +163,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if segue.identifier! == Storyboard.ShowAnsweredQuestionSegue {
             if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
                 if let question = (sender as? BrowseQuestionTableViewCell)?.question {
-                    print("Segueing to Answered Question VC")
                     answeredQuestionVC.question = question
                 }
             }
