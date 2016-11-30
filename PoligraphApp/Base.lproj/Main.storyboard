@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="767" y="-1099"/>
         </scene>
-        <!--View Controller-->
+        <!--Help Content View Controller-->
         <scene sceneID="snF-sZ-jiE">
             <objects>
-                <viewController storyboardIdentifier="Welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tLV-i3-nhS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Welcome 1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tLV-i3-nhS" customClass="HelpContentViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jvH-hz-l0W"/>
                         <viewControllerLayoutGuide type="bottom" id="Veh-cJ-qPj"/>
@@ -30,48 +30,27 @@
                     <view key="view" contentMode="scaleToFill" id="g2P-A4-uk0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdf-96-Afy">
+                                <rect key="frame" x="167" y="629" width="41" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="iAe-5V-V6V"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bdf-96-Afy" firstAttribute="top" secondItem="jvH-hz-l0W" secondAttribute="bottom" constant="609" id="Yus-mW-U4T"/>
+                            <constraint firstItem="bdf-96-Afy" firstAttribute="centerX" secondItem="g2P-A4-uk0" secondAttribute="centerX" id="fM5-pd-J9r"/>
+                            <constraint firstItem="Veh-cJ-qPj" firstAttribute="top" secondItem="bdf-96-Afy" secondAttribute="bottom" constant="10" id="sLu-Wr-3OS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTZ-mv-qpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="-1110"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qyi-rd-t6w">
-            <objects>
-                <viewController storyboardIdentifier="Welcome 2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gGk-lq-af6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ye1-fO-aXU"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Kl-jq-wXn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YEw-Vk-vGu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfg-uD-M9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2230" y="-1110"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="uK7-f0-lmy">
-            <objects>
-                <viewController storyboardIdentifier="Welcome 3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mQh-Ti-r5B" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4Tl-BY-cau"/>
-                        <viewControllerLayoutGuide type="bottom" id="kia-gy-0Yq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7th-GL-ZEh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9eD-zg-Vje" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2921" y="-1110"/>
+            <point key="canvasLocation" x="1520.8" y="-1110.4947526236883"/>
         </scene>
         <!--Browse-->
         <scene sceneID="hNz-n2-bh7">
@@ -176,7 +155,7 @@
                                 </constraints>
                                 <state key="normal" image="information_white.png"/>
                                 <connections>
-                                    <segue destination="KSi-oX-Njj" kind="show" id="bKd-Dj-Gzu"/>
+                                    <segue destination="KSi-oX-Njj" kind="show" identifier="Help Page" id="bKd-Dj-Gzu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9th-0n-Bno">
@@ -539,6 +518,72 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Help Content View Controller-->
+        <scene sceneID="zHe-md-ppa">
+            <objects>
+                <viewController storyboardIdentifier="Welcome 2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NKP-2S-hLn" customClass="HelpContentViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lm8-kj-eXy"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Wi-zD-9pR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YCv-IW-eAK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTJ-Fr-a1V">
+                                <rect key="frame" x="167" y="629" width="41" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="Bq5-19-fMA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZTJ-Fr-a1V" firstAttribute="centerX" secondItem="YCv-IW-eAK" secondAttribute="centerX" id="1qe-Hu-qhN"/>
+                            <constraint firstItem="6Wi-zD-9pR" firstAttribute="top" secondItem="ZTJ-Fr-a1V" secondAttribute="bottom" constant="10" id="CdP-JM-JDO"/>
+                            <constraint firstItem="ZTJ-Fr-a1V" firstAttribute="top" secondItem="lm8-kj-eXy" secondAttribute="bottom" constant="609" id="bBI-PC-5UT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iar-Ud-X6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="-1110"/>
+        </scene>
+        <!--Help Content View Controller-->
+        <scene sceneID="a0q-Sw-4US">
+            <objects>
+                <viewController storyboardIdentifier="Welcome 3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MjJ-Fy-Hz8" customClass="HelpContentViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VWD-Fb-2AN"/>
+                        <viewControllerLayoutGuide type="bottom" id="WLg-v5-YAt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bu9-9E-2VP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTW-QT-Ccj">
+                                <rect key="frame" x="167" y="629" width="41" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="Gmz-DZ-KND"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WLg-v5-YAt" firstAttribute="top" secondItem="HTW-QT-Ccj" secondAttribute="bottom" constant="10" id="PEO-v4-bbQ"/>
+                            <constraint firstItem="HTW-QT-Ccj" firstAttribute="top" secondItem="VWD-Fb-2AN" secondAttribute="bottom" constant="609" id="jml-iv-Lss"/>
+                            <constraint firstItem="HTW-QT-Ccj" firstAttribute="centerX" secondItem="bu9-9E-2VP" secondAttribute="centerX" id="lbd-fF-J1E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLQ-rA-A6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2970" y="-1110"/>
+        </scene>
     </scenes>
     <resources>
         <image name="information_white.png" width="256" height="256"/>
@@ -548,5 +593,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mT6-dn-76L"/>
+        <segue reference="Gmz-DZ-KND"/>
     </inferredMetricsTieBreakers>
 </document>
