@@ -10,11 +10,16 @@ import UIKit
 
 class UnansweredQuestionViewController: UIViewController {
 
+    @IBAction func dismissButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func upvoteButton(_ sender: UIButton) {
         //TODO: Limit user upvotes? Requires tracking if user has upvoted...
         if let question = self.question {
             question.upvotes += 1
             sender.tintColor = UIColor.polyBlue() //TODO: Determine color
+            updateUI()
         }
     }
     @IBOutlet weak var questionTextLabel: UILabel!
@@ -34,13 +39,10 @@ class UnansweredQuestionViewController: UIViewController {
     
     func updateUI() {
         if let question = self.question {
-            let noun = question.upvotes == 1 ? "person" : "people"
-            print("Setting upvotes to \(question.upvotes)")
-            upvoteCountLabel?.text = "\(question.upvotes) \(noun) want to know"
+            let noun = question.upvotes == 1 ? "person wants" : "people want"
+            upvoteCountLabel?.text = "\(question.upvotes) \(noun) to know"
         }
     }
-    
-    //TODO: Where do you segue back to?
     
     /*
     // MARK: - Navigation

@@ -32,19 +32,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdf-96-Afy">
-                                <rect key="frame" x="167" y="629" width="41" height="28"/>
+                                <rect key="frame" x="167" y="624" width="41" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="iAe-5V-V6V"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="8zG-Z6-s2l"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bdf-96-Afy" firstAttribute="top" secondItem="jvH-hz-l0W" secondAttribute="bottom" constant="609" id="Yus-mW-U4T"/>
+                            <constraint firstItem="Veh-cJ-qPj" firstAttribute="top" secondItem="bdf-96-Afy" secondAttribute="bottom" constant="10" id="XOI-18-CrV"/>
                             <constraint firstItem="bdf-96-Afy" firstAttribute="centerX" secondItem="g2P-A4-uk0" secondAttribute="centerX" id="fM5-pd-J9r"/>
-                            <constraint firstItem="Veh-cJ-qPj" firstAttribute="top" secondItem="bdf-96-Afy" secondAttribute="bottom" constant="10" id="sLu-Wr-3OS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -342,7 +341,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="Show Browse" id="4ii-HA-3E8"/>
+                                    <action selector="dismissButton:" destination="mz5-K6-PTF" eventType="touchUpInside" id="JrE-Po-ipn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -590,11 +589,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTJ-Fr-a1V">
-                                <rect key="frame" x="167" y="629" width="41" height="28"/>
+                                <rect key="frame" x="167" y="624" width="41" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="Bq5-19-fMA"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="4Uj-2a-dVc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -602,7 +601,6 @@
                         <constraints>
                             <constraint firstItem="ZTJ-Fr-a1V" firstAttribute="centerX" secondItem="YCv-IW-eAK" secondAttribute="centerX" id="1qe-Hu-qhN"/>
                             <constraint firstItem="6Wi-zD-9pR" firstAttribute="top" secondItem="ZTJ-Fr-a1V" secondAttribute="bottom" constant="10" id="CdP-JM-JDO"/>
-                            <constraint firstItem="ZTJ-Fr-a1V" firstAttribute="top" secondItem="lm8-kj-eXy" secondAttribute="bottom" constant="609" id="bBI-PC-5UT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -623,18 +621,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTW-QT-Ccj">
-                                <rect key="frame" x="167" y="629" width="41" height="28"/>
+                                <rect key="frame" x="167" y="624" width="41" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="Gmz-DZ-KND"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Browse" id="SJa-bv-y3u"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WLg-v5-YAt" firstAttribute="top" secondItem="HTW-QT-Ccj" secondAttribute="bottom" constant="10" id="PEO-v4-bbQ"/>
-                            <constraint firstItem="HTW-QT-Ccj" firstAttribute="top" secondItem="VWD-Fb-2AN" secondAttribute="bottom" constant="609" id="jml-iv-Lss"/>
                             <constraint firstItem="HTW-QT-Ccj" firstAttribute="centerX" secondItem="bu9-9E-2VP" secondAttribute="centerX" id="lbd-fF-J1E"/>
                         </constraints>
                     </view>
@@ -706,6 +703,9 @@
                                 <state key="normal" title="X">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismissButton:" destination="h6N-VU-hUy" eventType="touchUpInside" id="mEU-cX-kRp"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="good_question" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-Nu-aQa">
                                 <rect key="frame" x="36" y="63" width="30" height="30"/>
@@ -795,7 +795,7 @@
         <image name="social_white.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="SJa-bv-y3u"/>
         <segue reference="G94-Yy-Xbf"/>
-        <segue reference="4ii-HA-3E8"/>
     </inferredMetricsTieBreakers>
 </document>

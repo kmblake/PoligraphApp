@@ -9,6 +9,9 @@
 import UIKit
 
 class AnsweredQuestionViewController: UIViewController {
+    @IBAction func dismissButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     @IBOutlet weak var questionTextLabel: UILabel!
     @IBOutlet weak var answererLabel: UILabel!
@@ -20,6 +23,8 @@ class AnsweredQuestionViewController: UIViewController {
     @IBOutlet weak var answerBiasSlider: UISlider!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    
+    //TODO: Add a dismiss button
     
     // MARK: - Actions
     @IBAction func reportAnswerButton(_ sender: UIButton) {

@@ -69,7 +69,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedQuestion = questions?[indexPath.row] {
-            if selectedQuestion.status == Int32(Question.StatusTypes.answered.rawValue) {
+            if selectedQuestion.status == Int32(Question.StatusTypes.reviewed.rawValue) {
                 self.performSegue(withIdentifier: Storyboard.ShowAnswerSegueIdentifier, sender: selectedQuestion)
             } else {
                 self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
