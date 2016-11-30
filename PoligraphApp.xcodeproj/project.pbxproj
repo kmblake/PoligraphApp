@@ -31,6 +31,8 @@
 		65B229DE1DD962990058F6C8 /* PoligraphAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229DD1DD962990058F6C8 /* PoligraphAppTests.swift */; };
 		65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */; };
 		65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229EA1DD967960058F6C8 /* ReviewViewController.swift */; };
+		B10CAE341DEE6FB2005897F7 /* HelpContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */; };
+		B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1676A341DED359B00C43832 /* HelpPageViewController.swift */; };
 		B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */; };
 		B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E904E1DDEE2C300F89E2D /* User+CoreDataClass.swift */; };
 		B17E90551DDEE2C300F89E2D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E904F1DDEE2C300F89E2D /* User+CoreDataProperties.swift */; };
@@ -82,6 +84,8 @@
 		65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		65B229EA1DD967960058F6C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoligraphApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpContentViewController.swift; sourceTree = "<group>"; };
+		B1676A341DED359B00C43832 /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 		B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B17E904E1DDEE2C300F89E2D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B17E904F1DDEE2C300F89E2D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				B17E900B1DDED9E700F89E2D /* Answer */,
 				B17E900C1DDED9F200F89E2D /* Review */,
 				65B229CC1DD962980058F6C8 /* Main.storyboard */,
+				B1676A361DED35A300C43832 /* Help */,
 				65307FF81DE390E200713051 /* UIBiasBar.swift */,
 				65B229CF1DD962980058F6C8 /* Assets.xcassets */,
 				65B229D11DD962980058F6C8 /* LaunchScreen.storyboard */,
@@ -193,6 +198,15 @@
 				65B229DF1DD962990058F6C8 /* Info.plist */,
 			);
 			path = PoligraphAppTests;
+			sourceTree = "<group>";
+		};
+		B1676A361DED35A300C43832 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */,
+				B1676A341DED359B00C43832 /* HelpPageViewController.swift */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 		B17E90091DDED9D500F89E2D /* Browse */ = {
@@ -461,6 +475,7 @@
 				6553B81F1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift in Sources */,
 				65B229CB1DD962980058F6C8 /* AskViewController.swift in Sources */,
 				B17E90551DDEE2C300F89E2D /* User+CoreDataProperties.swift in Sources */,
+				B10CAE341DEE6FB2005897F7 /* HelpContentViewController.swift in Sources */,
 				B17E90571DDEE2C300F89E2D /* Question+CoreDataProperties.swift in Sources */,
 				65307FF71DE3370B00713051 /* AnsweredQuestionViewController.swift in Sources */,
 				65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */,
@@ -470,6 +485,7 @@
 				657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */,
 				B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */,
 				B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */,
+				B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */,
 				B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */,
 				B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */,
 				B17E90561DDEE2C300F89E2D /* Question+CoreDataClass.swift in Sources */,
