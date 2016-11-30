@@ -28,7 +28,7 @@ public class Question: NSManagedObject {
         case asked = 0
         case unfinishedAnswer
         case answered
-        case reviwed
+        case reviewed
     }
     
     class func printAllQuestions(inManagedObjectContext context: NSManagedObjectContext) {
@@ -64,10 +64,13 @@ public class Question: NSManagedObject {
      Returns: optional array of Questions
     
     */
-    class func searchQuestions(withStatus status: Question.StatusTypes, text: String, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
+    class func searchQuestions(withStatus status: Question.StatusTypes?, text: String, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
-        request.predicate = NSPredicate(format: "(status == %i) AND (text contains[c] %@)", status.rawValue, text)
-        //request.predicate = NSPredicate(format: "text contains[c] %@", text)
+        if let status = status {
+            request.predicate = NSPredicate(format: "(status == %i) AND (text contains[c] %@)", status.rawValue, text)
+        } else {
+            request.predicate = NSPredicate(format: "text contains[c] %@", text)
+        }
         
         if let questions = (try? context.fetch(request)) as? [Question] {
             return questions
