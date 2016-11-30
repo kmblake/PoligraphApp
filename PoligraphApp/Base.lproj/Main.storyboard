@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="KSi-oX-Njj" customClass="HelpPageViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hD-3e-uaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="-1099"/>
+            <point key="canvasLocation" x="-2204" y="-1085"/>
         </scene>
         <!--Help Content View Controller-->
         <scene sceneID="snF-sZ-jiE">
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTZ-mv-qpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.8" y="-1110.4947526236883"/>
+            <point key="canvasLocation" x="-1449" y="-1096"/>
         </scene>
         <!--Browse-->
         <scene sceneID="hNz-n2-bh7">
@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNo-rw-XK6" id="Sf3-kh-kkP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
@@ -200,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkb-zW-zpU">
-                                <rect key="frame" x="16" y="40" width="343" height="596"/>
+                                <rect key="frame" x="16" y="84" width="343" height="552"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dho-ee-e5a" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="596"/>
@@ -342,7 +342,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9pv-A4-QxB" kind="show" identifier="Show Browse" id="mT6-dn-76L"/>
+                                    <segue destination="49e-Tb-3d3" kind="presentation" identifier="Show Browse" id="4ii-HA-3E8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5K-kh-Owo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5999999999999" y="-360.2698650674663"/>
+            <point key="canvasLocation" x="1524" y="-360"/>
         </scene>
         <!--Ask-->
         <scene sceneID="wg7-f3-ORb">
@@ -446,14 +446,13 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionTextLabel" destination="slg-vW-HNL" id="fmI-n4-UW4"/>
-                                    <segue destination="mz5-K6-PTF" kind="presentation" identifier="Show Answer" id="be8-m3-mzX"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Submit Check" rowHeight="167" id="I40-gN-Qev">
                                 <rect key="frame" x="0.0" y="72" width="375" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I40-gN-Qev" id="k79-vU-lK4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-Wz-esv">
@@ -491,6 +490,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="Return to Ask" id="JEd-Aj-uVN"/>
+                        <segue destination="mz5-K6-PTF" kind="show" identifier="Show Answered Question" id="G94-Yy-Xbf"/>
+                        <segue destination="h6N-VU-hUy" kind="presentation" identifier="Show Unanswered Question" id="hXV-TZ-QUF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LT-JD-4GH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -607,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iar-Ud-X6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266" y="-1110"/>
+            <point key="canvasLocation" x="-705" y="-1096"/>
         </scene>
         <!--Help Content View Controller-->
         <scene sceneID="a0q-Sw-4US">
@@ -640,8 +641,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLQ-rA-A6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="-1110"/>
-	</scene>
+            <point key="canvasLocation" x="-1" y="-1096"/>
+        </scene>
         <!--Ask-->
         <scene sceneID="Eu3-yf-Jgt">
             <objects>
@@ -661,10 +662,10 @@
             </objects>
             <point key="canvasLocation" x="765.60000000000002" y="359.37031484257875"/>
         </scene>
-        <!--Answered Question View Controller-->
+        <!--Unanswered Question View Controller-->
         <scene sceneID="BPB-ea-8za">
             <objects>
-                <viewController id="h6N-VU-hUy" customClass="AnsweredQuestionViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h6N-VU-hUy" customClass="UnansweredQuestionViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hqY-gk-t02"/>
                         <viewControllerLayoutGuide type="bottom" id="zsQ-xm-3T2"/>
@@ -727,6 +728,9 @@
                                 <state key="normal" title="Good Question!" image="good_question.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="upvoteButton:" destination="h6N-VU-hUy" eventType="touchUpInside" id="bOe-ib-mHl"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-zV-JAF">
                                 <rect key="frame" x="36" y="121" width="303" height="431"/>
@@ -769,12 +773,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="questionTextLabel" destination="3TF-6T-ClO" id="rsY-zK-KyN"/>
+                        <outlet property="questionTextLabel" destination="3TF-6T-ClO" id="aem-Oz-6jr"/>
+                        <outlet property="upvoteCountLabel" destination="vdD-OX-65Y" id="GUH-P0-kHM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnQ-fd-A6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352.8000000000002" y="-381.85907046476763"/>
+            <point key="canvasLocation" x="2330" y="-360"/>
         </scene>
     </scenes>
     <resources>
@@ -790,7 +795,7 @@
         <image name="social_white.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mT6-dn-76L"/>
-        <segue reference="Gmz-DZ-KND"/>
+        <segue reference="G94-Yy-Xbf"/>
+        <segue reference="4ii-HA-3E8"/>
     </inferredMetricsTieBreakers>
 </document>

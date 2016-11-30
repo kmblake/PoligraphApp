@@ -14,7 +14,8 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     
     private struct Storyboard {
         static let SearchCellIdentifier = "Search"
-        static let ShowAnswerSegueIdentifier = "Show Answer"
+        static let ShowAnswerSegueIdentifier = "Show Answered Question"
+        static let ShowUnansweredSegueIdentifier = "Show Unanswered Question"
         static let CheckCellIdentifier = "Submit Check"
         static let AskTabSegueIdentifier = "Return to Ask"
     }
@@ -66,6 +67,16 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedQuestion = questions?[indexPath.row] {
+            if selectedQuestion.status == Int32(Question.StatusTypes.answered.rawValue) {
+                self.performSegue(withIdentifier: Storyboard.ShowAnswerSegueIdentifier, sender: selectedQuestion)
+            } else {
+                self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
+            }
+        }
+    }
+    
     // MARK: Search controller implementation
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -80,19 +91,21 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier! == Storyboard.ShowAnswerSegueIdentifier {
             if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
-                if let question = (sender as? SearchTableViewCell)?.question {
-                    print("Segueing to Answered Question VC from Search")
+                if let question = sender as? Question {
                     answeredQuestionVC.question = question
+                }
+            }
+        } else if segue.identifier! == Storyboard.ShowUnansweredSegueIdentifier {
+            if let unansweredQuestionVC = segue.destination as? UnansweredQuestionViewController {
+                if let question = sender as? Question {
+                    unansweredQuestionVC.question = question
                 }
             }
         } else if segue.identifier! == Storyboard.AskTabSegueIdentifier {
             if let tabBarController = segue.destination as? UITabBarController {
                 tabBarController.selectedIndex = 1
-                print("Set index")
             }
         }
     }
