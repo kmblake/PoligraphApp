@@ -45,6 +45,9 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
         } else {
             print("Question load failed.")
         }
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 250
+        
         askToolbar = makeToolbar(prompt: "Don't see your question?", buttonText: "Ask", selector: #selector(askPressed))
         
     }
@@ -113,7 +116,6 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     private struct Storyboard {
         static let BrowseQuestionCellIdentifier = "Question"
-        static let RowHeight: CGFloat = 250.0 //TODO: Autoset?
         static let ShowAnsweredQuestionSegue = "Show Answer"
         static let AskTabSegueIdentifier = "Return to Ask"
     }
@@ -142,10 +144,6 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Storyboard.RowHeight
-    }
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return questionSearchController.searchBar.bounds.height
     }
@@ -160,6 +158,17 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
         if(!searchText.isEmpty) {
             if let askButton = askToolbar?.items?[2] {
                 askButton.isEnabled = true
+                if let searchResultsTVC = questionSearchController.searchResultsUpdater as? SearchResultsTableViewController {
+                    if let questionsArray = searchResultsTVC.questions {
+                        if questionsArray.count > 0 {
+                            if(searchText.caseInsensitiveCompare(questionsArray[0].text!) == ComparisonResult.orderedSame) {
+                                askButton.isEnabled = false
+                            } else {
+                                askButton.isEnabled = true
+                            }
+                        }
+                    }
+                }
                 askToolbar?.reloadInputViews()
             }
         }

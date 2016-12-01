@@ -80,7 +80,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     
     func updateSearchResults(for searchController: UISearchController) {
         let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
-        //TODO: all questions or reviewed questions?
         let questions = Question.searchQuestions(withStatus: nil, text: searchController.searchBar.text!, inManagedObjectContext: moc)
         if let searchResultsTVC = searchController.searchResultsController as? SearchResultsTableViewController {
             searchResultsTVC.questions = questions

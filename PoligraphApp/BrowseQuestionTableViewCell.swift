@@ -22,6 +22,28 @@ class BrowseQuestionTableViewCell: UITableViewCell {
         }
     }
     
+//    internal var aspectConstraint : NSLayoutConstraint? {
+//        didSet {
+//            if oldValue != nil {
+//                questionImage.removeConstraint(oldValue!)
+//            }
+//            if aspectConstraint != nil {
+//                questionImage.addConstraint(aspectConstraint!)
+//            }
+//        }
+//    }
+//    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        aspectConstraint = nil
+//    }
+//    
+//    func setQuestionImage(image: UIImage) {
+//        let aspectRatio = image.size.width / image.size.height
+//        let aspectConstraint = NSLayoutConstraint(item: questionImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: questionImage, attribute: NSLayoutAttribute.height, multiplier: aspectRatio, constant: 0.0)
+//        questionImage.addConstraint(aspectConstraint)
+//    }
+   
     func updateUI() {
         if let question = self.question {
             questionTextLabel.text = question.text! //Force unwrap question text here
@@ -35,7 +57,9 @@ class BrowseQuestionTableViewCell: UITableViewCell {
                             DispatchQueue.main.async {
                                 if imageURLString == question.image {
                                     self.spinner.stopAnimating()
-                                    self.questionImage.image = UIImage(data: imageData)
+                                    if let image = UIImage(data: imageData) {
+                                        self.questionImage.image = image
+                                    }
                                 } else {
                                     print("Ignoring data returned from URL \(imageURL)")
                                 }

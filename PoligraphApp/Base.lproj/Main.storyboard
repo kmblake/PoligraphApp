@@ -337,7 +337,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2O-T6-Rfz">
-                                            <rect key="frame" x="88" y="45" width="279" height="21"/>
+                                            <rect key="frame" x="88" y="48" width="279" height="13.5"/>
                                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -352,14 +352,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="O2O-T6-Rfz" firstAttribute="leading" secondItem="szF-pa-v42" secondAttribute="leading" constant="60" id="CeQ-Yg-GaF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="O2O-T6-Rfz" secondAttribute="bottom" constant="40" id="Tky-41-ccT"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="O2O-T6-Rfz" secondAttribute="trailing" id="jyI-SC-qu4"/>
                                         <constraint firstItem="szF-pa-v42" firstAttribute="centerY" secondItem="fIB-c6-fvY" secondAttribute="centerY" id="lHT-2a-dqd"/>
+                                        <constraint firstItem="O2O-T6-Rfz" firstAttribute="top" secondItem="fIB-c6-fvY" secondAttribute="topMargin" constant="40" id="sn8-dM-eI9"/>
                                         <constraint firstItem="szF-pa-v42" firstAttribute="leading" secondItem="fIB-c6-fvY" secondAttribute="leadingMargin" constant="20" id="vO9-6z-5Qx"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="O2O-T6-Rfz" firstAttribute="centerY" secondItem="1a3-G4-a1B" secondAttribute="centerY" id="AtF-zp-0Iw"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="questionStatusImageView" destination="szF-pa-v42" id="PJx-pw-EYV"/>
                                     <outlet property="questionTextLabel" destination="O2O-T6-Rfz" id="yWu-R0-XVA"/>
@@ -630,19 +629,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A deal for nations to limit greenhouse gas emissions " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-y4-Wkx">
-                                            <rect key="frame" x="28" y="56" width="320" height="53"/>
+                                            <rect key="frame" x="28" y="56" width="320" height="28"/>
                                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-VP-Mfg">
-                                            <rect key="frame" x="28" y="116.5" width="319" height="125"/>
+                                            <rect key="frame" x="28" y="91.5" width="319" height="150"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="125" id="yPY-BV-l7y"/>
+                                                <constraint firstAttribute="height" constant="150" id="Sso-Zh-ovU"/>
                                             </constraints>
                                         </imageView>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-Qf-5Ux">
-                                            <rect key="frame" x="178" y="169" width="20" height="20"/>
+                                            <rect key="frame" x="178" y="157" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -878,7 +877,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JEd-Aj-uVN"/>
-        <segue reference="hXV-TZ-QUF"/>
-        <segue reference="G94-Yy-Xbf"/>
+        <segue reference="ffp-vc-ZiW"/>
+        <segue reference="P3L-WR-dRR"/>
     </inferredMetricsTieBreakers>
 </document>

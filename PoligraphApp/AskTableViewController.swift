@@ -33,6 +33,9 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
             inManagedObjectContext: moc) {
             questions = userQuestions
         }
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
     }
     
     // MARK: UI Search Controller Delegate
@@ -60,6 +63,17 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
         if(!searchText.isEmpty) {
             if let askButton = askToolbar?.items?[2] {
                 askButton.isEnabled = true
+                if let searchResultsTVC = questionSearchController.searchResultsUpdater as? SearchResultsTableViewController {
+                    if let questionsArray = searchResultsTVC.questions {
+                        if questionsArray.count > 0 {
+                            if(searchText.caseInsensitiveCompare(questionsArray[0].text!) == ComparisonResult.orderedSame) {
+                                askButton.isEnabled = false
+                            } else {
+                                askButton.isEnabled = true
+                            }
+                        }
+                    }
+                }
                 askToolbar?.reloadInputViews()
             }
         }
