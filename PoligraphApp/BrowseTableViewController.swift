@@ -46,7 +46,7 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
             print("Question load failed.")
         }
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 250
+        tableView.estimatedRowHeight = 300
         
         askToolbar = makeToolbar(prompt: "Don't see your question?", buttonText: "Ask", selector: #selector(askPressed))
         

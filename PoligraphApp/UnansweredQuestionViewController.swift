@@ -36,6 +36,7 @@ class UnansweredQuestionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        questionTextLabel?.text = question?.text
         updateUI()
         setAnswerStatus()
     }
