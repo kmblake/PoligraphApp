@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
-        let navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearance = UINavigationBar.appearance()
         
-        navigationBarAppearace.tintColor = uicolorFromHex(rgbValue: 0xffffff)
-        navigationBarAppearace.barTintColor = UIColor.polyBlue()
+        navigationBarAppearance.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        navigationBarAppearance.barTintColor = UIColor.polyBlue()
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         UISearchBar.appearance().barTintColor = UIColor.polyBlue()
         UISearchBar.appearance().tintColor = UIColor.white
         UISearchBar.appearance().placeholder = "Ask Poligraph"
