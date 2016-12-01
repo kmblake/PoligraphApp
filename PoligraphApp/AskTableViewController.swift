@@ -19,6 +19,7 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
         
+        questionSearchController.hidesNavigationBarDuringPresentation = false
         questionSearchController.dimsBackgroundDuringPresentation = true
         if let searchResultsTVC = questionSearchController.searchResultsController as? SearchResultsTableViewController {
             questionSearchController.searchResultsUpdater = searchResultsTVC

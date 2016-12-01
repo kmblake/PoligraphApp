@@ -190,6 +190,7 @@
 				65B229CC1DD962980058F6C8 /* Main.storyboard */,
 				B1676A361DED35A300C43832 /* Help */,
 				65307FF81DE390E200713051 /* UIBiasBar.swift */,
+				65B229C81DD962980058F6C8 /* BrowseViewController.swift */,
 				65B229CF1DD962980058F6C8 /* Assets.xcassets */,
 				65B229D11DD962980058F6C8 /* LaunchScreen.storyboard */,
 				65B229D41DD962980058F6C8 /* Info.plist */,
@@ -218,7 +219,6 @@
 		B17E90091DDED9D500F89E2D /* Browse */ = {
 			isa = PBXGroup;
 			children = (
-				65B229C81DD962980058F6C8 /* BrowseViewController.swift */,
 				65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */,
 				6553B81E1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift */,
 				65307FF61DE3370B00713051 /* AnsweredQuestionViewController.swift */,
