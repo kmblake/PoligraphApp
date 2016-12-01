@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AskTableViewController: UITableViewController, UISearchBarDelegate {
+class AskTableViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
 
     let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
     
@@ -16,6 +16,7 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         questionSearchController.searchBar.delegate = self
+        questionSearchController.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
         
@@ -32,6 +33,16 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate {
             inManagedObjectContext: moc) {
             questions = userQuestions
         }
+    }
+    
+    // MARK: UI Search Controller Delegate
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        self.title = "Ask"
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        self.title = "Your Questions"
     }
     
     // MARK: - UI Search Bar Delegate

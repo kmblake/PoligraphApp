@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowseTableViewController: UITableViewController, UISearchBarDelegate {
+class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
 
     let questionSearchController = UISearchController(searchResultsController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as UIViewController)
     
@@ -25,6 +25,7 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
 
         questionSearchController.searchBar.delegate = self
+        questionSearchController.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
         
@@ -46,6 +47,16 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate {
         }
         askToolbar = makeToolbar(prompt: "Don't see your question?", buttonText: "Ask", selector: #selector(askPressed))
         
+    }
+    
+    // MARK: UI Search Controller Delegate
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        self.title = "Ask"
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        self.title = "Browse"
     }
     
     // MARK: - Ask Toolbar Management
