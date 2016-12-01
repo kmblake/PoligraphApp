@@ -30,6 +30,9 @@
 		65B229DE1DD962990058F6C8 /* PoligraphAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229DD1DD962990058F6C8 /* PoligraphAppTests.swift */; };
 		65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */; };
 		65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229EA1DD967960058F6C8 /* ReviewViewController.swift */; };
+		65E3F5B11DF0147400F2C3D3 /* looking-for-answerer.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */; };
+		65E3F5B21DF0147400F2C3D3 /* answer-in-progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */; };
+		65E3F5B31DF0147400F2C3D3 /* review-in-progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */; };
 		65FEE33F1DEFC27600C0DD0A /* AskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE33E1DEFC27600C0DD0A /* AskTableViewController.swift */; };
 		65FEE3411DEFC78800C0DD0A /* YourQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE3401DEFC78800C0DD0A /* YourQuestionsTableViewCell.swift */; };
 		65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */; };
@@ -85,6 +88,9 @@
 		65B229DF1DD962990058F6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		65B229EA1DD967960058F6C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "looking-for-answerer.png"; sourceTree = "<group>"; };
+		65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "answer-in-progress.png"; sourceTree = "<group>"; };
+		65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "review-in-progress.png"; sourceTree = "<group>"; };
 		65FEE33E1DEFC27600C0DD0A /* AskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskTableViewController.swift; sourceTree = "<group>"; };
 		65FEE3401DEFC78800C0DD0A /* YourQuestionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourQuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseTableViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				653342381DED39D1002D38B5 /* checkmark.png */,
+				65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */,
+				65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */,
+				65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */,
 				650B14E61DE4E52E00F2F495 /* information_white.png */,
 				6566B1371DEE52A500ED00BB /* good_question_gray.png */,
 				65307FF41DE2BFF600713051 /* social.png */,
@@ -361,14 +370,17 @@
 				65307FF31DE2BF5700713051 /* information.png in Resources */,
 				653342391DED39D1002D38B5 /* checkmark.png in Resources */,
 				6566B1361DEE4C8900ED00BB /* good_question.png in Resources */,
+				65E3F5B31DF0147400F2C3D3 /* review-in-progress.png in Resources */,
 				65B229D31DD962980058F6C8 /* LaunchScreen.storyboard in Resources */,
 				65307FF51DE2BFF600713051 /* social.png in Resources */,
 				6553B81D1DE13D06008F183E /* test.json in Resources */,
 				650B14E71DE4E52E00F2F495 /* information_white.png in Resources */,
+				65E3F5B11DF0147400F2C3D3 /* looking-for-answerer.png in Resources */,
 				65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */,
 				6566B1381DEE52A500ED00BB /* good_question_gray.png in Resources */,
 				650B14E91DE4E58400F2F495 /* social_white.png in Resources */,
 				65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */,
+				65E3F5B21DF0147400F2C3D3 /* answer-in-progress.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
