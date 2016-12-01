@@ -10,17 +10,20 @@
         {
           "id": 1,
           "text": "What is Aleppo?",
-          "status": 0
+          "status": 0,
+          "userDidUpvote": true
         },
         {
           "id": 2,
           "text": "Why do we still have the electoral college?",
-          "status": 1
+          "status": 1,
+          "userDidUpvote": true
         },
         {
           "id": 3,
           "text": "How do senate confirmation hearings work?",
-          "status": 2
+          "status": 2,
+          "userDidUpvote": true
         }
       ],
     "answered_questions": [

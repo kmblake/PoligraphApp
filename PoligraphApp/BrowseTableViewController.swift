@@ -155,8 +155,8 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
     // Mark: - UISearchBarDelegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if(!searchText.isEmpty) {
-            if let askButton = askToolbar?.items?[2] {
+        if let askButton = askToolbar?.items?[2] {
+            if(!searchText.isEmpty) {
                 askButton.isEnabled = true
                 if let searchResultsTVC = questionSearchController.searchResultsUpdater as? SearchResultsTableViewController {
                     if let questionsArray = searchResultsTVC.questions {
@@ -169,8 +169,10 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
                         }
                     }
                 }
-                askToolbar?.reloadInputViews()
+            } else {
+                askButton.isEnabled = false
             }
+            askToolbar?.reloadInputViews()
         }
     }
     
