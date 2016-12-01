@@ -1,31 +1,20 @@
 //
-//  FirstViewController.swift
+//  AskTableViewController.swift
 //  PoligraphApp
 //
-//  Created by Kent Blake on 11/13/16.
+//  Created by Kent Blake on 11/30/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
 import UIKit
 
-class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class AskTableViewController: UITableViewController, UISearchBarDelegate {
 
-    let questionSearchController = UISearchController(searchResultsController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as UIViewController)
-    
     let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
     
-    var askToolbar: UIToolbar? {
-        didSet {
-            questionSearchController.searchBar.inputAccessoryView = askToolbar
-            questionSearchController.searchBar.reloadInputViews()
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
         questionSearchController.searchBar.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
@@ -35,16 +24,33 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             questionSearchController.searchResultsUpdater = searchResultsTVC
         }
         definesPresentationContext = true
+
         
-        if let newQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.reviewed, inManagedObjectContext: moc) {
-            questions = newQuestions
-            print("Questions Loaded")
-            print("Number of results: \(questions.count)")
-        } else {
-            print("Question load failed.")
+        if let userQuestions = Question.loadUnansweredQuestions(
+            forUser: User.currentUser(inManagedObjectContext: moc)!,
+            inManagedObjectContext: moc) {
+            questions = userQuestions
         }
-        askToolbar = makeToolbar(prompt: "Don't see your question?", buttonText: "Ask", selector: #selector(askPressed))
-        
+    }
+    
+    // MARK: - UI Search Bar Delegate
+    
+    let questionSearchController = UISearchController(searchResultsController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as UIViewController)
+    
+    var askToolbar: UIToolbar? {
+        didSet {
+            questionSearchController.searchBar.inputAccessoryView = askToolbar
+            questionSearchController.searchBar.reloadInputViews()
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(!searchText.isEmpty) {
+            if let askButton = askToolbar?.items?[2] {
+                askButton.isEnabled = true
+                askToolbar?.reloadInputViews()
+            }
+        }
     }
     
     // MARK: - Ask Toolbar Management
@@ -94,80 +100,74 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             searchResultsController.askPressed = false
         }
     }
-    
-    
-    
+
+
     // MARK: - Table view data source
     
     private struct Storyboard {
-        static let BrowseQuestionCellIdentifier = "Question"
-        static let RowHeight: CGFloat = 250.0 //TODO: Autoset?
-        static let ShowAnsweredQuestionSegue = "Show Answer"
+        static let QuestionCellIdentifier = "Your Question"
+        static let ShowAnswerSegueIdentifier = "Show Answered Question"
+        static let ShowUnansweredSegueIdentifier = "Show Unanswered Question"
         static let AskTabSegueIdentifier = "Return to Ask"
     }
-    
+
     var questions = [Question]() {
         didSet {
-            tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
-
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.BrowseQuestionCellIdentifier, for: indexPath)
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.QuestionCellIdentifier, for: indexPath)
         let question = questions[indexPath.row]
-        if let questionCell = cell as? BrowseQuestionTableViewCell {
+        if let questionCell = cell as? YourQuestionsTableViewCell {
             questionCell.question = question
         }
-        //TODO: Return inside or outside?
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Storyboard.RowHeight
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedQuestion = questions[indexPath.row]
+        if selectedQuestion.status == Int32(Question.StatusTypes.reviewed.rawValue) {
+            self.performSegue(withIdentifier: Storyboard.ShowAnswerSegueIdentifier, sender: selectedQuestion)
+        } else {
+            self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return questionSearchController.searchBar.bounds.height
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return questionSearchController.searchBar
     }
 
-     // Mark: - UISearchBarDelegate
+    // MARK: - Navigation
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if(!searchText.isEmpty) {
-            if let askButton = askToolbar?.items?[2] {
-                askButton.isEnabled = true
-                askToolbar?.reloadInputViews()
-            }
-        }
-    }
-    
-    
-     // MARK: - Navigation
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier! == Storyboard.ShowAnsweredQuestionSegue {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == Storyboard.ShowAnswerSegueIdentifier {
             if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
-                if let question = (sender as? BrowseQuestionTableViewCell)?.question {
+                if let question = sender as? Question {
                     answeredQuestionVC.question = question
                 }
             }
+        } else if segue.identifier! == Storyboard.ShowUnansweredSegueIdentifier {
+            if let unansweredQuestionVC = segue.destination as? UnansweredQuestionViewController {
+                if let question = sender as? Question {
+                    unansweredQuestionVC.question = question
+                }
+            }
         }
-     }
-
+    }
 
 }
-

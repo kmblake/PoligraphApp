@@ -1,14 +1,14 @@
 //
-//  FirstViewController.swift
+//  BrowseTableViewController.swift
 //  PoligraphApp
 //
-//  Created by Kent Blake on 11/13/16.
+//  Created by Kent Blake on 11/30/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
 import UIKit
 
-class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class BrowseTableViewController: UITableViewController, UISearchBarDelegate {
 
     let questionSearchController = UISearchController(searchResultsController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as UIViewController)
     
@@ -20,12 +20,10 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             questionSearchController.searchBar.reloadInputViews()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+
         questionSearchController.searchBar.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
@@ -108,21 +106,19 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var questions = [Question]() {
         didSet {
-            tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
-
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.BrowseQuestionCellIdentifier, for: indexPath)
         let question = questions[indexPath.row]
         if let questionCell = cell as? BrowseQuestionTableViewCell {
@@ -132,19 +128,19 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Storyboard.RowHeight
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return questionSearchController.searchBar.bounds.height
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return questionSearchController.searchBar
     }
-
-     // Mark: - UISearchBarDelegate
+    
+    // Mark: - UISearchBarDelegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(!searchText.isEmpty) {
@@ -156,9 +152,9 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-     // MARK: - Navigation
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == Storyboard.ShowAnsweredQuestionSegue {
             if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
                 if let question = (sender as? BrowseQuestionTableViewCell)?.question {
@@ -166,8 +162,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-     }
-
+    }
 
 }
-

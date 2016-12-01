@@ -15,15 +15,21 @@ class UnansweredQuestionViewController: UIViewController {
     }
     
     @IBAction func upvoteButton(_ sender: UIButton) {
-        //TODO: Limit user upvotes. Requires tracking if user has upvoted...
         if let question = self.question {
-            question.upvotes += 1
-            sender.tintColor = UIColor.polyBlue() //TODO: Determine color
-            updateUI()
+            if question.userDidUpvote {
+                question.upvotes -= 1
+                question.userDidUpvote = false
+                updateUI()
+            } else {
+                question.upvotes += 1
+                question.userDidUpvote = true
+                updateUI()
+            }
         }
     }
     @IBOutlet weak var questionTextLabel: UILabel!
     @IBOutlet weak var upvoteCountLabel: UILabel!
+    @IBOutlet weak var upvoteButtonOutlet: UIButton!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +47,11 @@ class UnansweredQuestionViewController: UIViewController {
         if let question = self.question {
             let noun = question.upvotes == 1 ? "person wants" : "people want"
             upvoteCountLabel?.text = "\(question.upvotes) \(noun) to know"
+            if question.userDidUpvote {
+                upvoteButtonOutlet?.tintColor = UIColor.polyBlue()
+            } else {
+                upvoteButtonOutlet?.tintColor = UIColor.gray
+            }
         }
     }
     

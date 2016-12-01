@@ -2,7 +2,7 @@
 //  Review+CoreDataProperties.swift
 //  PoligraphApp
 //
-//  Created by Kent Blake on 11/21/16.
+//  Created by Kent Blake on 11/30/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
