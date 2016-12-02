@@ -15,20 +15,40 @@ class UnansweredQuestionViewController: UIViewController {
     }
     
     @IBAction func upvoteButton(_ sender: UIButton) {
-        //TODO: Limit user upvotes. Requires tracking if user has upvoted...
         if let question = self.question {
-            question.upvotes += 1
-            sender.tintColor = UIColor.polyBlue() //TODO: Determine color
-            updateUI()
+            if question.userDidUpvote {
+                question.upvotes -= 1
+                question.userDidUpvote = false
+                updateUI()
+            } else {
+                question.upvotes += 1
+                question.userDidUpvote = true
+                updateUI()
+            }
         }
     }
     @IBOutlet weak var questionTextLabel: UILabel!
     @IBOutlet weak var upvoteCountLabel: UILabel!
+    @IBOutlet weak var upvoteButtonOutlet: UIButton!
     
+    @IBOutlet weak var answerStatusImage: UIImageView!
+    @IBOutlet weak var answerStatusText: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
+        questionTextLabel?.text = question?.text
         updateUI()
+        setAnswerStatus()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.black
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
     }
 
     var question: Question? {
@@ -37,10 +57,45 @@ class UnansweredQuestionViewController: UIViewController {
         }
     }
     
+    func getStatus()-> Question.StatusTypes {
+        guard let status = Question.StatusTypes(rawValue: Int((question?.status)!)) else {
+            return Question.StatusTypes.asked
+        }
+        return status
+    }
+    
+    
+    func setAnswerStatus() {
+        let status = getStatus()
+        switch status {
+        case .asked:
+            answerStatusText?.text = "Awaiting answerer"
+            answerStatusImage?.image = UIImage(named: "looking-for-answerer.png")
+        case .unfinishedAnswer:
+            answerStatusText?.text = "Answer in progress"
+            answerStatusImage?.image = UIImage(named: "answer-in-progress.png")
+        case .answered:
+            answerStatusText?.text = "Answer under review"
+            answerStatusImage?.image = UIImage(named: "review-in-progress.png")
+        default:
+            answerStatusText?.text = "Awaiting answerer"
+            answerStatusImage?.image = UIImage(named: "looking-for-answerer.png")
+        }
+        answerStatusImage?.image = answerStatusImage?.image!.withRenderingMode(.alwaysTemplate)
+        answerStatusImage?.tintColor = UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 235.0/255.0, alpha: 1.0)
+    }
+    
     func updateUI() {
         if let question = self.question {
             let noun = question.upvotes == 1 ? "person wants" : "people want"
             upvoteCountLabel?.text = "\(question.upvotes) \(noun) to know"
+            if question.userDidUpvote {
+                upvoteButtonOutlet?.tintColor = UIColor.polyBlue()
+                upvoteButtonOutlet?.setTitleColor(UIColor.polyBlue(), for: .normal)
+            } else {
+                upvoteButtonOutlet?.tintColor = UIColor.lightGray
+                upvoteButtonOutlet?.setTitleColor(UIColor.gray, for: .normal)
+            }
         }
     }
     

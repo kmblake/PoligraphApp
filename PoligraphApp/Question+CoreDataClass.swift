@@ -56,6 +56,16 @@ public class Question: NSManagedObject {
         }
         return nil
     }
+    
+    class func loadUnansweredQuestions(forUser user: User, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
+        if let userQuestions = user.askedQuestions {
+            if let questionsArray = Array(userQuestions) as?  [Question] {
+                //TODO: Optionally sort these by status
+                return questionsArray
+            }
+        }
+        return nil
+    }
 
     /* Search Questions
      
@@ -103,6 +113,7 @@ public class Question: NSManagedObject {
             question.asker = asker
             question.status = Int32(StatusTypes.asked.rawValue)
             question.id = maxQuestionID
+            question.userDidUpvote = true
             return question
         }
         

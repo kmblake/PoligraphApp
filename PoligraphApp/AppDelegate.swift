@@ -17,15 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
-        let navigationBarAppearace = UINavigationBar.appearance()
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
         
-        navigationBarAppearace.tintColor = uicolorFromHex(rgbValue: 0xffffff)
-        navigationBarAppearace.barTintColor = UIColor.polyBlue()
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.isTranslucent = false
+        navigationBarAppearance.barTintColor = UIColor.polyBlue()
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        
         UISearchBar.appearance().barTintColor = UIColor.polyBlue()
         UISearchBar.appearance().tintColor = UIColor.white
         UISearchBar.appearance().placeholder = "Ask Poligraph"
+        
         fetchLocalItems(errorPrint)
         Question.printAllQuestions(inManagedObjectContext: self.dataStack.mainContext)
         return true
@@ -96,6 +99,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension UIColor {
     static func polyBlue() -> UIColor {
         return UIColor(red: 45.0/255.0, green: 156.0/255.0, blue: 219.0/255.0, alpha: 1.0)
+    }
+}
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
     }
 }
 

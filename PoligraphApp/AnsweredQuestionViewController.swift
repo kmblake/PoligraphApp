@@ -61,6 +61,16 @@ class AnsweredQuestionViewController: UIViewController {
         updateUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.black
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
+    }
+    
     var question: Question? {
         didSet{
             updateUI()
