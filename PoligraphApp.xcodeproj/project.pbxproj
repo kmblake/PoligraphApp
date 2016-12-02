@@ -28,8 +28,8 @@
 		65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CF1DD962980058F6C8 /* Assets.xcassets */; };
 		65B229D31DD962980058F6C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B229D11DD962980058F6C8 /* LaunchScreen.storyboard */; };
 		65B229DE1DD962990058F6C8 /* PoligraphAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229DD1DD962990058F6C8 /* PoligraphAppTests.swift */; };
-		65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */; };
 		65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229EA1DD967960058F6C8 /* ReviewViewController.swift */; };
+		65DD1E771DF204F100E337EB /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DD1E761DF204F100E337EB /* AnswerViewController.swift */; };
 		65E3F5B11DF0147400F2C3D3 /* looking-for-answerer.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */; };
 		65E3F5B21DF0147400F2C3D3 /* answer-in-progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */; };
 		65E3F5B31DF0147400F2C3D3 /* review-in-progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */; };
@@ -86,8 +86,8 @@
 		65B229D91DD962990058F6C8 /* PoligraphAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoligraphAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B229DD1DD962990058F6C8 /* PoligraphAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoligraphAppTests.swift; sourceTree = "<group>"; };
 		65B229DF1DD962990058F6C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		65B229EA1DD967960058F6C8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		65DD1E761DF204F100E337EB /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "looking-for-answerer.png"; sourceTree = "<group>"; };
 		65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "answer-in-progress.png"; sourceTree = "<group>"; };
 		65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "review-in-progress.png"; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 		B17E900B1DDED9E700F89E2D /* Answer */ = {
 			isa = PBXGroup;
 			children = (
-				65B229E81DD9675E0058F6C8 /* AnswerViewController.swift */,
+				65DD1E761DF204F100E337EB /* AnswerViewController.swift */,
 			);
 			name = Answer;
 			sourceTree = "<group>";
@@ -492,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				657DAB5A1DE531C800F4AEDE /* SearchResultsTableViewController.swift in Sources */,
-				65B229E91DD9675E0058F6C8 /* AnswerViewController.swift in Sources */,
 				6553B81F1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift in Sources */,
 				B17E90551DDEE2C300F89E2D /* User+CoreDataProperties.swift in Sources */,
 				65FEE3411DEFC78800C0DD0A /* YourQuestionsTableViewCell.swift in Sources */,
@@ -502,6 +501,7 @@
 				65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */,
 				65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */,
 				65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */,
+				65DD1E771DF204F100E337EB /* AnswerViewController.swift in Sources */,
 				65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */,
 				65307FF91DE390E200713051 /* UIBiasBar.swift in Sources */,
 				657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */,
