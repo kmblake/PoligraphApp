@@ -24,8 +24,10 @@ class YourQuestionsTableViewCell: UITableViewCell {
             questionTextLabel.text = question.text!
             if question.status == Int32(Question.StatusTypes.reviewed.rawValue) {
                 questionStatusImageView.image = #imageLiteral(resourceName: "Checkmark Small")
+                questionStatusImageView.tintColor = UIColor.polyBlue()
             } else {
                 questionStatusImageView.image = #imageLiteral(resourceName: "pending small")
+                questionStatusImageView.tintColor = UIColor(red: 86.0/255.0, green: 204.0/255.0, blue: 242.0/255.0, alpha: 1.0)
             }
             
         }

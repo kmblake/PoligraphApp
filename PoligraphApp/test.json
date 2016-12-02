@@ -24,6 +24,13 @@
           "text": "How do senate confirmation hearings work?",
           "status": 2,
           "userDidUpvote": true
+        },
+        {
+          "id": 2,
+          "text": "How are electors for the electoral college chosen?",
+          "status": 3,
+          "bias": 0.4,
+          "summary": "By the people, for the people"
         }
       ],
     "answered_questions": [
@@ -59,12 +66,7 @@
         "id": 1,
         "text": "Is Donald Trump actually going to build a border wall?",
         "status": 0
-      },
-      {
-        "id": 2,
-        "text": "How are electors for the electoral college chosen?",
-        "status": 1
-      },
+      }
     ]
   }, {
     "id": 3,

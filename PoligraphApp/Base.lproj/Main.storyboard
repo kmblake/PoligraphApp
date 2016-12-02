@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -621,16 +621,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="20" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
                                             <rect key="frame" x="28" y="23" width="320" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="2fk-aN-8Xl"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A deal for nations to limit greenhouse gas emissions " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-y4-Wkx">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="A deal for nations to limit greenhouse gas emissions " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-y4-Wkx">
                                             <rect key="frame" x="28" y="53" width="320" height="13.5"/>
                                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -639,7 +636,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-VP-Mfg">
                                             <rect key="frame" x="28" y="76.5" width="319" height="200"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="Sso-Zh-ovU"/>
+                                                <constraint firstAttribute="height" constant="200" id="Nfx-GZ-PMg"/>
                                             </constraints>
                                         </imageView>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-Qf-5Ux">
@@ -651,10 +648,10 @@
                                         <constraint firstItem="fPs-y4-Wkx" firstAttribute="top" secondItem="afX-Zf-BMo" secondAttribute="bottom" constant="10" id="BTg-qO-Nkz"/>
                                         <constraint firstItem="afX-Zf-BMo" firstAttribute="top" secondItem="Sf3-kh-kkP" secondAttribute="topMargin" constant="15" id="G1L-cr-dhT"/>
                                         <constraint firstItem="afX-Zf-BMo" firstAttribute="leading" secondItem="fPs-y4-Wkx" secondAttribute="leading" id="O5O-pM-69U"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Reg-VP-Mfg" secondAttribute="trailing" constant="20" id="P3C-Vp-63S"/>
                                         <constraint firstItem="Reg-VP-Mfg" firstAttribute="leading" secondItem="Sf3-kh-kkP" secondAttribute="leadingMargin" constant="20" id="U5A-xM-b2b"/>
                                         <constraint firstItem="fPs-y4-Wkx" firstAttribute="centerX" secondItem="Reg-VP-Mfg" secondAttribute="centerX" id="XQV-am-Jy9"/>
                                         <constraint firstItem="afX-Zf-BMo" firstAttribute="trailing" secondItem="fPs-y4-Wkx" secondAttribute="trailing" id="ao5-RM-JFx"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Reg-VP-Mfg" secondAttribute="trailing" constant="20" id="kSF-kn-XLk"/>
                                         <constraint firstItem="2cj-Qf-5Ux" firstAttribute="centerX" secondItem="Reg-VP-Mfg" secondAttribute="centerX" id="kpH-zu-bjz"/>
                                         <constraint firstItem="afX-Zf-BMo" firstAttribute="leading" secondItem="Sf3-kh-kkP" secondAttribute="leadingMargin" constant="20" id="pbQ-lQ-KVy"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Reg-VP-Mfg" secondAttribute="bottom" constant="15" id="tQQ-7j-FMx"/>
@@ -675,7 +672,14 @@
                             <outlet property="delegate" destination="SUB-q4-gAW" id="h7C-6d-Fpp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Browse" id="Brc-t0-V3g"/>
+                    <navigationItem key="navigationItem" title="Browse" id="Brc-t0-V3g">
+                        <barButtonItem key="leftBarButtonItem" image="profile" id="k5X-ue-a61">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="information navbar" id="9Gh-ql-FU2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCD-f6-YGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -877,13 +881,15 @@
         <image name="Pen Icon Small" width="25" height="25"/>
         <image name="Review Small" width="25" height="25"/>
         <image name="good_question" width="25" height="25"/>
+        <image name="information navbar" width="22" height="22"/>
         <image name="information_white.png" width="256" height="256"/>
+        <image name="profile" width="22" height="22"/>
         <image name="social.png" width="256" height="256"/>
         <image name="social_white.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JEd-Aj-uVN"/>
-        <segue reference="P3L-WR-dRR"/>
+        <segue reference="hXV-TZ-QUF"/>
         <segue reference="ffp-vc-ZiW"/>
     </inferredMetricsTieBreakers>
 </document>
