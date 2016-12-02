@@ -37,7 +37,7 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     // MARK: Koloda View Delegate implementation
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        //koloda.dataSource.reset()
+        koloda.resetCurrentCardIndex()
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -51,18 +51,13 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let questionView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 21))
-        label.center = questionView.center
-        label.textAlignment = .center
-        label.text = "I'am a test label"
-        questionView.addSubview(label)
-        return questionView
+        //let questionFrame = CGRect(x: 0.0, y: 0.0, width: koloda.bounds.width * 0.8, height: koloda.bounds.height)
+        return QuestionCardView(frame: koloda.bounds, question: questions[index])
     }
     
-    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as? OverlayView
-    }
+//    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+//        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as? OverlayView
+//    }
 
     /*
     // MARK: - Navigation

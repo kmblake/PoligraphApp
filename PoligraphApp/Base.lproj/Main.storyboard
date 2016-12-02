@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -393,24 +393,26 @@
                         <viewControllerLayoutGuide type="top" id="F5U-fh-BWi"/>
                         <viewControllerLayoutGuide type="bottom" id="png-Xx-asw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cWk-d3-TGn" customClass="KolodaView" customModule="Koloda">
+                    <view key="view" contentMode="scaleToFill" id="cWk-d3-TGn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Answer View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-A7-T8n">
-                                <rect key="frame" x="83" y="312" width="208" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myE-Yd-GpC" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="55" y="116" width="264" height="264"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="myE-Yd-GpC" firstAttribute="top" secondItem="F5U-fh-BWi" secondAttribute="bottom" constant="52" id="EEb-bV-Df2"/>
+                            <constraint firstItem="png-Xx-asw" firstAttribute="top" secondItem="myE-Yd-GpC" secondAttribute="bottom" constant="238" id="XRR-cQ-KXy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="myE-Yd-GpC" secondAttribute="trailing" constant="40" id="fBQ-Lc-sT4"/>
+                            <constraint firstItem="myE-Yd-GpC" firstAttribute="leading" secondItem="cWk-d3-TGn" secondAttribute="leadingMargin" constant="39" id="tv9-3d-87T"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1MI-W1-CPt"/>
                     <connections>
-                        <outlet property="kolodaView" destination="cWk-d3-TGn" id="1Gt-bA-NTK"/>
+                        <outlet property="kolodaView" destination="myE-Yd-GpC" id="UDM-On-fpW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4v-ge-t9l" userLabel="First Responder" sceneMemberID="firstResponder"/>

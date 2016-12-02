@@ -37,6 +37,7 @@
 		65FEE3411DEFC78800C0DD0A /* YourQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE3401DEFC78800C0DD0A /* YourQuestionsTableViewCell.swift */; };
 		65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */; };
 		B10CAE341DEE6FB2005897F7 /* HelpContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */; };
+		B116093A1DF2259400BEC916 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11609391DF2259400BEC916 /* QuestionCardView.swift */; };
 		B118765B1DEE8C340040F7FB /* UnansweredQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118765A1DEE8C340040F7FB /* UnansweredQuestionViewController.swift */; };
 		B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1676A341DED359B00C43832 /* HelpPageViewController.swift */; };
 		B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */; };
@@ -96,6 +97,7 @@
 		65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseTableViewController.swift; sourceTree = "<group>"; };
 		96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoligraphApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpContentViewController.swift; sourceTree = "<group>"; };
+		B11609391DF2259400BEC916 /* QuestionCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		B118765A1DEE8C340040F7FB /* UnansweredQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnansweredQuestionViewController.swift; sourceTree = "<group>"; };
 		B1676A341DED359B00C43832 /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 		B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				65DD1E761DF204F100E337EB /* AnswerViewController.swift */,
+				B11609391DF2259400BEC916 /* QuestionCardView.swift */,
 			);
 			name = Answer;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				65FEE33F1DEFC27600C0DD0A /* AskTableViewController.swift in Sources */,
 				B118765B1DEE8C340040F7FB /* UnansweredQuestionViewController.swift in Sources */,
 				B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */,
+				B116093A1DF2259400BEC916 /* QuestionCardView.swift in Sources */,
 				B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */,
 				B17E90561DDEE2C300F89E2D /* Question+CoreDataClass.swift in Sources */,
 			);
