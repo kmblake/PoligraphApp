@@ -411,7 +411,7 @@
                                     <outlet property="questionTextLabel" destination="slg-vW-HNL" id="fmI-n4-UW4"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Submit Check" rowHeight="167" id="I40-gN-Qev">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Submit Check" rowHeight="167" id="I40-gN-Qev">
                                 <rect key="frame" x="0.0" y="72" width="375" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I40-gN-Qev" id="k79-vU-lK4">
@@ -889,7 +889,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JEd-Aj-uVN"/>
+        <segue reference="G94-Yy-Xbf"/>
         <segue reference="hXV-TZ-QUF"/>
-        <segue reference="ffp-vc-ZiW"/>
     </inferredMetricsTieBreakers>
 </document>
