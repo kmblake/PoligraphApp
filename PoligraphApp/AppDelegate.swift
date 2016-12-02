@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
         let navigationBarAppearance = UINavigationBar.appearance()
         
-        navigationBarAppearance.tintColor = uicolorFromHex(rgbValue: 0xffffff)
+        //navigationBarAppearance.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         navigationBarAppearance.barTintColor = UIColor.polyBlue()
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         UISearchBar.appearance().barTintColor = UIColor.polyBlue()
@@ -97,6 +98,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension UIColor {
     static func polyBlue() -> UIColor {
         return UIColor(red: 45.0/255.0, green: 156.0/255.0, blue: 219.0/255.0, alpha: 1.0)
+    }
+}
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
     }
 }
 

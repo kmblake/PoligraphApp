@@ -41,11 +41,12 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
     // MARK: UI Search Controller Delegate
     
     func willPresentSearchController(_ searchController: UISearchController) {
-        self.title = "Ask"
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     func willDismissSearchController(_ searchController: UISearchController) {
-        self.title = "Your Questions"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // MARK: - UI Search Bar Delegate

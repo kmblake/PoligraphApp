@@ -23,7 +23,6 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         questionSearchController.searchBar.delegate = self
         questionSearchController.delegate = self
         
@@ -55,11 +54,11 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
     // MARK: UI Search Controller Delegate
     
     func willPresentSearchController(_ searchController: UISearchController) {
-        self.title = "Ask"
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func willDismissSearchController(_ searchController: UISearchController) {
-        self.title = "Browse"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // MARK: - Ask Toolbar Management
