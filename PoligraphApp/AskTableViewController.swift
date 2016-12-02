@@ -27,6 +27,7 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
         }
         definesPresentationContext = true
 
+        tableView.tableHeaderView = questionSearchController.searchBar
         
         if let userQuestions = Question.loadUnansweredQuestions(
             forUser: User.currentUser(inManagedObjectContext: moc)!,
@@ -173,13 +174,13 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return questionSearchController.searchBar.bounds.height
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return questionSearchController.searchBar
-    }
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return questionSearchController.searchBar.bounds.height
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return questionSearchController.searchBar
+//    }
 
     // MARK: - Navigation
     
