@@ -35,6 +35,11 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
         definesPresentationContext = true
         
+//        let navView = UIView()
+//        navView.bounds = questionSearchController.searchBar.bounds
+//        navView.addSubview(questionSearchController.searchBar)
+//        tableView.tableHeaderView = navView
+        tableView.tableHeaderView = questionSearchController.searchBar
         
         
         if let newQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.reviewed, inManagedObjectContext: moc) {
@@ -51,10 +56,30 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
         
     }
     
+    
+//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if let wrapperView = questionSearchController.searchBar.superview {
+//            var rect = wrapperView.frame
+//            rect.origin.y = max(0, scrollView.contentOffset.y)
+//            let searchBar = questionSearchController.searchBar
+//            searchBar.frame = rect
+//            let newHeight = searchBar.frame.maxY
+//            wrapperView.bounds = CGRect(x: 0.0, y: 0.0, width: wrapperView.bounds.width, height: newHeight)
+//            print(searchBar.frame)
+//            print(wrapperView.bounds)
+//            if (!wrapperView.bounds.intersection(searchBar.frame).equalTo(searchBar.frame))
+//            {
+//                print("Search Bar partially out of bounds")
+//            }
+//        }
+//    }
+    
+    
     // MARK: UI Search Controller Delegate
     
     func willPresentSearchController(_ searchController: UISearchController) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
     
     func willDismissSearchController(_ searchController: UISearchController) {
@@ -143,13 +168,13 @@ class BrowseTableViewController: UITableViewController, UISearchBarDelegate, UIS
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return questionSearchController.searchBar.bounds.height
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return questionSearchController.searchBar
-    }
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return questionSearchController.searchBar.bounds.height
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return questionSearchController.searchBar
+//    }
     
     // Mark: - UISearchBarDelegate
     
