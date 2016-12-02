@@ -29,11 +29,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,7 +80,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     
     func updateSearchResults(for searchController: UISearchController) {
         let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
-        //TODO: all questions or reviewed questions?
         let questions = Question.searchQuestions(withStatus: nil, text: searchController.searchBar.text!, inManagedObjectContext: moc)
         if let searchResultsTVC = searchController.searchResultsController as? SearchResultsTableViewController {
             searchResultsTVC.questions = questions

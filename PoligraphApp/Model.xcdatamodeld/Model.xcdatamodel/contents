@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Question" representedClassName=".Question" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="biasRating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -9,6 +9,7 @@
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="upvotes" optional="YES" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userDidUpvote" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="answerer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="answeredQuestions" inverseEntity="User" syncable="YES"/>
         <relationship name="asker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="askedQuestions" inverseEntity="User" syncable="YES"/>
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="question" inverseEntity="Review" syncable="YES"/>
@@ -33,7 +34,7 @@
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewer" inverseEntity="Review" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Question" positionX="-8487" positionY="-2971" width="128" height="210"/>
+        <element name="Question" positionX="-8487" positionY="-2971" width="128" height="223"/>
         <element name="Review" positionX="-8300" positionY="-2691" width="128" height="133"/>
         <element name="User" positionX="-8282" positionY="-2935" width="128" height="178"/>
     </elements>

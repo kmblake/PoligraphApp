@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  PoligraphApp
 //
-//  Created by Kent Blake on 11/21/16.
+//  Created by Kent Blake on 11/30/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
@@ -20,8 +20,8 @@ extension User {
     @NSManaged public var credentials: String?
     @NSManaged public var firstName: String?
     @NSManaged public var id: Int32
-    @NSManaged public var lastName: String?
     @NSManaged public var image: String?
+    @NSManaged public var lastName: String?
     @NSManaged public var answeredQuestions: NSSet?
     @NSManaged public var askedQuestions: NSSet?
     @NSManaged public var reviews: NSSet?
