@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteAnswerViewController: UIViewController {
+class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     
     
     // MARK: - Outlets
@@ -18,6 +18,8 @@ class WriteAnswerViewController: UIViewController {
     @IBOutlet weak var answerTextView: UITextView!
     @IBOutlet weak var answerBoxHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var summaryTextView: UITextView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var summaryHeightConstraint: NSLayoutConstraint!
     
     var question: Question? {
         didSet {
@@ -25,7 +27,9 @@ class WriteAnswerViewController: UIViewController {
         }
     }
     
-
+    var keyboardHeight: CGFloat?
+    
+    let characterLimit = 140
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,18 @@ class WriteAnswerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: Notification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
         
+        summaryTextView.delegate = self
+        summaryTextView.clearsOnInsertion = true
+        answerTextView.delegate = self
+        answerTextView.clearsOnInsertion = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.numberOfTapsRequired = 1
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
         updateUI()
         // Do any additional setup after loading the view.
     }
@@ -54,7 +70,6 @@ class WriteAnswerViewController: UIViewController {
         }
         UIApplication.shared.statusBarStyle = .lightContent
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
-
     }
 
     func updateUI() {
@@ -65,18 +80,57 @@ class WriteAnswerViewController: UIViewController {
     
     func keyboardDidShow(notification: NSNotification) {
         if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let keyboardHeight = keyboardFrame.height
-            UIView.animate(withDuration: 0.1, animations: { () -> Void in
-              //  self.bottomConstraint.constant = keyboardFrame.size.height + 20
-            })
+            keyboardHeight = keyboardFrame.height
+            bottomConstraint.constant = keyboardHeight! + 20
         }
 
     }
     
     func keyboardDidHide() {
-        
+        bottomConstraint.constant = 0.0
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
+    
+    // MARK: - UI Text View Delegate Implementation
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.characters.count
+        return numberOfChars <= characterLimit
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView == summaryTextView {
+            let characterCount = textView.text.characters.count
+            if characterCount < characterLimit {
+                summaryCharacterCountLabel.text = String(characterCount) + " / 140"
+                summaryCharacterCountLabel.textColor = UIColor.black
+            } else {
+                summaryCharacterCountLabel.text = "Character Limit"
+                summaryCharacterCountLabel.textColor = UIColor.red
+            }
+            summaryHeightConstraint.constant = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
+        } else if textView == answerTextView {
+            answerBoxHeightConstraint.constant = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
+            if let cursorLocation = textView.selectedTextRange {
+                if cursorLocation.end == textView.endOfDocument {
+                    if let scrollView = self.view.subviews.first as? UIScrollView {
+                        let keyboardHeight = self.keyboardHeight ?? 200.0
+                        let offset = CGPoint(x: textView.frame.origin.x, y: textView.frame.maxY - keyboardHeight - 50.0)
+                        scrollView.setContentOffset(offset, animated: true)
+                    }
+                }
+            }
+
+
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
