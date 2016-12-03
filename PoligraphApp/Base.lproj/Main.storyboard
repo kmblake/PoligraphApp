@@ -461,7 +461,7 @@
         <!--Your Answers-->
         <scene sceneID="Yba-Yc-Fzf">
             <objects>
-                <tableViewController title="Your Answers" id="8a5-Mm-xfx" customClass="YourAnswersTableViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Your Answers" title="Your Answers" id="8a5-Mm-xfx" customClass="YourAnswersTableViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cYB-EP-TbO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -662,7 +662,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Write Answer" id="PmU-Cs-SEm">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="Pn6-fA-G7v"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="Pn6-fA-G7v">
+                            <connections>
+                                <action selector="submitButton:" destination="Woi-Mi-bea" id="38y-xw-iYo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="answerBoxHeightConstraint" destination="La3-u6-WJu" id="0Kv-ry-oeC"/>
@@ -673,6 +677,7 @@
                         <outlet property="summaryCharacterCountLabel" destination="9Kr-el-TLJ" id="eme-We-8hr"/>
                         <outlet property="summaryHeightConstraint" destination="YCw-lc-8bX" id="rKn-gr-sa7"/>
                         <outlet property="summaryTextView" destination="zv1-Xt-8Lc" id="09R-qV-GJh"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="Show Your Answers" id="TO2-oQ-UmT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwY-OB-val" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1268,8 +1273,8 @@
         <image name="social.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0fG-fQ-U31"/>
-        <segue reference="JEd-Aj-uVN"/>
+        <segue reference="TO2-oQ-UmT"/>
         <segue reference="VPv-fp-MbI"/>
+        <segue reference="0fG-fQ-U31"/>
     </inferredMetricsTieBreakers>
 </document>
