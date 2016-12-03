@@ -70,6 +70,16 @@
         "id": 1,
         "text": "Is Donald Trump actually going to build a border wall?",
         "status": 0
+      },
+      {
+        "id": 2,
+        "text": "How do I register to vote?",
+        "status": 0
+      },
+      {
+        "id": 3,
+        "text": "Why were the presidential polls so wrong?",
+        "status": 0
       }
     ]
   }, {
