@@ -57,10 +57,29 @@ public class Question: NSManagedObject {
         return nil
     }
     
-    class func loadUnansweredQuestions(forUser user: User, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
+    class func loadQuestions(withStatus status: Question.StatusTypes, excludingUser user: User, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
+        request.predicate = NSPredicate(format: "status == %i AND asker.id != %i", status.rawValue, user.id) //TODO: Correctly formed?
+        
+        if let questions = (try? context.fetch(request)) as? [Question] {
+            return questions
+        }
+        return nil
+    }
+    
+    class func loadUnansweredQuestions(forUser user: User) -> [Question]? {
         if let userQuestions = user.askedQuestions {
             if let questionsArray = Array(userQuestions) as?  [Question] {
                 //TODO: Optionally sort these by status
+                return questionsArray
+            }
+        }
+        return nil
+    }
+    
+    class func loadAnsweredQuestions(forUser user: User) -> [Question]? {
+        if let answeredQuestions = user.answeredQuestions {
+            if let questionsArray = Array(answeredQuestions) as? [Question] {
                 return questionsArray
             }
         }

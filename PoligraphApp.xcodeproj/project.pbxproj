@@ -23,7 +23,6 @@
 		657DAB5A1DE531C800F4AEDE /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAB591DE531C800F4AEDE /* SearchResultsTableViewController.swift */; };
 		657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */; };
 		65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C61DD962980058F6C8 /* AppDelegate.swift */; };
-		65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C81DD962980058F6C8 /* BrowseViewController.swift */; };
 		65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CC1DD962980058F6C8 /* Main.storyboard */; };
 		65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CF1DD962980058F6C8 /* Assets.xcassets */; };
 		65B229D31DD962980058F6C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B229D11DD962980058F6C8 /* LaunchScreen.storyboard */; };
@@ -38,6 +37,9 @@
 		65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */; };
 		B10CAE341DEE6FB2005897F7 /* HelpContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */; };
 		B116093A1DF2259400BEC916 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11609391DF2259400BEC916 /* QuestionCardView.swift */; };
+		B116093C1DF249AC00BEC916 /* YourAnswersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116093B1DF249AC00BEC916 /* YourAnswersTableViewController.swift */; };
+		B116093E1DF24D4900BEC916 /* YourAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116093D1DF24D4900BEC916 /* YourAnswerTableViewCell.swift */; };
+		B11609401DF261A500BEC916 /* WriteAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116093F1DF261A500BEC916 /* WriteAnswerViewController.swift */; };
 		B118765B1DEE8C340040F7FB /* UnansweredQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118765A1DEE8C340040F7FB /* UnansweredQuestionViewController.swift */; };
 		B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1676A341DED359B00C43832 /* HelpPageViewController.swift */; };
 		B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */; };
@@ -79,7 +81,6 @@
 		657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		65B229C31DD962980058F6C8 /* PoligraphApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoligraphApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B229C61DD962980058F6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65B229C81DD962980058F6C8 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		65B229CD1DD962980058F6C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65B229CF1DD962980058F6C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65B229D21DD962980058F6C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +99,9 @@
 		96971037BB229BC313336F4A /* Pods_PoligraphApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoligraphApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10CAE331DEE6FB2005897F7 /* HelpContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpContentViewController.swift; sourceTree = "<group>"; };
 		B11609391DF2259400BEC916 /* QuestionCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
+		B116093B1DF249AC00BEC916 /* YourAnswersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourAnswersTableViewController.swift; sourceTree = "<group>"; };
+		B116093D1DF24D4900BEC916 /* YourAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		B116093F1DF261A500BEC916 /* WriteAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteAnswerViewController.swift; sourceTree = "<group>"; };
 		B118765A1DEE8C340040F7FB /* UnansweredQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnansweredQuestionViewController.swift; sourceTree = "<group>"; };
 		B1676A341DED359B00C43832 /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 		B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -201,7 +205,6 @@
 				65B229CC1DD962980058F6C8 /* Main.storyboard */,
 				B1676A361DED35A300C43832 /* Help */,
 				65307FF81DE390E200713051 /* UIBiasBar.swift */,
-				65B229C81DD962980058F6C8 /* BrowseViewController.swift */,
 				65B229CF1DD962980058F6C8 /* Assets.xcassets */,
 				65B229D11DD962980058F6C8 /* LaunchScreen.storyboard */,
 				65B229D41DD962980058F6C8 /* Info.plist */,
@@ -253,6 +256,9 @@
 			isa = PBXGroup;
 			children = (
 				65DD1E761DF204F100E337EB /* AnswerViewController.swift */,
+				B116093F1DF261A500BEC916 /* WriteAnswerViewController.swift */,
+				B116093B1DF249AC00BEC916 /* YourAnswersTableViewController.swift */,
+				B116093D1DF24D4900BEC916 /* YourAnswerTableViewCell.swift */,
 				B11609391DF2259400BEC916 /* QuestionCardView.swift */,
 			);
 			name = Answer;
@@ -502,8 +508,8 @@
 				B17E90571DDEE2C300F89E2D /* Question+CoreDataProperties.swift in Sources */,
 				65307FF71DE3370B00713051 /* AnsweredQuestionViewController.swift in Sources */,
 				65B229EB1DD967960058F6C8 /* ReviewViewController.swift in Sources */,
+				B116093C1DF249AC00BEC916 /* YourAnswersTableViewController.swift in Sources */,
 				65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */,
-				65B229C91DD962980058F6C8 /* BrowseViewController.swift in Sources */,
 				65DD1E771DF204F100E337EB /* AnswerViewController.swift in Sources */,
 				65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */,
 				65307FF91DE390E200713051 /* UIBiasBar.swift in Sources */,
@@ -512,7 +518,9 @@
 				B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */,
 				B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */,
 				65FEE33F1DEFC27600C0DD0A /* AskTableViewController.swift in Sources */,
+				B116093E1DF24D4900BEC916 /* YourAnswerTableViewCell.swift in Sources */,
 				B118765B1DEE8C340040F7FB /* UnansweredQuestionViewController.swift in Sources */,
+				B11609401DF261A500BEC916 /* WriteAnswerViewController.swift in Sources */,
 				B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */,
 				B116093A1DF2259400BEC916 /* QuestionCardView.swift in Sources */,
 				B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */,

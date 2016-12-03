@@ -12,7 +12,7 @@ import Koloda
 class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
     
     @IBOutlet var kolodaView: KolodaView!
-
+    
     var questions = [Question]() {
         didSet {
             kolodaView.reloadData()
@@ -21,17 +21,24 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     
     let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
     
+    private struct Storyboard {
+        static let ShowAnswersSegue = "Show Your Answers"
+        static let ChooseQuestionSegueIdentifier = "Choose Question"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
-        if let unansweredQuestions = Question.loadQuestions(withStatus: Question.StatusTypes.asked, inManagedObjectContext: moc) {
+        if let unansweredQuestions = Question.loadQuestions(
+            withStatus: Question.StatusTypes.asked,
+            excludingUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!,
+            inManagedObjectContext: moc) {
             questions = unansweredQuestions
         }
-        
-        // Do any additional setup after loading the view.
+
     }
     
     // MARK: Koloda View Delegate implementation
@@ -59,14 +66,16 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
 //        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as? OverlayView
 //    }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier! == Storyboard.ChooseQuestionSegueIdentifier {
+            if let writeAnswerVC = segue.destination as? WriteAnswerViewController {
+                let question = questions[kolodaView.currentCardIndex]
+                writeAnswerVC.question = question
+            }
+        }
     }
-    */
 
 }

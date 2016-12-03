@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var currentUser: User?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
@@ -23,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.isTranslucent = false
         navigationBarAppearance.barTintColor = UIColor.polyBlue()
+        navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         
         UISearchBar.appearance().barTintColor = UIColor.polyBlue()
@@ -31,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         fetchLocalItems(errorPrint)
         Question.printAllQuestions(inManagedObjectContext: self.dataStack.mainContext)
+        currentUser = User.currentUser(inManagedObjectContext: dataStack.mainContext)
         return true
     }
 
