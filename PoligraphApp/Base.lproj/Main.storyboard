@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -258,7 +258,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1a3-G4-a1B" id="fIB-c6-fvY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2O-T6-Rfz">
@@ -318,11 +318,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i1a-iM-Yv1" id="YS1-Wo-7rx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="slg-vW-HNL">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -338,7 +338,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I40-gN-Qev" id="k79-vU-lK4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark Small" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-Wz-esv">
@@ -445,6 +445,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Question" id="1MI-W1-CPt">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="25V-eS-3yA"/>
                         <barButtonItem key="rightBarButtonItem" image="reload" id="7CY-Ef-4vZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -470,7 +471,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="58N-mv-78E" id="ckI-Lg-q1F">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Question Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWf-wj-LAn">
@@ -560,7 +561,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Answer Summary" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv1-Xt-8Lc">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Answer Summary" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv1-Xt-8Lc">
                                                 <rect key="frame" x="0.0" y="52" width="343" height="69"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -585,7 +586,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your Answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-Yf-oPh">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Your Answer" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-Yf-oPh">
                                                 <rect key="frame" x="0.0" y="302" width="343" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -661,9 +662,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Write Answer" id="PmU-Cs-SEm">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="5tX-GS-1Dk"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="Pn6-fA-G7v"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="Pn6-fA-G7v"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerBoxHeightConstraint" destination="La3-u6-WJu" id="0Kv-ry-oeC"/>
+                        <outlet property="answerImageView" destination="z1f-Yk-fUI" id="IJ6-Ot-UKQ"/>
+                        <outlet property="answerTextView" destination="m3s-Yf-oPh" id="Yof-2R-oow"/>
+                        <outlet property="questionTextLabel" destination="fEw-lh-vH4" id="sM5-2B-C4L"/>
+                        <outlet property="summaryCharacterCountLabel" destination="9Kr-el-TLJ" id="eme-We-8hr"/>
+                        <outlet property="summaryTextView" destination="zv1-Xt-8Lc" id="09R-qV-GJh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwY-OB-val" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -823,7 +831,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNo-rw-XK6" id="Sf3-kh-kkP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="20" text="What is the Paris Agreement?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afX-Zf-BMo">
@@ -1258,8 +1266,8 @@
         <image name="social.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JEd-Aj-uVN"/>
         <segue reference="0fG-fQ-U31"/>
+        <segue reference="JEd-Aj-uVN"/>
         <segue reference="VPv-fp-MbI"/>
     </inferredMetricsTieBreakers>
 </document>

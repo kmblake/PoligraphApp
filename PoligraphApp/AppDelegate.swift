@@ -22,11 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
         
-        let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.isTranslucent = false
-        navigationBarAppearance.barTintColor = UIColor.polyBlue()
-        navigationBarAppearance.tintColor = UIColor.white
-        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        setNavigationBarDefaultAppearance()
         
         UISearchBar.appearance().barTintColor = UIColor.polyBlue()
         UISearchBar.appearance().tintColor = UIColor.white
@@ -96,6 +92,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let blue = CGFloat(rgbValue & 0xFF)/256.0
         
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
+    
+    func setNavigationBarDefaultAppearance() {
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.isTranslucent = false
+        navigationBarAppearance.barTintColor = UIColor.polyBlue()
+        navigationBarAppearance.tintColor = UIColor.white
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
     }
     
 }
