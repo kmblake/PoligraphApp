@@ -20,24 +20,15 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var summaryTextView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var summaryHeightConstraint: NSLayoutConstraint!
-    
-    private struct Storyboard {
-        static let ShowAnswersSegueIdentifer = "Show Your Answers"
-    }
-    
-    var question: Question? {
-        didSet {
-            updateUI()
-        }
-    }
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var submitButtonOutlet: UIBarButtonItem!
     
     @IBAction func submitButton(_ sender: UIBarButtonItem) {
-        let submitAnswerController = UIAlertController(title: "Submit Answer", message: "Are you sure you're ready to submit?", preferredStyle: .alert)
+        let submitAnswerController = UIAlertController(title: "Submit Answer", message: "Are you sure you're ready to submit?", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             //TODO: Add action
         }
         let submitAction = UIAlertAction(title: "Yes", style: .default) { (action) in
-            //TODO: Enforce content
             if let question = self.question {
                 question.answer = self.answerTextView.text
                 question.summary = self.summaryTextView.text
@@ -52,6 +43,30 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         submitAnswerController.addAction(submitAction)
         self.present(submitAnswerController, animated: true, completion: nil)
     }
+    
+    @IBAction func addImageButton(_ sender: UIButton) {
+        imageURL = "https://quote.com/blog/wp-content/uploads/2016/06/american-flag.jpg"
+    }
+    
+    private struct Storyboard {
+        static let ShowAnswersSegueIdentifer = "Show Your Answers"
+        static let SummaryPlaceholderText = "Answer Summary"
+        static let AnswerPlaceholderText = "Your Answer"
+    }
+    
+    var question: Question? {
+        didSet {
+            updateUI()
+            
+        }
+    }
+    
+    private var imageURL: String? {
+        didSet {
+            setImage()
+        }
+    }
+    
     var keyboardHeight: CGFloat?
     
     let characterLimit = 140
@@ -72,6 +87,8 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         
         summaryTextView.delegate = self
         answerTextView.delegate = self
+        
+        submitButtonOutlet.isEnabled = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.numberOfTapsRequired = 1
@@ -96,6 +113,42 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
             questionTextLabel?.text = question.text!
         }
     }
+    
+    private func checkSubmitConditions() {
+        if !summaryTextView.text.isEmpty && !answerTextView.text.isEmpty && imageURL != nil {
+            if summaryTextView.text != Storyboard.SummaryPlaceholderText  && answerTextView.text != Storyboard.AnswerPlaceholderText {
+                submitButtonOutlet.isEnabled = true
+                return
+            }
+        }
+        submitButtonOutlet.isEnabled = false
+    }
+    
+    private func setImage() {
+        if let imageURL = self.imageURL {
+            if let url = URL(string: imageURL) {
+                checkSubmitConditions()
+                spinner.startAnimating()
+                DispatchQueue.global(qos: .background).async {
+                    if let answerImageData = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async {
+                            self.spinner.stopAnimating()
+                            if imageURL == self.imageURL {
+                                self.answerImageView.image = UIImage(data: answerImageData)
+                            } else {
+                                print("Ignoring data returned from URL \(imageURL)")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+
+
+    }
+    
+    // MARK: - Keyboard Notification Functions
     
     func keyboardDidShow(notification: NSNotification) {
         if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -126,6 +179,7 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
+        checkSubmitConditions()
         if textView == summaryTextView {
             let characterCount = textView.text.characters.count
             if characterCount < characterLimit {
@@ -152,7 +206,6 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         }
         
     }
-    
 
     // MARK: - Navigation
 

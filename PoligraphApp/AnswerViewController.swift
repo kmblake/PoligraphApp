@@ -13,6 +13,18 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     
     @IBOutlet var kolodaView: KolodaView!
     
+    @IBAction func nextButton(_ sender: UIButton) {
+        kolodaView.swipe(.left)
+    }
+    
+    @IBAction func selectButton(_ sender: UIButton) {
+        kolodaView.swipe(.right)
+    }
+    
+    @IBAction func undoButton(_ sender: UIBarButtonItem) {
+        kolodaView.revertAction()
+    }
+    
     var questions = [Question]() {
         didSet {
             kolodaView.reloadData()
@@ -47,8 +59,14 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
         koloda.resetCurrentCardIndex()
     }
     
-    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        //TODO implement
+//    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+//        //TODO implement
+//    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction == .right {
+            self.performSegue(withIdentifier: Storyboard.ChooseQuestionSegueIdentifier, sender: questions[index])
+        }
     }
     
     // MARK: Koloda View Data Source implementation
@@ -58,7 +76,6 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        //let questionFrame = CGRect(x: 0.0, y: 0.0, width: koloda.bounds.width * 0.8, height: koloda.bounds.height)
         return QuestionCardView(frame: koloda.bounds, question: questions[index])
     }
     
@@ -72,8 +89,9 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == Storyboard.ChooseQuestionSegueIdentifier {
             if let writeAnswerVC = segue.destination as? WriteAnswerViewController {
-                let question = questions[kolodaView.currentCardIndex]
-                writeAnswerVC.question = question
+                if let question = sender as? Question {
+                    writeAnswerVC.question = question
+                }
             }
         }
     }

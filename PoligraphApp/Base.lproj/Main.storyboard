@@ -415,7 +415,7 @@
                                 </constraints>
                                 <state key="normal" title="Select"/>
                                 <connections>
-                                    <segue destination="Woi-Mi-bea" kind="show" identifier="Choose Question" id="Huh-1f-DoR"/>
+                                    <action selector="selectButton:" destination="r30-T8-Ret" eventType="touchUpInside" id="Obj-jL-k1S"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouT-ni-i8l">
@@ -424,6 +424,9 @@
                                     <constraint firstAttribute="width" constant="46" id="k6s-qj-kzh"/>
                                 </constraints>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="r30-T8-Ret" eventType="touchUpInside" id="3SS-k7-R4e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -448,10 +451,14 @@
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="25V-eS-3yA"/>
                         <barButtonItem key="rightBarButtonItem" image="reload" id="7CY-Ef-4vZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="undoButton:" destination="r30-T8-Ret" id="VwI-7G-q6X"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="kolodaView" destination="myE-Yd-GpC" id="UDM-On-fpW"/>
+                        <segue destination="Woi-Mi-bea" kind="show" identifier="Choose Question" id="HIM-26-hEY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4v-ge-t9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -575,6 +582,9 @@
                                                 <rect key="frame" x="100" y="121" width="243" height="30"/>
                                                 <color key="backgroundColor" red="0.88393897239999997" green="0.88393897239999997" blue="0.88393897239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Add Image"/>
+                                                <connections>
+                                                    <action selector="addImageButton:" destination="Woi-Mi-bea" eventType="touchUpInside" id="Ntf-3m-gsf"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-IM-4b4" userLabel="Divider">
                                                 <rect key="frame" x="0.0" y="301" width="343" height="1"/>
@@ -612,15 +622,20 @@
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CT4-vo-MJZ">
+                                                <rect key="frame" x="161" y="216" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="9Kr-el-TLJ" firstAttribute="top" secondItem="zv1-Xt-8Lc" secondAttribute="bottom" id="1Ro-Xb-jl0"/>
+                                            <constraint firstItem="CT4-vo-MJZ" firstAttribute="centerX" secondItem="z1f-Yk-fUI" secondAttribute="centerX" id="1uR-Cq-pKh"/>
                                             <constraint firstItem="9Kr-el-TLJ" firstAttribute="height" secondItem="9Bu-oK-UfH" secondAttribute="height" id="3HT-gA-sGI"/>
                                             <constraint firstItem="z1f-Yk-fUI" firstAttribute="top" secondItem="9Kr-el-TLJ" secondAttribute="bottom" id="3uT-Ne-5eI"/>
                                             <constraint firstAttribute="trailing" secondItem="m3s-Yf-oPh" secondAttribute="trailing" id="48N-zz-dCm"/>
                                             <constraint firstAttribute="trailing" secondItem="DEN-9E-vDj" secondAttribute="trailing" constant="20" id="4mg-Dt-N6E"/>
                                             <constraint firstItem="zv1-Xt-8Lc" firstAttribute="top" secondItem="DEN-9E-vDj" secondAttribute="bottom" constant="10" id="52r-OO-IIu"/>
+                                            <constraint firstItem="CT4-vo-MJZ" firstAttribute="centerY" secondItem="z1f-Yk-fUI" secondAttribute="centerY" id="9TA-IB-uMS"/>
                                             <constraint firstAttribute="trailing" secondItem="XRM-IM-4b4" secondAttribute="trailing" id="9n9-sz-e9I"/>
                                             <constraint firstItem="9Bu-oK-UfH" firstAttribute="top" secondItem="zv1-Xt-8Lc" secondAttribute="bottom" id="AzT-7V-Lvx"/>
                                             <constraint firstItem="9Kr-el-TLJ" firstAttribute="leading" secondItem="7sp-AG-EsE" secondAttribute="leading" id="B2m-BE-JnI"/>
@@ -674,6 +689,8 @@
                         <outlet property="answerTextView" destination="m3s-Yf-oPh" id="Yof-2R-oow"/>
                         <outlet property="bottomConstraint" destination="WwO-NW-RBh" id="FJk-9Z-DPN"/>
                         <outlet property="questionTextLabel" destination="fEw-lh-vH4" id="sM5-2B-C4L"/>
+                        <outlet property="spinner" destination="CT4-vo-MJZ" id="4jn-in-7pD"/>
+                        <outlet property="submitButtonOutlet" destination="Pn6-fA-G7v" id="ehv-77-E48"/>
                         <outlet property="summaryCharacterCountLabel" destination="9Kr-el-TLJ" id="eme-We-8hr"/>
                         <outlet property="summaryHeightConstraint" destination="YCw-lc-8bX" id="rKn-gr-sa7"/>
                         <outlet property="summaryTextView" destination="zv1-Xt-8Lc" id="09R-qV-GJh"/>
