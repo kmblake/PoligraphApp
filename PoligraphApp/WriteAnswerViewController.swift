@@ -172,6 +172,18 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - UI Text View Delegate Implementation
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView == summaryTextView {
+            if textView.text == Storyboard.SummaryPlaceholderText {
+                textView.text = ""
+            }
+        } else if textView == answerTextView {
+            if textView.text == Storyboard.AnswerPlaceholderText {
+                textView.text = ""
+            }
+        }
+    }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView == summaryTextView {
             let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
