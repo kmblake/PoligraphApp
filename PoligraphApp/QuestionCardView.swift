@@ -15,6 +15,8 @@ class QuestionCardView: UIView {
         super.init(frame: frame)
         addLabel(question: question)
         //TODO: Rounded Edges
+        self.layer.cornerRadius = 30
+        
         self.layer.borderWidth = 6
         self.backgroundColor = UIColor.white
     }
@@ -39,6 +41,7 @@ class QuestionCardView: UIView {
         let label = UILabel(frame: labelFrame)
         label.center = self.center
         label.textAlignment = .center
+        label.font = UIFont(name: "Optima", size: 17)
         label.text = question.text!
         label.numberOfLines = 0
         self.addSubview(label)

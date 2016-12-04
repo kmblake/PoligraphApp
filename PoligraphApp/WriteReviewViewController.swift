@@ -45,7 +45,8 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
                     reviewer: user,
                     inManagedObjectContext: self.moc)
             }
-            //TODO: Check if this adds the user as the a question reviwer
+            self.performSegue(withIdentifier: Storyboard.ShowYourReviewsSegue, sender: sender)
+            //TODO: Check if this adds the user as the a question reviewer
         }
         submitAnswerController.addAction(cancelAction)
         submitAnswerController.addAction(submitAction)
@@ -62,6 +63,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
     
     private struct Storyboard {
         static let ShowAnswerPreviewSegue = "Show Answer Preview"
+        static let ShowYourReviewsSegue = "Show Your Reviews"
         static let feedbackPlaceholderText = "Feedback"
         static let recommendationLabelPlaceholderText = "Not Set"
     }
@@ -144,7 +146,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
         view.endEditing(true)
     }
     
-    
     // MARK: - Text View Delegate Implementation
     
     func textViewDidChange(_ textView: UITextView) {
@@ -186,6 +187,16 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
                 answeredQuestionVC.previewMode = true
                 if let question = self.question {
                     answeredQuestionVC.question = question
+                }
+            }
+        }
+        if segue.identifier! == Storyboard.ShowYourReviewsSegue {
+            if let tabBarController = segue.destination as? UITabBarController {
+                tabBarController.selectedIndex = 3
+                if let navController = tabBarController.selectedViewController as? UINavigationController {
+                    if let reviewTVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Your Reviews") as? YourReviewsTableViewController {
+                        navController.pushViewController(reviewTVC, animated: false)
+                    }
                 }
             }
         }

@@ -59,7 +59,13 @@ public class Question: NSManagedObject {
     
     class func loadQuestions(withStatus status: Question.StatusTypes, excludingUser user: User, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
-        request.predicate = NSPredicate(format: "status == %i AND asker.id != %i", status.rawValue, user.id) //TODO: Correctly formed?
+        if status == StatusTypes.asked {
+            request.predicate = NSPredicate(format: "status == %i AND asker.id != %i", status.rawValue, user.id)
+        } else if status == StatusTypes.answered {
+            request.predicate = NSPredicate(format: "status == %i AND asker.id != %i AND answerer.id != %i", status.rawValue, user.id, user.id)
+        } else {
+            request.predicate = NSPredicate(format: "status == %i", status.rawValue)
+        }
         
         if let questions = (try? context.fetch(request)) as? [Question] {
             return questions
@@ -92,7 +98,6 @@ public class Question: NSManagedObject {
             if let reviewArray = Array(reviews) as? [Review] {
                 print("Loaded \(reviewArray.count) reviewed questions")
                 for review in reviewArray {
-                    print("cast succesful")
                     reviewedQuestions.append(review.question!)
                 }
             }

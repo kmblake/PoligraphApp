@@ -1271,6 +1271,7 @@
                         <outlet property="recommendationLabel" destination="CvQ-Pi-xvW" id="Ehl-E1-Z0x"/>
                         <outlet property="recommendationPickerView" destination="DD4-Yc-XVM" id="2lD-b4-iAr"/>
                         <outlet property="submitButtonOutlet" destination="r1t-ti-yF8" id="2WL-dJ-eE4"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="Show Your Reviews" id="xQ5-oa-gdI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qce-E1-Wb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1459,7 +1460,7 @@
         <image name="social.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TO2-oQ-UmT"/>
+        <segue reference="xQ5-oa-gdI"/>
         <segue reference="inW-hb-zqe"/>
         <segue reference="9G4-6o-f6B"/>
     </inferredMetricsTieBreakers>

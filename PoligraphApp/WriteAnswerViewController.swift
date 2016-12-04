@@ -213,7 +213,6 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier! == Storyboard.ShowAnswersSegueIdentifer {
             if let tabBarController = segue.destination as? UITabBarController {
                 tabBarController.selectedIndex = 2
