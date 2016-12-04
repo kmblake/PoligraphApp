@@ -21,5 +21,10 @@ class UIBiasBar: UISlider {
     override func trackRect(forBounds: CGRect) -> CGRect {
         return CGRect (x: 0, y: 0, width: bounds.size.width, height: 4)
     }
+    
+    func colorUnset() {
+        self.minimumTrackTintColor = UIColor.lightGray
+        self.maximumTrackTintColor = UIColor.lightGray
+    }
 
 }

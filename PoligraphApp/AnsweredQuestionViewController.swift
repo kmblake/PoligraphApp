@@ -21,8 +21,9 @@ class AnsweredQuestionViewController: UIViewController {
     @IBOutlet weak var answerImage: UIImageView!
     @IBOutlet weak var answerSummary: UILabel!
     @IBOutlet weak var answerText: UILabel!
-    @IBOutlet weak var answerBiasSlider: UISlider!
+    @IBOutlet weak var answerBiasSlider: UIBiasBar!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var reportAnswerOutlet: UIButton!
     
     
     //TODO: Add a dismiss button
@@ -50,10 +51,12 @@ class AnsweredQuestionViewController: UIViewController {
         
         self.present(reportQuestionController, animated: true, completion: nil)
     }
-
+    
+    var previewMode = false
     
     private struct Storyboard {
         static let ShowBrowseSegue = "Show Browse"
+        static let AnswerBiasDefault: Float = 0.5
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,16 +81,6 @@ class AnsweredQuestionViewController: UIViewController {
     }
     
     func updateUI() {
-        
-        //Reset existing info
-//        questionTextLabel?.text = nil
-//        answererLabel?.text = nil
-//        answererBio?.text = nil
-//        answererImage?.image = nil
-//        answerImage?.image = nil
-//        answerSummary?.text = nil
-//        answerText?.text = nil
-        
         //Load new info from question (if any)
         if let question = self.question {
             questionTextLabel?.text = question.text!
@@ -99,7 +92,14 @@ class AnsweredQuestionViewController: UIViewController {
             let textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
             attributedString.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSMakeRange(0, attributedString.length))
             answerText?.attributedText = attributedString
-            answerBiasSlider?.setValue(question.biasRating, animated: false)
+            
+            if previewMode {
+                answerBiasSlider?.colorUnset()
+                answerBiasSlider?.setValue(Storyboard.AnswerBiasDefault, animated: false)
+                reportAnswerOutlet?.isHidden = true
+            } else {
+                answerBiasSlider?.setValue(question.biasRating, animated: false)
+            }
 
             
             if let imageURLString = question.image {
@@ -109,7 +109,7 @@ class AnsweredQuestionViewController: UIViewController {
                             DispatchQueue.main.async {
                                 if imageURLString == question.image {
                                     self.spinner?.stopAnimating()
-                                    self.answerImage.image = UIImage(data: imageData)
+                                    self.answerImage?.image = UIImage(data: imageData)
                                 } else {
                                     print("Ignoring data returned from URL \(imageURL)")
                                 }
@@ -129,9 +129,9 @@ class AnsweredQuestionViewController: UIViewController {
                             if let answererImageData = try? Data(contentsOf: answererImageURL) {
                                 DispatchQueue.main.async {
                                     if answererImageURLString == answerer.image {
-                                        self.answererImage.image = UIImage(data: answererImageData)
-                                        self.answererImage.layer.cornerRadius = self.answererImage.frame.size.width / 2
-                                        self.answererImage.clipsToBounds = true
+                                        self.answererImage?.image = UIImage(data: answererImageData)
+                                        self.answererImage?.layer.cornerRadius = (self.answererImage?.frame.size.width ?? 0.0) / 2
+                                        self.answererImage?.clipsToBounds = true
                                     } else {
                                         print("Ignoring data returned from URL \(answererImageURL)")
                                     }

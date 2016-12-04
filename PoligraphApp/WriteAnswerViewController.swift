@@ -33,10 +33,10 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
                 question.answer = self.answerTextView.text
                 question.summary = self.summaryTextView.text
                 question.status = Int32(Question.StatusTypes.answered.rawValue)
-                self.performSegue(withIdentifier: Storyboard.ShowAnswersSegueIdentifer, sender: sender)
                 if let user = (UIApplication.shared.delegate as! AppDelegate).currentUser {
                     user.addToAnsweredQuestions(question)
                 }
+                self.performSegue(withIdentifier: Storyboard.ShowAnswersSegueIdentifer, sender: sender)
             }
         }
         submitAnswerController.addAction(cancelAction)
@@ -73,22 +73,13 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.statusBarStyle = .default
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.lightGray
-        //TODO: Fix colors
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.lightGray
-            navBar.tintColor = UIColor.black
-            navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
-        }
+        setNavigationBarColors()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: Notification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
         
         summaryTextView.delegate = self
         answerTextView.delegate = self
-        
-        submitButtonOutlet.isEnabled = false
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.numberOfTapsRequired = 1
@@ -112,6 +103,18 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         if let question = self.question {
             questionTextLabel?.text = question.text!
         }
+    }
+    
+    private func setNavigationBarColors() {
+        UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.lightGray
+        //TODO: Fix colors
+        if let navBar = self.navigationController?.navigationBar {
+            navBar.barTintColor = UIColor.lightGray
+            navBar.tintColor = UIColor.black
+            navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+        }
+        
     }
     
     private func checkSubmitConditions() {
@@ -215,7 +218,6 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
             if let tabBarController = segue.destination as? UITabBarController {
                 tabBarController.selectedIndex = 2
                 if let navController = tabBarController.selectedViewController as? UINavigationController {
-                    print("So far, so good")
                     if let answersTVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Your Answers") as? YourAnswersTableViewController {
                         navController.pushViewController(answersTVC, animated: false)
                     }

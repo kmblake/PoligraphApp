@@ -85,6 +85,21 @@ public class Question: NSManagedObject {
         }
         return nil
     }
+    
+    class func loadReviewedQuestions(forUser user: User) -> [Question]? {
+        if let reviews = user.reviews {
+            var reviewedQuestions = [Question]()
+            if let reviewArray = Array(reviews) as? [Review] {
+                print("Loaded \(reviewArray.count) reviewed questions")
+                for review in reviewArray {
+                    print("cast succesful")
+                    reviewedQuestions.append(review.question!)
+                }
+            }
+            return reviewedQuestions
+        }
+        return nil
+    }
 
     /* Search Questions
      

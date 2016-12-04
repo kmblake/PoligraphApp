@@ -1,15 +1,15 @@
 //
-//  YourAnswersTableViewController.swift
+//  YourReviewsTableViewController.swift
 //  PoligraphApp
 //
-//  Created by Gordon Blake on 12/2/16.
+//  Created by Gordon Blake on 12/3/16.
 //  Copyright © 2016 Silo Busters. All rights reserved.
 //
 
 import UIKit
 
-class YourAnswersTableViewController: UITableViewController {
-    
+class YourReviewsTableViewController: UITableViewController {
+
     var questions = [Question]() {
         didSet {
             tableView.reloadData()
@@ -19,22 +19,21 @@ class YourAnswersTableViewController: UITableViewController {
     let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
     
     private struct Storyboard {
-        static let QuestionCellIdentifier = "Your Answer"
+        static let ReviewCellIdentifier = "Review Cell"
         static let ShowAnswerSegueIdentifier = "Show Answered Question"
         static let ShowUnansweredSegueIdentifier = "Show Unanswered Question"
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let answeredQuestions = Question.loadAnsweredQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
-            questions = answeredQuestions
+        if let userReviewedQuestions = Question.loadReviewedQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
+            questions = userReviewedQuestions
         }
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }
-
 
     // MARK: - Table view data source
 
@@ -47,9 +46,10 @@ class YourAnswersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.QuestionCellIdentifier, for: indexPath)
-        if let questionCell = cell as? YourAnswerTableViewCell {
-            questionCell.question = questions[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.ReviewCellIdentifier, for: indexPath)
+
+        if let reviewCell = cell as? YourReviewTableViewCell {
+            reviewCell.question = questions[indexPath.row]
         }
 
         return cell
@@ -82,6 +82,5 @@ class YourAnswersTableViewController: UITableViewController {
             }
         }
     }
-
 
 }

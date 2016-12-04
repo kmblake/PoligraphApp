@@ -58,13 +58,14 @@
             "biasRating": 0.2,
             "image": "https://timesofislamabad.com/wp-content/uploads/2016/11/Paris-Climate-Agreement.jpg",
             "asker_id": 3
-        }
+     }
     ]
   }, {
     "id": 2,
     "first_name": "Anna",
     "last_name": "Smith",
     "bio": "Campaign Consultant",
+    "image": "http://media.istockphoto.com/photos/businesswoman-portrait-picture-id501368096?k=6&m=501368096&s=170667a&w=0&h=LPeRHjmmRkAxfmn5JwIUqCalcvgo-Xda8HAYJCf6ZKI=",
    "asked_questions": [
       {
         "id": 1,
@@ -82,10 +83,32 @@
         "status": 0
       }
     ]
-  }, {
+     }, {
     "id": 3,
     "first_name": "Peter",
     "last_name": "Jones",
+    "asked_questions": [
+       {
+         "id": 1,
+         "text": "Which Presidential cabinet positions are most influential?",
+         "status": 2,
+         "summary": "Secretary of State, Secretrary of the Treasury, and Attorney General",
+         "answer": "As the highest-ranking member of the cabinet, the Secretary of State is the third-highest official of the executive branch of the Federal Government of the United States, after the President and Vice President and is fourth in line to succeed the Presidency, coming after the Vice President, the Speaker of the House of Representatives, and the President pro tempore of the Senate. Six Secretaries of State have gone on to be elected President. Others, including John Kerry, William Seward, Henry Clay and Hillary Clinton have been unsuccessful presidential candidates, either before or after their term of office as Secretary of State. Former Secretaries of State retain the right to add the title \"Secretary\" to their surnames.\n\nAs the head of the United States Foreign Service, the Secretary of State is responsible for management of the diplomatic service of the United States. The foreign service employs about 12,000 people domestically and internationally, and supports 265 United States diplomatic missions around the world, including ambassadors to various nations.\n\nThe Secretary of the Treasury is the principal economic advisor to the President and plays a critical role in policy-making by bringing an economic and government financial policy perspective to issues facing the government. The Secretary is responsible for formulating and recommending domestic and international financial, economic, and tax policy, participating in the formulation of broad fiscal policies that have general significance for the economy, and managing the public debt. The Secretary oversees the activities of the Department in carrying out its major law enforcement responsibilities; in serving as the financial agent for the United States Government; and in manufacturing coins and currency.\n\nThe office of Attorney General was established by Congress by the Judiciary Act of 1789. The original duties of this officer were to prosecute and conduct all suits in the Supreme Court in which the United States shall be concerned, and to give his advice and opinion upon questions of law when required by the president of the United States, or when requested by the heads of any of the departments.",
+         "upvotes": 56,
+         "image": "http://ic.pics.livejournal.com/kensmind/1278588/10010/10010_original.jpg",
+         "answerer_id": 2
+        },
+        {
+         "id": 2,
+         "text": "Why do so many Republicans deny climate change?",
+         "status": 2,
+         "summary": "Ideology, Free-Market Economics, and Incentives",
+         "answer": "The climate change denial industry is most widespread in the United States, where the official Senate Environmental Committee is chaired by Jim Inhofe, who famously called climate change “the greatest hoax ever perpetrated on the American people” and claimed to have debunked it in 2015 when he took a snowball with him and threw it on the Senate floor Organised campaigning to undermine public trust in climate science is associated with conservative economic policies and backed by industrial interests opposed to the regulation of CO2 emissions. Climate change denial has been associated with the fossil fuels lobby, the Koch brothers, industry advocates and libertarian think tanks, often in the United States. More than 90% of papers sceptical on climate change originate from right-wing think tanks. The total annual income of these climate change counter-movement-organizations is roughly $900 million. Between 2002 and 2010, nearly $120 million was anonymously donated via the Donors Trust and Donors Capital Fund to more than 100 organisations seeking to undermine the public perception of the science on climate change. In 2013 the Center for Media and Democracy reported that the State Policy Network (SPN), an umbrella group of 64 U.S. think tanks, had been lobbying on behalf of major corporations and conservative donors to oppose climate change regulation. (Credit: Wikipedia)",
+          "upvotes": 124,
+          "image": "http://content.gallup.com/origin/gallupinc/GallupSpaces/Production/Cms/POLL/ieyhl5he8uqykf66edcqvq.gif",
+          "answerer_id": 6
+         }
+    ]
   }, {
     "id": 4,
     "first_name": "Akshay",

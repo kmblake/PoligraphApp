@@ -40,6 +40,9 @@
 		B116093C1DF249AC00BEC916 /* YourAnswersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116093B1DF249AC00BEC916 /* YourAnswersTableViewController.swift */; };
 		B116093E1DF24D4900BEC916 /* YourAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116093D1DF24D4900BEC916 /* YourAnswerTableViewCell.swift */; };
 		B11609401DF261A500BEC916 /* WriteAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116093F1DF261A500BEC916 /* WriteAnswerViewController.swift */; };
+		B11609421DF3620300BEC916 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11609411DF3620300BEC916 /* WriteReviewViewController.swift */; };
+		B11609441DF392C300BEC916 /* YourReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11609431DF392C300BEC916 /* YourReviewsTableViewController.swift */; };
+		B11609461DF3936E00BEC916 /* YourReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11609451DF3936E00BEC916 /* YourReviewTableViewCell.swift */; };
 		B118765B1DEE8C340040F7FB /* UnansweredQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B118765A1DEE8C340040F7FB /* UnansweredQuestionViewController.swift */; };
 		B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1676A341DED359B00C43832 /* HelpPageViewController.swift */; };
 		B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17E900E1DDEDA7700F89E2D /* Model.xcdatamodeld */; };
@@ -102,6 +105,9 @@
 		B116093B1DF249AC00BEC916 /* YourAnswersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourAnswersTableViewController.swift; sourceTree = "<group>"; };
 		B116093D1DF24D4900BEC916 /* YourAnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		B116093F1DF261A500BEC916 /* WriteAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteAnswerViewController.swift; sourceTree = "<group>"; };
+		B11609411DF3620300BEC916 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
+		B11609431DF392C300BEC916 /* YourReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourReviewsTableViewController.swift; sourceTree = "<group>"; };
+		B11609451DF3936E00BEC916 /* YourReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourReviewTableViewCell.swift; sourceTree = "<group>"; };
 		B118765A1DEE8C340040F7FB /* UnansweredQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnansweredQuestionViewController.swift; sourceTree = "<group>"; };
 		B1676A341DED359B00C43832 /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 		B17E900F1DDEDA7700F89E2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -268,6 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				65B229EA1DD967960058F6C8 /* ReviewViewController.swift */,
+				B11609411DF3620300BEC916 /* WriteReviewViewController.swift */,
+				B11609431DF392C300BEC916 /* YourReviewsTableViewController.swift */,
+				B11609451DF3936E00BEC916 /* YourReviewTableViewCell.swift */,
 			);
 			name = Review;
 			sourceTree = "<group>";
@@ -514,6 +523,7 @@
 				65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */,
 				65307FF91DE390E200713051 /* UIBiasBar.swift in Sources */,
 				657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */,
+				B11609421DF3620300BEC916 /* WriteReviewViewController.swift in Sources */,
 				B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */,
 				B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */,
 				B1676A351DED359B00C43832 /* HelpPageViewController.swift in Sources */,
@@ -522,6 +532,8 @@
 				B118765B1DEE8C340040F7FB /* UnansweredQuestionViewController.swift in Sources */,
 				B11609401DF261A500BEC916 /* WriteAnswerViewController.swift in Sources */,
 				B17E90101DDEDA7700F89E2D /* Model.xcdatamodeld in Sources */,
+				B11609441DF392C300BEC916 /* YourReviewsTableViewController.swift in Sources */,
+				B11609461DF3936E00BEC916 /* YourReviewTableViewCell.swift in Sources */,
 				B116093A1DF2259400BEC916 /* QuestionCardView.swift in Sources */,
 				B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */,
 				B17E90561DDEE2C300F89E2D /* Question+CoreDataClass.swift in Sources */,
