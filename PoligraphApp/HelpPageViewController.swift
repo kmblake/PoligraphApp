@@ -18,6 +18,9 @@ class HelpPageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.black
 
         dataSource = self
         
@@ -33,6 +36,12 @@ class HelpPageViewController: UIPageViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
 
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
+    }
 
     /*
     // MARK: - Navigation
