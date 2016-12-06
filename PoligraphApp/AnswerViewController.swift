@@ -59,9 +59,6 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
         koloda.resetCurrentCardIndex()
     }
     
-//    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-//        //TODO implement
-//    }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         if direction == .right {
@@ -76,12 +73,8 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return QuestionCardView(frame: koloda.bounds, question: questions[index], answer: true)
+        return QuestionCardView(frame: koloda.bounds, question: questions[index], answer: true, includeSummary: false)
     }
-    
-//    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-//        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as? OverlayView
-//    }
 
     
     // MARK: - Navigation

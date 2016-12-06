@@ -71,7 +71,7 @@ class ReviewViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return QuestionCardView(frame: koloda.bounds, question: questions[index], answer: false)
+        return QuestionCardView(frame: koloda.bounds, question: questions[index], answer: false, includeSummary: true)
     }
 
     
