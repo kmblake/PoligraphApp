@@ -18,9 +18,9 @@ class QuestionCardView: UIView {
         
         
         if includeSummary {
-            let questionTextLabel = makeLabel(text: question.text!, frame: CGRect(x: leadingX, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+            let questionTextLabel = makeLabel(text: question.text!, frame: CGRect(x: leadingX, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude), isAnswer: answer)
             questionTextLabel.center = CGPoint(x: self.center.x, y: self.center.y * 0.85)
-            let summaryLabel = makeLabel(text: question.summary!, frame: CGRect(x: leadingX, y: questionTextLabel.frame.maxY + 5.0, width: width, height: CGFloat.greatestFiniteMagnitude))
+            let summaryLabel = makeLabel(text: question.summary!, frame: CGRect(x: leadingX, y: questionTextLabel.frame.maxY + 5.0, width: width, height: CGFloat.greatestFiniteMagnitude), isAnswer: answer)
             summaryLabel.textColor = UIColor.lightGray
             summaryLabel.font = UIFont(name: "Optima", size: 14)
             summaryLabel.sizeToFit()
@@ -28,7 +28,7 @@ class QuestionCardView: UIView {
             self.addSubview(questionTextLabel)
             self.addSubview(summaryLabel)
         } else {
-            let questionTextLabel = makeLabel(text: question.text!, frame: CGRect(x: leadingX, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+            let questionTextLabel = makeLabel(text: question.text!, frame: CGRect(x: leadingX, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude), isAnswer: answer)
             questionTextLabel.center = self.center
             self.addSubview(questionTextLabel)
         }
@@ -40,7 +40,7 @@ class QuestionCardView: UIView {
             self.backgroundColor = UIColor.polyBlue()
         } else {
             self.layer.borderColor = UIColor.polyBlue().cgColor
-            self.backgroundColor = UIColor.lightBlue()
+            self.backgroundColor = UIColor.white
         }
 
     }
@@ -72,13 +72,19 @@ class QuestionCardView: UIView {
 //        self.addSubview(label)
 //    }
     
-    private func makeLabel(text: String, frame: CGRect) -> UILabel {
+    private func makeLabel(text: String, frame: CGRect, isAnswer: Bool) -> UILabel {
         let label = UILabel(frame: frame)
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.textAlignment = .center
         label.font = labelFont
         label.text = text
+        if isAnswer {
+            label.textColor = UIColor.white
+        } else {
+            label.textColor = UIColor.polyBlue()
+        }
+        
         label.sizeToFit()
         return label
     }
