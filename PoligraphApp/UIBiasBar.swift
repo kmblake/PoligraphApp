@@ -26,5 +26,18 @@ class UIBiasBar: UISlider {
         self.minimumTrackTintColor = UIColor.lightGray
         self.maximumTrackTintColor = UIColor.lightGray
     }
+    
+    func getCaption()  -> String {
+        let score = abs(0.5 - self.value)
+        var caption = " Answer Bias"
+        if score <= 0.1 {
+            caption = "Low" + caption
+        } else if score <= 0.3 {
+            caption = "Moderate" + caption
+        } else {
+            caption = "High" + caption
+        }
+        return caption
+    }
 
 }

@@ -81,11 +81,19 @@ class AnswerViewController: UIViewController, KolodaViewDelegate, KolodaViewData
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == Storyboard.ChooseQuestionSegueIdentifier {
+            let backButton = UIBarButtonItem()
+            backButton.title = "Cancel"
+            navigationItem.backBarButtonItem = backButton
             if let writeAnswerVC = segue.destination as? WriteAnswerViewController {
                 if let question = sender as? Question {
                     writeAnswerVC.question = question
                 }
             }
+        }
+        if segue.identifier! == Storyboard.ShowAnswersSegue {
+            let backButton = UIBarButtonItem()
+            backButton.title = "Back"
+            navigationItem.backBarButtonItem = backButton
         }
     }
 

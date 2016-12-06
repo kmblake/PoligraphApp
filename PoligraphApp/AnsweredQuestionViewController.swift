@@ -24,6 +24,7 @@ class AnsweredQuestionViewController: UIViewController {
     @IBOutlet weak var answerBiasSlider: UIBiasBar!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var reportAnswerOutlet: UIButton!
+    @IBOutlet weak var biasCaptionLabel: UILabel!
     
     
     //TODO: Add a dismiss button
@@ -97,8 +98,10 @@ class AnsweredQuestionViewController: UIViewController {
                 answerBiasSlider?.colorUnset()
                 answerBiasSlider?.setValue(Storyboard.AnswerBiasDefault, animated: false)
                 reportAnswerOutlet?.isHidden = true
+                biasCaptionLabel?.isHidden = true
             } else {
                 answerBiasSlider?.setValue(question.biasRating, animated: false)
+                biasCaptionLabel?.text = answerBiasSlider?.getCaption()
             }
 
             

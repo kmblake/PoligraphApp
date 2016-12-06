@@ -148,13 +148,13 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
     
     // MARK: - Text View Delegate Implementation
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView == feedbackTextView {
-            if textView.text == Storyboard.feedbackPlaceholderText {
-                textView.text = ""
-            }
-        }
-    }
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        if textView == feedbackTextView {
+//            if textView.text == Storyboard.feedbackPlaceholderText {
+//                textView.text = ""
+//            }
+//        }
+//    }
     
     func textViewDidChange(_ textView: UITextView) {
         checkSubmitConditions()

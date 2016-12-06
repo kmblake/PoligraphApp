@@ -30,7 +30,6 @@ class YourReviewsTableViewController: UITableViewController {
         if let userReviewedQuestions = Question.loadReviewedQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
             questions = userReviewedQuestions
         }
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }

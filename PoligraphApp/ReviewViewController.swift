@@ -35,6 +35,7 @@ class ReviewViewController: UIViewController, KolodaViewDelegate, KolodaViewData
 
     private struct Storyboard {
         static let ChooseAnswerSegueIdentifier = "Choose Answer"
+        static let ShowReviewsSegue = "Show Your Reviews"
     }
     
     override func viewDidLoad() {
@@ -79,11 +80,19 @@ class ReviewViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == Storyboard.ChooseAnswerSegueIdentifier {
+            let backButton = UIBarButtonItem()
+            backButton.title = "Cancel"
+            navigationItem.backBarButtonItem = backButton
             if let writeReviewVC = segue.destination as? WriteReviewViewController {
                 if let question = sender as? Question {
                     writeReviewVC.question = question
                 }
             }
+        }
+        if segue.identifier! == Storyboard.ShowReviewsSegue {
+            let backButton = UIBarButtonItem()
+            backButton.title = "Back"
+            navigationItem.backBarButtonItem = backButton
         }
     }
 
