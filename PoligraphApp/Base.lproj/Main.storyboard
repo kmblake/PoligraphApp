@@ -1506,10 +1506,10 @@
             </objects>
             <point key="canvasLocation" x="2329" y="1790"/>
         </scene>
-        <!--Unanswered Question View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="xBV-KX-yQ8">
             <objects>
-                <viewController id="M9T-SC-zee" customClass="UnansweredQuestionViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M9T-SC-zee" customClass="ReviewViewController" customModule="PoligraphApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dKh-6E-vcu"/>
                         <viewControllerLayoutGuide type="bottom" id="D9P-L4-Tb3"/>
