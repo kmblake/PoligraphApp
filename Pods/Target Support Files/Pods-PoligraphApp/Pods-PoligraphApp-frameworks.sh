@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DATAStack/DATAStack.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KMPlaceholderTextView/KMPlaceholderTextView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Koloda/Koloda.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SYNCPropertyMapper/SYNCPropertyMapper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Sync/Sync.framework"
@@ -92,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DATAStack/DATAStack.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KMPlaceholderTextView/KMPlaceholderTextView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Koloda/Koloda.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SYNCPropertyMapper/SYNCPropertyMapper.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Sync/Sync.framework"

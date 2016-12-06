@@ -8,6 +8,7 @@ target 'PoligraphApp' do
   # Pods for PoligraphApp
    pod 'Sync', '~> 2'
    pod 'Koloda', :git => 'https://github.com/Yalantis/Koloda.git', :branch => 'swift-3'
+   pod 'KMPlaceholderTextView', '~> 1.3.0'
 
   target 'PoligraphAppTests' do
     inherit! :search_paths

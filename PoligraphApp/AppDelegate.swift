@@ -108,6 +108,10 @@ extension UIColor {
     static func polyBlue() -> UIColor {
         return UIColor(red: 45.0/255.0, green: 156.0/255.0, blue: 219.0/255.0, alpha: 1.0)
     }
+    
+    static func lightBlue() -> UIColor {
+        return UIColor(red: 86.0/255.0, green: 204.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+    }
 }
 
 extension UIApplication {
