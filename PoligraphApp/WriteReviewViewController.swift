@@ -111,19 +111,22 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
             didSetBiasBar  &&
             recommendationLabel.text! != Storyboard.recommendationLabelPlaceholderText {
             submitButtonOutlet.isEnabled = true
+            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.buttonBlue()], for: .normal)
         } else {
             submitButtonOutlet.isEnabled = false
+            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
         }
     }
     
     private func setNavigationBarColors() {
         UIApplication.shared.statusBarStyle = .default
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.lightGray
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyGray()
         //TODO: Fix colors
         if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.lightGray
+            navBar.barTintColor = UIColor.polyGray()
             navBar.tintColor = UIColor.black
             navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
         }
         
     }

@@ -112,6 +112,14 @@ extension UIColor {
     static func lightBlue() -> UIColor {
         return UIColor(red: 86.0/255.0, green: 204.0/255.0, blue: 242.0/255.0, alpha: 1.0)
     }
+    
+    static func polyGray() -> UIColor {
+        return UIColor(red: 225.0/255.0, green: 225.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+    }
+    
+    static func buttonBlue() -> UIColor {
+        return UIColor(red: 48.0/255.0, green: 131.0/255.0, blue: 251.0/255.0, alpha: 1.0)
+    }
 }
 
 extension UIApplication {

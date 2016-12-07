@@ -107,12 +107,13 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     
     private func setNavigationBarColors() {
         UIApplication.shared.statusBarStyle = .default
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.lightGray
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyGray()
         //TODO: Fix colors
         if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.lightGray
+            navBar.barTintColor = UIColor.polyGray()
             navBar.tintColor = UIColor.black
             navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
         }
         
     }
@@ -121,10 +122,12 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         if !summaryTextView.text.isEmpty && !answerTextView.text.isEmpty && imageURL != nil {
             if summaryTextView.text != Storyboard.SummaryPlaceholderText  && answerTextView.text != Storyboard.AnswerPlaceholderText {
                 submitButtonOutlet.isEnabled = true
+                submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.buttonBlue()], for: .normal)
                 return
             }
         }
         submitButtonOutlet.isEnabled = false
+        submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
     }
     
     private func setImage() {
