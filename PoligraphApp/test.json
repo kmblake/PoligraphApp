@@ -112,7 +112,30 @@
   }, {
     "id": 4,
     "first_name": "Akshay",
-    "last_name": "Rajasekar"
+    "last_name": "Rajasekar",
+    "asked_questions": [
+        {
+            "id": 7,
+            "text": "What's the role of a political party chair?",
+            "answer": "In politics, a party chair (often party chairman/-woman/-person or party president) is the presiding officer of a political party.\n\nThe role of a party chairman is often quite different from that of a party leader. The duties of the chairman are typically concerned with the party membership as a whole, and the activities of the party organization. Chairmen often play important roles in strategies to recruit and retain members, in campaign fundraising, and in internal party governance, where they may serve as a member of, or even preside over, a governing board or council. They often also have influence in candidate selections, and sometimes in the development and promulgation of party policy. For example, the Republican National Committee (RNC) is a U.S. political committee that provides national leadership for the Republican Party of the United States. It is responsible for developing and promoting the Republican political platform, as well as coordinating fundraising and election strategy. It is also responsible for organizing and running the Republican National Convention. Similar committees exist in every U.S. state and most U.S. counties, although in some states party organization is structured by congressional district, allied campaign organizations being governed by a national committee. Reince Priebus is the current RNC Chairman. The RNC's main counterpart is the Democratic National Committee.\n\nThe DNC is responsible for articulating and promoting the Democratic platform and coordinating party organizational activity. When the president is a Democrat, the party generally works closely with the president. In presidential elections it supervises the national convention and, both independently and in coordination with the presidential candidate, raises funds, commissions polls, and coordinates campaign strategy. Following the selection of a party nominee, the public funding laws permit the national party to coordinate certain expenditures with the nominee, but additional funds are spent on general, party-building activities. There are state committees in every state, as well as local committees in most cities, wards, and towns (and, in most states, counties). The chairperson of the DNC is elected by vote of members of the Democratic National Committee. The DNC is composed of the chairs and vice-chairs of each state Democratic Party's central committee, two hundred members apportioned among the states based on population and generally elected either on the ballot by primary voters or by the state Democratic Party committee, a number of elected officials serving in an ex officio capacity, and a variety of representatives of major Democratic Party constituencies. (Credit: Wikipedia)",
+            "status": 3,
+            "summary": "Organize the party and coordinate its policy.",
+            "upvotes": 15,
+            "biasRating": 0.5,
+            "image": "http://www.slate.com/content/dam/slate/blogs/the_slatest/2016/09/18/rnc_head_reince_priebus_says_trump_s_former_challengers_need_to_support/464835203-republican-national-committee-chairman-reince-priebus.jpg.CROP.promo-xlarge2.jpg",
+            "answerer_id": 5,
+            "reviews": [
+                {
+                 "id": 1,
+                 "biasRating": 0.4,
+                 "feedbackText": "Overall a balanced response, but kind of technical. In the future, try to give more specific examples to explain your points.",
+                 "recommendation": 0,
+                 "question_id": 7,
+                 "reviewer_id": 1
+                }
+            ]
+        }
+    ]
   }, {
     "id": 5,
     "first_name": "Curtis",

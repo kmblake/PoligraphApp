@@ -21,7 +21,6 @@ class QuestionCardView: UIView {
             let questionTextLabel = makeLabel(text: question.text!, frame: CGRect(x: leadingX, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude), isAnswer: answer)
             questionTextLabel.center = CGPoint(x: self.center.x, y: self.center.y * 0.85)
             let summaryLabel = makeLabel(text: question.summary!, frame: CGRect(x: leadingX, y: questionTextLabel.frame.maxY + 5.0, width: width, height: CGFloat.greatestFiniteMagnitude), isAnswer: answer)
-          //  summaryLabel.textColor = UIColor.darkGray
             summaryLabel.font = UIFont(name: "Optima-bold", size: 14)
             summaryLabel.sizeToFit()
             summaryLabel.center = CGPoint(x: self.center.x, y: questionTextLabel.frame.maxY + (summaryLabel.bounds.height / 2) + 5.0)
