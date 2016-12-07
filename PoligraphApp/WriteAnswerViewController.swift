@@ -73,7 +73,7 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBarColors()
+        submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.lightGray], for: .normal)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: Notification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
@@ -88,16 +88,6 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         updateUI()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.polyBlue()
-            navBar.tintColor = UIColor.white
-            navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-        }
-        UIApplication.shared.statusBarStyle = .lightContent
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
-    }
 
     func updateUI() {
         if let question = self.question {
@@ -105,29 +95,16 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    private func setNavigationBarColors() {
-        UIApplication.shared.statusBarStyle = .default
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyGray()
-        //TODO: Fix colors
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.polyGray()
-            navBar.tintColor = UIColor.black
-            navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
-            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
-        }
-        
-    }
-    
     private func checkSubmitConditions() {
         if !summaryTextView.text.isEmpty && !answerTextView.text.isEmpty && imageURL != nil {
             if summaryTextView.text != Storyboard.SummaryPlaceholderText  && answerTextView.text != Storyboard.AnswerPlaceholderText {
                 submitButtonOutlet.isEnabled = true
-                submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.buttonBlue()], for: .normal)
+                submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for: .normal)
                 return
             }
         }
         submitButtonOutlet.isEnabled = false
-        submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
+        submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.lightGray], for: .normal)
     }
     
     private func setImage() {

@@ -73,6 +73,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.lightGray], for: .normal)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: Notification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: Notification.Name.UIKeyboardDidHide, object: nil)
         
@@ -89,46 +90,17 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
         self.performSegue(withIdentifier: Storyboard.ShowAnswerPreviewSegue, sender: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-         setNavigationBarColors()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.polyBlue()
-            navBar.tintColor = UIColor.white
-            navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-        }
-        UIApplication.shared.statusBarStyle = .lightContent
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
-    }
-    
     private func checkSubmitConditions() {
         if !feedbackTextView.text.isEmpty &&
             feedbackTextView.text != Storyboard.feedbackPlaceholderText &&
             didSetBiasBar  &&
             recommendationLabel.text! != Storyboard.recommendationLabelPlaceholderText {
             submitButtonOutlet.isEnabled = true
-            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.buttonBlue()], for: .normal)
+            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.white], for: .normal)
         } else {
             submitButtonOutlet.isEnabled = false
-            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
+            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.lightGray], for: .normal)
         }
-    }
-    
-    private func setNavigationBarColors() {
-        UIApplication.shared.statusBarStyle = .default
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyGray()
-        //TODO: Fix colors
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.polyGray()
-            navBar.tintColor = UIColor.black
-            navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
-            submitButtonOutlet.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.gray], for: .normal)
-        }
-        
     }
     
     // MARK: - Keyboard Notification Functions
@@ -150,14 +122,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
     }
     
     // MARK: - Text View Delegate Implementation
-    
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if textView == feedbackTextView {
-//            if textView.text == Storyboard.feedbackPlaceholderText {
-//                textView.text = ""
-//            }
-//        }
-//    }
     
     func textViewDidChange(_ textView: UITextView) {
         checkSubmitConditions()
