@@ -50,7 +50,14 @@ class YourReviewViewController: UIViewController {
             }
             biasBar?.value = review.biasRating
             biasCaptionLabel?.text = biasBar?.getCaption()
-            feedbackLabel?.text = review.feedbackText!
+            let attributedString = NSMutableAttributedString(string: review.feedbackText ?? "Error loading feedback")
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6 // Whatever line spacing you want in points
+            attributedString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+            let textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+            attributedString.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSMakeRange(0, attributedString.length))
+            feedbackLabel?.attributedText = attributedString
+//            feedbackLabel?.text = review.feedbackText!
             
         }
     }

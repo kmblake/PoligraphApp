@@ -1939,19 +1939,19 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpm-ss-uWj" customClass="UIBiasBar" customModule="PoligraphApp" customModuleProvider="target">
-                                <rect key="frame" x="14" y="109" width="347" height="31"/>
+                                <rect key="frame" x="14" y="131" width="347" height="31"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moderate Answer Bias" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-gP-EoG">
-                                <rect key="frame" x="16" y="124" width="343" height="18"/>
+                                <rect key="frame" x="16" y="146" width="343" height="18"/>
                                 <fontDescription key="fontDescription" name="Optima-Italic" family="Optima" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA7-kw-g2h">
-                                <rect key="frame" x="16" y="150" width="343" height="30.5"/>
+                                <rect key="frame" x="16" y="172" width="343" height="30.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Feedback">
                                         <attributes>
@@ -1963,10 +1963,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-WG-yES">
-                                <rect key="frame" x="135.5" y="74" width="103.5" height="30"/>
+                                <rect key="frame" x="135.5" y="86" width="103.5" height="30"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avx-WN-1XF">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="tintColor" red="0.1764705882" green="0.61176470589999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="5u7-Ts-zSW"/>
                                             <constraint firstAttribute="height" constant="30" id="S3C-g4-3T8"/>
@@ -1999,17 +2000,17 @@
                             <constraint firstItem="jqz-S6-HTq" firstAttribute="leading" secondItem="zDY-9b-ZgE" secondAttribute="leadingMargin" id="9ha-JY-yEL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RA7-kw-g2h" secondAttribute="trailing" id="B49-CO-OQV"/>
                             <constraint firstItem="idz-DI-Ybg" firstAttribute="top" secondItem="zDY-9b-ZgE" secondAttribute="topMargin" constant="-2" id="Fxy-8q-biI"/>
-                            <constraint firstItem="d7p-gP-EoG" firstAttribute="top" secondItem="PNg-WG-yES" secondAttribute="bottom" constant="20" id="GxV-6z-Z0w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jpm-ss-uWj" secondAttribute="trailing" id="Imp-3z-Lxq"/>
                             <constraint firstItem="jqz-S6-HTq" firstAttribute="top" secondItem="dKh-6E-vcu" secondAttribute="bottom" constant="10" id="JAF-0h-HXg"/>
                             <constraint firstItem="RA7-kw-g2h" firstAttribute="top" secondItem="d7p-gP-EoG" secondAttribute="bottom" constant="8" id="Nth-J9-T1f"/>
                             <constraint firstItem="d7p-gP-EoG" firstAttribute="top" secondItem="jpm-ss-uWj" secondAttribute="bottom" constant="-15" id="U7A-P3-JnK"/>
+                            <constraint firstItem="jpm-ss-uWj" firstAttribute="top" secondItem="PNg-WG-yES" secondAttribute="bottom" constant="15" id="Utr-fa-bQO"/>
                             <constraint firstItem="idz-DI-Ybg" firstAttribute="width" secondItem="zDY-9b-ZgE" secondAttribute="width" id="gEL-RT-bhm"/>
                             <constraint firstItem="D9P-L4-Tb3" firstAttribute="top" secondItem="PU7-0q-yWV" secondAttribute="bottom" id="iFO-Ed-eOg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jqz-S6-HTq" secondAttribute="trailing" id="nWf-ib-cjv"/>
                             <constraint firstItem="idz-DI-Ybg" firstAttribute="leading" secondItem="zDY-9b-ZgE" secondAttribute="leading" id="pLL-Gy-Z09"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PU7-0q-yWV" secondAttribute="trailing" constant="-16" id="pM3-fL-zbg"/>
-                            <constraint firstItem="PNg-WG-yES" firstAttribute="top" secondItem="jqz-S6-HTq" secondAttribute="bottom" constant="8" id="rJY-Hc-nMW"/>
+                            <constraint firstItem="PNg-WG-yES" firstAttribute="top" secondItem="jqz-S6-HTq" secondAttribute="bottom" constant="20" id="rJY-Hc-nMW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d7p-gP-EoG" secondAttribute="trailing" id="uil-GS-tWU"/>
                         </constraints>
                     </view>
@@ -2045,7 +2046,7 @@
         <image name="washington.jpg" width="1588" height="1932"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xQ5-oa-gdI"/>
+        <segue reference="SJa-bv-y3u"/>
         <segue reference="zy0-DN-zhc"/>
         <segue reference="hXV-TZ-QUF"/>
     </inferredMetricsTieBreakers>
