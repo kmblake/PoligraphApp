@@ -53,6 +53,8 @@
 		B17E90571DDEE2C300F89E2D /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90511DDEE2C300F89E2D /* Question+CoreDataProperties.swift */; };
 		B17E90581DDEE2C300F89E2D /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90521DDEE2C300F89E2D /* Review+CoreDataClass.swift */; };
 		B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */; };
+		B1877AF31DF8E83100410D94 /* YourReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1877AF21DF8E83100410D94 /* YourReviewViewController.swift */; };
+		B1C425EA1DF91A4C00FBDF4F /* logo_final.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C425E91DF91A4B00FBDF4F /* logo_final.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		B17E90511DDEE2C300F89E2D /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B17E90521DDEE2C300F89E2D /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1877AF21DF8E83100410D94 /* YourReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourReviewViewController.swift; sourceTree = "<group>"; };
+		B1C425E91DF91A4B00FBDF4F /* logo_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_final.png; sourceTree = "<group>"; };
 		C8886B85062E9F231DA55B8B /* Pods-PoligraphApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphApp/Pods-PoligraphApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,7 @@
 			children = (
 				653342381DED39D1002D38B5 /* checkmark.png */,
 				65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */,
+				B1C425E91DF91A4B00FBDF4F /* logo_final.png */,
 				65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */,
 				65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */,
 				650B14E61DE4E52E00F2F495 /* information_white.png */,
@@ -280,6 +285,7 @@
 				B11609411DF3620300BEC916 /* WriteReviewViewController.swift */,
 				B11609431DF392C300BEC916 /* YourReviewsTableViewController.swift */,
 				B11609451DF3936E00BEC916 /* YourReviewTableViewCell.swift */,
+				B1877AF21DF8E83100410D94 /* YourReviewViewController.swift */,
 			);
 			name = Review;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				65E3F5B11DF0147400F2C3D3 /* looking-for-answerer.png in Resources */,
 				65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */,
 				6566B1381DEE52A500ED00BB /* good_question_gray.png in Resources */,
+				B1C425EA1DF91A4C00FBDF4F /* logo_final.png in Resources */,
 				650B14E91DE4E58400F2F495 /* social_white.png in Resources */,
 				65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */,
 				65E3F5B21DF0147400F2C3D3 /* answer-in-progress.png in Resources */,
@@ -541,6 +548,7 @@
 				B116093A1DF2259400BEC916 /* QuestionCardView.swift in Sources */,
 				B17E90541DDEE2C300F89E2D /* User+CoreDataClass.swift in Sources */,
 				B17E90561DDEE2C300F89E2D /* Question+CoreDataClass.swift in Sources */,
+				B1877AF31DF8E83100410D94 /* YourReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

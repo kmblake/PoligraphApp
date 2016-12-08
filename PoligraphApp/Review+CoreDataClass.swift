@@ -17,6 +17,15 @@ public class Review: NSManagedObject {
         "Needs Revision": 1,
         "Reject": 2
     ]
+    
+    class func loadReviews(forUser user: User) -> [Review]? {
+        if let reviews = user.reviews {
+            if let reviewsArray = Array(reviews) as? [Review] {
+                return reviewsArray
+            }
+        }
+        return nil
+    }
 
     /* Add New Review
         Adds a new review to the Model database, populating it wth all the provided info. Returns the review, or nil if there's an error. Intended for use preloading data. The in-app review creation process would be different.

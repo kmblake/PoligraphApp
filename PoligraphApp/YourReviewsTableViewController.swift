@@ -10,7 +10,13 @@ import UIKit
 
 class YourReviewsTableViewController: UITableViewController {
 
-    var questions = [Question]() {
+//    var questions = [Question]() {
+//        didSet {
+//            tableView.reloadData()
+//        }
+//    }
+    
+    var reviews = [Review]() {
         didSet {
             tableView.reloadData()
         }
@@ -20,16 +26,19 @@ class YourReviewsTableViewController: UITableViewController {
     
     private struct Storyboard {
         static let ReviewCellIdentifier = "Review Cell"
-        static let ShowAnswerSegueIdentifier = "Show Answered Question"
-        static let ShowUnansweredSegueIdentifier = "Show Unanswered Question"
+        static let ShowReviewSegueIdentifier = "Show Your Review"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let userReviewedQuestions = Question.loadReviewedQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
-            questions = userReviewedQuestions
+        if let userReviews = Review.loadReviews(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
+            reviews = userReviews
         }
+        
+//        if let userReviewedQuestions = Question.loadReviewedQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
+//            questions = userReviewedQuestions
+//        }
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }
@@ -41,45 +50,53 @@ class YourReviewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
+        return reviews.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.ReviewCellIdentifier, for: indexPath)
 
         if let reviewCell = cell as? YourReviewTableViewCell {
-            reviewCell.question = questions[indexPath.row]
+            reviewCell.review = reviews[indexPath.row]
         }
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedQuestion = questions[indexPath.row]
-        if selectedQuestion.status == Int32(Question.StatusTypes.reviewed.rawValue) {
-            self.performSegue(withIdentifier: Storyboard.ShowAnswerSegueIdentifier, sender: selectedQuestion)
-        } else {
-            self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
-        }
+        let selectedReview = reviews[indexPath.row]
+        self.performSegue(withIdentifier: Storyboard.ShowReviewSegueIdentifier, sender: selectedReview)
+//        if selectedQuestion.status == Int32(Question.StatusTypes.reviewed.rawValue) {
+//            self.performSegue(withIdentifier: Storyboard.ShowAnswerSegueIdentifier, sender: selectedQuestion)
+//        } else {
+//            self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
+//        }
     }
 
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier! == Storyboard.ShowAnswerSegueIdentifier {
-            if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
-                if let question = sender as? Question {
-                    answeredQuestionVC.question = question
-                }
-            }
-        } else if segue.identifier! == Storyboard.ShowUnansweredSegueIdentifier {
-            if let unansweredQuestionVC = segue.destination as? UnansweredQuestionViewController {
-                if let question = sender as? Question {
-                    unansweredQuestionVC.question = question
+        if segue.identifier! == Storyboard.ShowReviewSegueIdentifier {
+            if let yourReviewVC = segue.destination as? YourReviewViewController {
+                if let review = sender as? Review {
+                    yourReviewVC.review = review
                 }
             }
         }
+//        if segue.identifier! == Storyboard.ShowAnswerSegueIdentifier {
+//            if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
+//                if let question = sender as? Question {
+//                    answeredQuestionVC.question = question
+//                }
+//            }
+//        } else if segue.identifier! == Storyboard.ShowUnansweredSegueIdentifier {
+//            if let unansweredQuestionVC = segue.destination as? UnansweredQuestionViewController {
+//                if let question = sender as? Question {
+//                    unansweredQuestionVC.question = question
+//                }
+//            }
+//        }
     }
 
 }

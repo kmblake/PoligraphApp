@@ -45,7 +45,7 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func addImageButton(_ sender: UIButton) {
-        imageURL = "https://quote.com/blog/wp-content/uploads/2016/06/american-flag.jpg"
+        imageURL = "http://geo-mexico.com/wp-content/uploads/2016/03/border-fence-reuters-fred-greaves.jpg"
     }
     
     private struct Storyboard {
@@ -84,6 +84,8 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.numberOfTapsRequired = 1
         view.addGestureRecognizer(tap)
+        
+        imageURL = "https://quote.com/blog/wp-content/uploads/2016/06/american-flag.jpg"
         
         updateUI()
     }
