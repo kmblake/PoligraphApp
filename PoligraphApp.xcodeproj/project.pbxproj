@@ -23,6 +23,8 @@
 		6566B1381DEE52A500ED00BB /* good_question_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566B1371DEE52A500ED00BB /* good_question_gray.png */; };
 		657DAB5A1DE531C800F4AEDE /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAB591DE531C800F4AEDE /* SearchResultsTableViewController.swift */; };
 		657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */; };
+		6593C7AD1DF95C1600E865C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6593C7AC1DF95C1600E865C0 /* ProfileViewController.swift */; };
+		6593C7AF1DF95CF100E865C0 /* washington.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6593C7AE1DF95CF100E865C0 /* washington.jpg */; };
 		65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B229C61DD962980058F6C8 /* AppDelegate.swift */; };
 		65B229CE1DD962980058F6C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CC1DD962980058F6C8 /* Main.storyboard */; };
 		65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B229CF1DD962980058F6C8 /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		6566B1371DEE52A500ED00BB /* good_question_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = good_question_gray.png; sourceTree = "<group>"; };
 		657DAB591DE531C800F4AEDE /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		657DAB5B1DE5639400F4AEDE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		6593C7AC1DF95C1600E865C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6593C7AE1DF95CF100E865C0 /* washington.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = washington.jpg; sourceTree = "<group>"; };
 		65B229C31DD962980058F6C8 /* PoligraphApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoligraphApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B229C61DD962980058F6C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B229CD1DD962980058F6C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			children = (
 				653342381DED39D1002D38B5 /* checkmark.png */,
 				65E3F5AE1DF0147400F2C3D3 /* looking-for-answerer.png */,
+				6593C7AE1DF95CF100E865C0 /* washington.jpg */,
 				B1C425E91DF91A4B00FBDF4F /* logo_final.png */,
 				65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */,
 				65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */,
@@ -253,6 +258,7 @@
 				65FEE3441DEFDADE00C0DD0A /* BrowseTableViewController.swift */,
 				6553B81E1DE23FEF008F183E /* BrowseQuestionTableViewCell.swift */,
 				65307FF61DE3370B00713051 /* AnsweredQuestionViewController.swift */,
+				6593C7AC1DF95C1600E865C0 /* ProfileViewController.swift */,
 			);
 			name = Browse;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				65B229D31DD962980058F6C8 /* LaunchScreen.storyboard in Resources */,
 				65307FF51DE2BFF600713051 /* social.png in Resources */,
 				6553B81D1DE13D06008F183E /* test.json in Resources */,
+				6593C7AF1DF95CF100E865C0 /* washington.jpg in Resources */,
 				650B14E71DE4E52E00F2F495 /* information_white.png in Resources */,
 				65E3F5B11DF0147400F2C3D3 /* looking-for-answerer.png in Resources */,
 				65B229D01DD962980058F6C8 /* Assets.xcassets in Resources */,
@@ -535,6 +542,7 @@
 				B116093C1DF249AC00BEC916 /* YourAnswersTableViewController.swift in Sources */,
 				65B229C71DD962980058F6C8 /* AppDelegate.swift in Sources */,
 				65DD1E771DF204F100E337EB /* AnswerViewController.swift in Sources */,
+				6593C7AD1DF95C1600E865C0 /* ProfileViewController.swift in Sources */,
 				65FEE3451DEFDADE00C0DD0A /* BrowseTableViewController.swift in Sources */,
 				65307FF91DE390E200713051 /* UIBiasBar.swift in Sources */,
 				657DAB5C1DE5639400F4AEDE /* SearchTableViewCell.swift in Sources */,

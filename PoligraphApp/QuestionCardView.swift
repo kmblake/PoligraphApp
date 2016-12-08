@@ -36,7 +36,7 @@ class QuestionCardView: UIView {
         self.layer.borderWidth = 6
         if answer {
             self.layer.borderColor = UIColor.polyBlue().cgColor
-            self.backgroundColor = UIColor.lightBlue()
+            self.backgroundColor = UIColor.white
         } else {
             self.layer.borderColor = UIColor.lightBlue().cgColor
             self.backgroundColor = UIColor.polyBlue()

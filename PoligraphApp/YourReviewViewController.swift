@@ -44,6 +44,7 @@ class YourReviewViewController: UIViewController {
 
     func updateUI() {
         if let review = self.review {
+            setRecommendation(review: review)
             if let question = review.question {
                 questionTextLabel?.text = question.text
             }
@@ -63,6 +64,20 @@ class YourReviewViewController: UIViewController {
             decisionLabel?.text = "Decision Pending"
         }
     }
+    
+    func setRecommendation(review: Review) {
+        if review.recommendation == Int32(0) {
+            decisionImageView?.image = #imageLiteral(resourceName: "Checkmark Small")
+            decisionLabel?.text = "Accept"
+        } else if review.recommendation == Int32(1) {
+            decisionImageView?.image = #imageLiteral(resourceName: "pending small")
+            decisionLabel?.text = "Revise"
+        } else {
+            decisionImageView?.image = #imageLiteral(resourceName: "cancel")
+            decisionLabel?.text = "Reject"
+        }
+    }
+
     
 
     /*
