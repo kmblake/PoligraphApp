@@ -62,7 +62,14 @@ public class Question: NSManagedObject {
         if status == StatusTypes.asked {
             request.predicate = NSPredicate(format: "status == %i AND asker.id != %i", status.rawValue, user.id)
         } else if status == StatusTypes.answered {
-            request.predicate = NSPredicate(format: "status == %i AND asker.id != %i AND answerer.id != %i", status.rawValue, user.id, user.id)
+            var ids = [Int32]()
+            if let reviews = Review.loadReviews(forUser: user) {
+                for review in reviews {
+                    ids.append(review.question!.id)
+                }
+            }
+            //request.predicate = NSPredicate(format: "status == %i AND asker.id != %i AND answerer.id != %i", status.rawValue, user.id, user.id)
+            request.predicate = NSPredicate(format: "status == %i AND asker.id != %i AND answerer.id != %i AND NOT (id in %@)", status.rawValue, user.id, user.id, ids)
         } else {
             request.predicate = NSPredicate(format: "status == %i", status.rawValue)
         }
@@ -144,7 +151,6 @@ public class Question: NSManagedObject {
         request.predicate = NSPredicate(format: "text == %@", text) //TODO: Make case-insensitive
         
         if let question = (try? context.fetch(request))?.first as? Question {
-            //TODO: This happens if question is already in database. Decide what to do here
             print("Error: That question already exists.")
             return question
         } else if let question = NSEntityDescription.insertNewObject(forEntityName: "Question", into: context) as? Question {

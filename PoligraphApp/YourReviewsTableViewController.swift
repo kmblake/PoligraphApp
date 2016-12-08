@@ -9,12 +9,6 @@
 import UIKit
 
 class YourReviewsTableViewController: UITableViewController {
-
-//    var questions = [Question]() {
-//        didSet {
-//            tableView.reloadData()
-//        }
-//    }
     
     var reviews = [Review]() {
         didSet {
@@ -36,9 +30,6 @@ class YourReviewsTableViewController: UITableViewController {
             reviews = userReviews
         }
         
-//        if let userReviewedQuestions = Question.loadReviewedQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
-//            questions = userReviewedQuestions
-//        }
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }
@@ -66,11 +57,6 @@ class YourReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedReview = reviews[indexPath.row]
         self.performSegue(withIdentifier: Storyboard.ShowReviewSegueIdentifier, sender: selectedReview)
-//        if selectedQuestion.status == Int32(Question.StatusTypes.reviewed.rawValue) {
-//            self.performSegue(withIdentifier: Storyboard.ShowAnswerSegueIdentifier, sender: selectedQuestion)
-//        } else {
-//            self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
-//        }
     }
 
     
@@ -84,19 +70,6 @@ class YourReviewsTableViewController: UITableViewController {
                 }
             }
         }
-//        if segue.identifier! == Storyboard.ShowAnswerSegueIdentifier {
-//            if let answeredQuestionVC = segue.destination as? AnsweredQuestionViewController {
-//                if let question = sender as? Question {
-//                    answeredQuestionVC.question = question
-//                }
-//            }
-//        } else if segue.identifier! == Storyboard.ShowUnansweredSegueIdentifier {
-//            if let unansweredQuestionVC = segue.destination as? UnansweredQuestionViewController {
-//                if let question = sender as? Question {
-//                    unansweredQuestionVC.question = question
-//                }
-//            }
-//        }
     }
 
 }

@@ -32,7 +32,7 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
     @IBAction func submitButton(_ sender: UIBarButtonItem) {
         let submitAnswerController = UIAlertController(title: "Submit Answer", message: "Are you sure you're ready to submit?", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            //TODO: Add action
+            //
         }
         let submitAction = UIAlertAction(title: "Yes", style: .default) { (action) in
             let user = (UIApplication.shared.delegate as! AppDelegate).currentUser!
@@ -46,7 +46,6 @@ class WriteReviewViewController: UIViewController, UITextViewDelegate, UIPickerV
                     inManagedObjectContext: self.moc)
             }
             self.performSegue(withIdentifier: Storyboard.ShowYourReviewsSegue, sender: sender)
-            //TODO: Check if this adds the user as the a question reviewer
         }
         submitAnswerController.addAction(cancelAction)
         submitAnswerController.addAction(submitAction)

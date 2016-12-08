@@ -16,7 +16,6 @@ class QuestionCardView: UIView {
         let width = self.frame.width * widthScale
         let leadingX = (self.frame.width - width) / 2.0
         
-        
         if includeSummary {
             let questionTextLabel = makeLabel(text: question.text!, frame: CGRect(x: leadingX, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude), isAnswer: answer)
             questionTextLabel.center = CGPoint(x: self.center.x, y: self.center.y * 0.85)

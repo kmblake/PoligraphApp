@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISearchBar.appearance().placeholder = "Ask Poligraph"
         
         fetchLocalItems(errorPrint)
-        Question.printAllQuestions(inManagedObjectContext: self.dataStack.mainContext)
         currentUser = User.currentUser(inManagedObjectContext: dataStack.mainContext)
         return true
     }
@@ -76,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 completion(error)
             })
         }
-        print("Local Items Fetched")
     }
     
     /* Error Handler for fetchLocalItems */

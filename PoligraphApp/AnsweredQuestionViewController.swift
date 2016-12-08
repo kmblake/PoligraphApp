@@ -26,23 +26,20 @@ class AnsweredQuestionViewController: UIViewController {
     @IBOutlet weak var reportAnswerOutlet: UIButton!
     @IBOutlet weak var biasCaptionLabel: UILabel!
     
-    
-    //TODO: Add a dismiss button
-    
     // MARK: - Actions
     @IBAction func reportAnswerButton(_ sender: UIButton) {
         let reportQuestionController = UIAlertController(title: "Report Answer", message: "We're sorry. Please tell us what's wrong with this answer.", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            //TODO: Add action
+            //
         }
         let inaccurateAction = UIAlertAction(title: "Inaccurate", style: .default) { (action) in
-            //TODO: Add action
+            //
         }
         let offensiveAction = UIAlertAction(title: "Offensive", style: .default) { (action) in
-            //TODO: Add action
+            //
         }
         let otherAction = UIAlertAction(title: "Other", style: .default) { (action) in
-            //TODO: Add action
+            //
         }
         
         reportQuestionController.addAction(cancelAction)
@@ -85,7 +82,7 @@ class AnsweredQuestionViewController: UIViewController {
         //Load new info from question (if any)
         if let question = self.question {
             questionTextLabel?.text = question.text!
-            answerSummary?.text = question.summary ?? "Error loading summary" //TODO Attributed/rich text?
+            answerSummary?.text = question.summary ?? "Error loading summary"
             let attributedString = NSMutableAttributedString(string: question.answer ?? "Error loading answer")
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 6 // Whatever line spacing you want in points
@@ -150,20 +147,5 @@ class AnsweredQuestionViewController: UIViewController {
             
         }
     }
-    
-
-    // MARK: - Navigation
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if segue.identifier! == Storyboard.ShowBrowseSegue {
-            if let _ = segue.destination as? BrowseViewController {
-                //TODO do stuff?
-            }
-        }
-    }
-     */
 
 }

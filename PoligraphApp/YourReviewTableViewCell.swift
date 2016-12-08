@@ -20,12 +20,6 @@ class YourReviewTableViewCell: UITableViewCell {
         }
     }
     
-//    var question: Question? {
-//        didSet {
-//            updateUI()
-//        }
-//    }
-    
     func updateUI() {
         if let review = self.review {
             if let question = review.question {

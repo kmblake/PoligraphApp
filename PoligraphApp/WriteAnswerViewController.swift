@@ -26,7 +26,7 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
     @IBAction func submitButton(_ sender: UIBarButtonItem) {
         let submitAnswerController = UIAlertController(title: "Submit Answer", message: "Are you sure you're ready to submit?", preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            //TODO: Add action
+            //
         }
         let submitAction = UIAlertAction(title: "Yes", style: .default) { (action) in
             if let question = self.question {
@@ -153,18 +153,6 @@ class WriteAnswerViewController: UIViewController, UITextViewDelegate {
 
     
     // MARK: - UI Text View Delegate Implementation
-    
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if textView == summaryTextView {
-//            if textView.text == Storyboard.SummaryPlaceholderText {
-//                textView.text = ""
-//            }
-//        } else if textView == answerTextView {
-//            if textView.text == Storyboard.AnswerPlaceholderText {
-//                textView.text = ""
-//            }
-//        }
-//    }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView == summaryTextView {

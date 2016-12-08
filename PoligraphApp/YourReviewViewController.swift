@@ -44,9 +44,9 @@ class YourReviewViewController: UIViewController {
 
     func updateUI() {
         if let review = self.review {
-            setRecommendation(review: review)
             if let question = review.question {
                 questionTextLabel?.text = question.text
+                setDecision(question: question)
             }
             biasBar?.value = review.biasRating
             biasCaptionLabel?.text = biasBar?.getCaption()
@@ -57,8 +57,6 @@ class YourReviewViewController: UIViewController {
             let textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
             attributedString.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSMakeRange(0, attributedString.length))
             feedbackLabel?.attributedText = attributedString
-//            feedbackLabel?.text = review.feedbackText!
-            
         }
     }
     
@@ -71,30 +69,5 @@ class YourReviewViewController: UIViewController {
             decisionLabel?.text = "Decision Pending"
         }
     }
-    
-    func setRecommendation(review: Review) {
-        if review.recommendation == Int32(0) {
-            decisionImageView?.image = #imageLiteral(resourceName: "Checkmark Small")
-            decisionLabel?.text = "Accept"
-        } else if review.recommendation == Int32(1) {
-            decisionImageView?.image = #imageLiteral(resourceName: "pending small")
-            decisionLabel?.text = "Revise"
-        } else {
-            decisionImageView?.image = #imageLiteral(resourceName: "cancel")
-            decisionLabel?.text = "Reject"
-        }
-    }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

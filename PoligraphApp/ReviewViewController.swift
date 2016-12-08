@@ -48,7 +48,6 @@ class ReviewViewController: UIViewController, KolodaViewDelegate, KolodaViewData
             withStatus: Question.StatusTypes.answered,
             excludingUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!,
             inManagedObjectContext: moc) {
-            print("Loaded \(unreviewedQuestions.count) unreviewed questions")
             questions = unreviewedQuestions
         }
     }

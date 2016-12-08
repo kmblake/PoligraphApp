@@ -170,14 +170,6 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
             self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
         }
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return questionSearchController.searchBar.bounds.height
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        return questionSearchController.searchBar
-//    }
 
     // MARK: - Navigation
     
