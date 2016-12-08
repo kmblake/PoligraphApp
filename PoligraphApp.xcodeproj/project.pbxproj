@@ -55,6 +55,7 @@
 		B17E90591DDEE2C300F89E2D /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */; };
 		B1877AF31DF8E83100410D94 /* YourReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1877AF21DF8E83100410D94 /* YourReviewViewController.swift */; };
 		B1C425EA1DF91A4C00FBDF4F /* logo_final.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C425E91DF91A4B00FBDF4F /* logo_final.png */; };
+		B1C425EE1DF9248100FBDF4F /* AnswerExample.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C425ED1DF9248100FBDF4F /* AnswerExample.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		B17E90531DDEE2C300F89E2D /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1877AF21DF8E83100410D94 /* YourReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourReviewViewController.swift; sourceTree = "<group>"; };
 		B1C425E91DF91A4B00FBDF4F /* logo_final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_final.png; sourceTree = "<group>"; };
+		B1C425ED1DF9248100FBDF4F /* AnswerExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnswerExample.png; sourceTree = "<group>"; };
 		C8886B85062E9F231DA55B8B /* Pods-PoligraphApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoligraphApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoligraphApp/Pods-PoligraphApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 				B1C425E91DF91A4B00FBDF4F /* logo_final.png */,
 				65E3F5AF1DF0147400F2C3D3 /* answer-in-progress.png */,
 				65E3F5B01DF0147400F2C3D3 /* review-in-progress.png */,
+				B1C425ED1DF9248100FBDF4F /* AnswerExample.png */,
 				650B14E61DE4E52E00F2F495 /* information_white.png */,
 				6566B1371DEE52A500ED00BB /* good_question_gray.png */,
 				65307FF41DE2BFF600713051 /* social.png */,
@@ -394,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C425EE1DF9248100FBDF4F /* AnswerExample.png in Resources */,
 				65307FF31DE2BF5700713051 /* information.png in Resources */,
 				653342391DED39D1002D38B5 /* checkmark.png in Resources */,
 				6566B1361DEE4C8900ED00BB /* good_question.png in Resources */,
