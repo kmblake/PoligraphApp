@@ -10,8 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.profileImage?.layer.cornerRadius = (self.profileImage?.frame.size.width ?? 0.0) / 2
+        self.profileImage?.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }
@@ -31,5 +35,6 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
