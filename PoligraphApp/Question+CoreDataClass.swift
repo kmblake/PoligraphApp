@@ -57,12 +57,58 @@ public class Question: NSManagedObject {
         return nil
     }
     
-    class func loadUnansweredQuestions(forUser user: User, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
+    class func loadQuestions(withStatus status: Question.StatusTypes, excludingUser user: User, inManagedObjectContext context: NSManagedObjectContext) -> [Question]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
+        if status == StatusTypes.asked {
+            request.predicate = NSPredicate(format: "status == %i AND asker.id != %i", status.rawValue, user.id)
+        } else if status == StatusTypes.answered {
+            var ids = [Int32]()
+            if let reviews = Review.loadReviews(forUser: user) {
+                for review in reviews {
+                    ids.append(review.question!.id)
+                }
+            }
+            //request.predicate = NSPredicate(format: "status == %i AND asker.id != %i AND answerer.id != %i", status.rawValue, user.id, user.id)
+            request.predicate = NSPredicate(format: "status == %i AND asker.id != %i AND answerer.id != %i AND NOT (id in %@)", status.rawValue, user.id, user.id, ids)
+        } else {
+            request.predicate = NSPredicate(format: "status == %i", status.rawValue)
+        }
+        
+        if let questions = (try? context.fetch(request)) as? [Question] {
+            return questions
+        }
+        return nil
+    }
+    
+    class func loadUnansweredQuestions(forUser user: User) -> [Question]? {
         if let userQuestions = user.askedQuestions {
             if let questionsArray = Array(userQuestions) as?  [Question] {
                 //TODO: Optionally sort these by status
                 return questionsArray
             }
+        }
+        return nil
+    }
+    
+    class func loadAnsweredQuestions(forUser user: User) -> [Question]? {
+        if let answeredQuestions = user.answeredQuestions {
+            if let questionsArray = Array(answeredQuestions) as? [Question] {
+                return questionsArray
+            }
+        }
+        return nil
+    }
+    
+    class func loadReviewedQuestions(forUser user: User) -> [Question]? {
+        if let reviews = user.reviews {
+            var reviewedQuestions = [Question]()
+            if let reviewArray = Array(reviews) as? [Review] {
+                print("Loaded \(reviewArray.count) reviewed questions")
+                for review in reviewArray {
+                    reviewedQuestions.append(review.question!)
+                }
+            }
+            return reviewedQuestions
         }
         return nil
     }
@@ -105,7 +151,6 @@ public class Question: NSManagedObject {
         request.predicate = NSPredicate(format: "text == %@", text) //TODO: Make case-insensitive
         
         if let question = (try? context.fetch(request))?.first as? Question {
-            //TODO: This happens if question is already in database. Decide what to do here
             print("Error: That question already exists.")
             return question
         } else if let question = NSEntityDescription.insertNewObject(forEntityName: "Question", into: context) as? Question {

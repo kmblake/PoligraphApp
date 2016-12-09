@@ -29,9 +29,7 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
 
         tableView.tableHeaderView = questionSearchController.searchBar
         
-        if let userQuestions = Question.loadUnansweredQuestions(
-            forUser: User.currentUser(inManagedObjectContext: moc)!,
-            inManagedObjectContext: moc) {
+        if let userQuestions = Question.loadUnansweredQuestions(forUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!) {
             questions = userQuestions
         }
         
@@ -157,9 +155,8 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.QuestionCellIdentifier, for: indexPath)
-        let question = questions[indexPath.row]
         if let questionCell = cell as? YourQuestionsTableViewCell {
-            questionCell.question = question
+            questionCell.question = questions[indexPath.row]
         }
 
         return cell
@@ -173,14 +170,6 @@ class AskTableViewController: UITableViewController, UISearchBarDelegate, UISear
             self.performSegue(withIdentifier: Storyboard.ShowUnansweredSegueIdentifier, sender: selectedQuestion)
         }
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return questionSearchController.searchBar.bounds.height
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        return questionSearchController.searchBar
-//    }
 
     // MARK: - Navigation
     

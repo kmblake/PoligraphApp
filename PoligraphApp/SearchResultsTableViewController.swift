@@ -48,7 +48,6 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         return 0
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if askPressed {
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.CheckCellIdentifier, for: indexPath)

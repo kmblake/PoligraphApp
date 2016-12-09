@@ -16,21 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var currentUser: User?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.polyBlue()
         
-        let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.isTranslucent = false
-        navigationBarAppearance.barTintColor = UIColor.polyBlue()
-        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        setNavigationBarDefaultAppearance()
         
         UISearchBar.appearance().barTintColor = UIColor.polyBlue()
         UISearchBar.appearance().tintColor = UIColor.white
         UISearchBar.appearance().placeholder = "Ask Poligraph"
         
         fetchLocalItems(errorPrint)
-        Question.printAllQuestions(inManagedObjectContext: self.dataStack.mainContext)
+        currentUser = User.currentUser(inManagedObjectContext: dataStack.mainContext)
         return true
     }
 
@@ -76,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 completion(error)
             })
         }
-        print("Local Items Fetched")
     }
     
     /* Error Handler for fetchLocalItems */
@@ -94,11 +92,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
     }
     
+    func setNavigationBarDefaultAppearance() {
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.isTranslucent = false
+        navigationBarAppearance.barTintColor = UIColor.polyBlue()
+        navigationBarAppearance.tintColor = UIColor.white
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+    }
+    
 }
 
 extension UIColor {
     static func polyBlue() -> UIColor {
         return UIColor(red: 45.0/255.0, green: 156.0/255.0, blue: 219.0/255.0, alpha: 1.0)
+    }
+    
+    static func lightBlue() -> UIColor {
+        return UIColor(red: 86.0/255.0, green: 204.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+    }
+    
+    static func polyGray() -> UIColor {
+        return UIColor(red: 225.0/255.0, green: 225.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+    }
+    
+    static func buttonBlue() -> UIColor {
+        return UIColor(red: 48.0/255.0, green: 131.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     }
 }
 

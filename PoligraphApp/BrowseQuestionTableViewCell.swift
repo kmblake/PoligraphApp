@@ -21,28 +21,6 @@ class BrowseQuestionTableViewCell: UITableViewCell {
             updateUI()
         }
     }
-    
-//    internal var aspectConstraint : NSLayoutConstraint? {
-//        didSet {
-//            if oldValue != nil {
-//                questionImage.removeConstraint(oldValue!)
-//            }
-//            if aspectConstraint != nil {
-//                questionImage.addConstraint(aspectConstraint!)
-//            }
-//        }
-//    }
-//    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        aspectConstraint = nil
-//    }
-//    
-//    func setQuestionImage(image: UIImage) {
-//        let aspectRatio = image.size.width / image.size.height
-//        let aspectConstraint = NSLayoutConstraint(item: questionImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: questionImage, attribute: NSLayoutAttribute.height, multiplier: aspectRatio, constant: 0.0)
-//        questionImage.addConstraint(aspectConstraint)
-//    }
    
     func updateUI() {
         if let question = self.question {

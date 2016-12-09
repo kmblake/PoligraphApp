@@ -7,29 +7,92 @@
 //
 
 import UIKit
+import Koloda
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var kolodaView: KolodaView!
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+        kolodaView.swipe(.left)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectButton(_ sender: UIButton) {
+        kolodaView.swipe(.right)
     }
-    */
+    
+    @IBAction func undoButton(_ sender: UIBarButtonItem) {
+        kolodaView.revertAction()
+    }
+    
+    var questions = [Question]() {
+        didSet {
+            kolodaView.reloadData()
+        }
+    }
+    
+    let moc = (UIApplication.shared.delegate as! AppDelegate).dataStack.mainContext
+
+    private struct Storyboard {
+        static let ChooseAnswerSegueIdentifier = "Choose Answer"
+        static let ShowReviewsSegue = "Show Your Reviews"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        kolodaView.dataSource = self
+        kolodaView.delegate = self
+
+        if let unreviewedQuestions = Question.loadQuestions(
+            withStatus: Question.StatusTypes.answered,
+            excludingUser: (UIApplication.shared.delegate as! AppDelegate).currentUser!,
+            inManagedObjectContext: moc) {
+            questions = unreviewedQuestions
+        }
+    }
+    
+    // MARK: Koloda View Delegate implementation
+    
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        koloda.resetCurrentCardIndex()
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction == .right {
+            self.performSegue(withIdentifier: Storyboard.ChooseAnswerSegueIdentifier, sender: questions[index])
+        }
+    }
+    
+    // MARK: Koloda View Data Source implementation
+    
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        return questions.count
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        return QuestionCardView(frame: koloda.bounds, question: questions[index], answer: false, includeSummary: true)
+    }
+
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == Storyboard.ChooseAnswerSegueIdentifier {
+            let backButton = UIBarButtonItem()
+            backButton.title = "Cancel"
+            navigationItem.backBarButtonItem = backButton
+            if let writeReviewVC = segue.destination as? WriteReviewViewController {
+                if let question = sender as? Question {
+                    writeReviewVC.question = question
+                }
+            }
+        }
+        if segue.identifier! == Storyboard.ShowReviewsSegue {
+            let backButton = UIBarButtonItem()
+            backButton.title = "Back"
+            navigationItem.backBarButtonItem = backButton
+        }
+    }
 
 }

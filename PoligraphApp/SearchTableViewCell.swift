@@ -12,7 +12,6 @@ class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var questionTextLabel: UILabel!
     
-    
     var question: Question? {
         didSet{
             updateUI()
