@@ -13,5 +13,4 @@ pod install
 ```
 (This will take some time on the first run.)
 
-4) Open XCode and run the ap
-p!
+4) Open XCode and run the app!
